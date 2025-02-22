@@ -5,17 +5,17 @@ import { onLocalEvent, useLocalEvent } from '../utils/event-bus';
 import useStateIfMounted from './useStateIfMounted';
 
 /**
- * 类似于useGameEvent，但是他的数据会被缓存
+ *Similar to useGameEvent, but its data will be cached
  *
- * 要注意，这个hook的callback参数需要保持一致，否则事件会被重复注册
- * 最好使用 React.useCallback 包裹
+ *Note that the callback parameters of this hook need to be consistent, otherwise the event will be registered repeatedly.
+ *It is best to use React.useCallback package
  *
- * @export
- * @template T
- * @template K
- * @param {T} table_name
- * @param {K} key
- * @param {(data: XNetTableDefinitions[T][K]) => void} callback
+ *@export
+ *@template T
+ *@template K
+ *@param {T} table_name
+ *@param {K} key
+ *@param {(data: XNetTableDefinitions[T][K]) => void} callback
  */
 export function useXNetTableEvent<TABLE_NAME extends keyof XNetTableDefinitions, T extends XNetTableDefinitions[TABLE_NAME], KEY extends keyof T>(
     table_name: TABLE_NAME,
@@ -35,16 +35,16 @@ export function useXNetTableEvent<TABLE_NAME extends keyof XNetTableDefinitions,
 }
 
 /**
- * 当x_net_table中的数据发生变化时，会触发回调
+ *When the data in x_net_table changes, a callback will be triggered
  *
- * 注意： *这不是一个hook函数，不要在函数组件中使用*
+ *Note: *This is not a hook function, don't use it in function components*
  *
- * @export
- * @template T
- * @template K
- * @param {T} table_name
- * @param {K} key
- * @param {(data: XNetTableDefinitions[T][K]) => void} callback
+ *@export
+ *@template T
+ *@template K
+ *@param {T} table_name
+ *@param {K} key
+ *@param {(data: XNetTableDefinitions[T][K]) => void} callback
  */
 export function onXNetTableEvent<TABLE_NAME extends keyof XNetTableDefinitions, T extends XNetTableDefinitions[TABLE_NAME], KEY extends keyof T>(
     table_name: TABLE_NAME,
@@ -59,13 +59,13 @@ export function onXNetTableEvent<TABLE_NAME extends keyof XNetTableDefinitions, 
 }
 
 /**
- * 侦听网表变更的hook回调
- * @export
- * @template T
- * @template KEY
- * @param {T} table_name 表名
- * @param {KEY} key 表键
- * @param {XNetTableDefinitions[T][KEY]} fail_safe_value 如果网表中不含有该值，那么返回该值，此项必须是为了避免react渲染出错
+ *Hook callback listening for netlist changes
+ *@export
+ *@template T
+ *@template KEY
+ *@param {T} table_name table name
+ *@param {KEY} key table key
+ *@param {XNetTableDefinitions[T][KEY]} fail_safe_value If the netlist does not contain this value, then the value must be returned. This item must be to avoid react rendering errors
  */
 export function useXNetTableKey<TABLE_NAME extends keyof XNetTableDefinitions, T extends XNetTableDefinitions[TABLE_NAME], KEY extends keyof T>(
     table_name: TABLE_NAME,
@@ -74,7 +74,7 @@ export function useXNetTableKey<TABLE_NAME extends keyof XNetTableDefinitions, T
 ): T[KEY] {
     GameUI.CustomUIConfig().__x_nettable_cache__ ??= {};
     GameUI.CustomUIConfig().__x_nettable_cache__[table_name] ??= {};
-    const current_value = GameUI.CustomUIConfig().__x_nettable_cache__[<string>table_name][<string>key]; // 这个cache的set在dispatcher.ts进行
+    const current_value = GameUI.CustomUIConfig().__x_nettable_cache__[<string>table_name][<string>key]; //This cache set is performed in dispatcher.ts
 
     const [value, setValue] = useStateIfMounted<T[KEY]>(current_value ?? fail_safe_value);
 

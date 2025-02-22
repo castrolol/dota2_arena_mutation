@@ -1,8 +1,8 @@
-/** 
- * 项目名称 
- * 必须为字母开头，而且只能包含小写字母、数字和下划线
+/**
+ *Project name
+ *Must start with letters and only include lowercase letters, numbers and underscores
  */
-let addon_name = 'x_template';
+let addon_name = 'adaption_arena';
 
 try {
     addon_name = require('./.test/addon_name');
@@ -10,10 +10,10 @@ try {
     //do nothing
 }
 
-/** 
- * 要加密的项目列表 
- * 建议需要双端运行的modifier, ability代码等不加密
- * 避免出现运行时错误或者泄漏加密秘钥
+/**
+ *List of items to be encrypted
+ *It is recommended that modifiers, ability codes, etc. that need to be run on both ends are not encrypted.
+ *Avoid running-time errors or leaking encryption keys
  */
 const encrypt_files = [
     '**/*.lua',
@@ -27,9 +27,9 @@ const encrypt_files = [
     '!game/scripts/vscripts/utils/aeslua/**/*.lua',
 ];
 
-/** 发布时要排除的文件列表，他们不会被复制到发布的game文件夹 */
+/**List of files to be excluded when publishing, they will not be copied to the published game folder */
 const exclude_files = [
-    'game/scripts/src/**/*.*', // 不输出源码
+    'game/scripts/src/**/*.*', //No source code output
     '**/*.json',
     '**/*.ts',
     '**/*.bin',
@@ -37,24 +37,26 @@ const exclude_files = [
     '**/*.cfg',
 ];
 
-/** 本地测试（工具模式）密钥，一般不需要修改 */
+/**Local test (tool mode) keys generally do not need to be modified */
 const encryptDedicatedServerKeyTest = `Invalid_NotOnDedicatedServer`;
 
-/** 测试发布（测试图）密钥，运行 yarn prod 必须，获取方法请参考 https://github.com/XavierCHN/fetch-keys */
-const encryptDedicatedServerKeyRelease_Test = `这里需要填入测试图的密钥 GetDedicatedServerKeyV3('version') 的结果`;
+/**Test release (test image) key, running yarn prod must be done. Please refer to https://github.com/XavierCHN/fetch-keys */
+const encryptDedicatedServerKeyRelease_Test = `Here you need to fill in the key of the test diagram. The result of GetDedicatedServerKeyV3('version')`;
 
-/** 正式发布（正式图）密钥，运行 yarn prod 必须，获取方法请参考 https://github.com/XavierCHN/fetch-keys */
-const encryptDedicatedServerKeyRelease = `这里需要填入正式的发布密钥 GetDedicatedServerKeyV3('version') 的结果`;
+/**For official release (official picture) key, you must run yarn prod. Please refer to https://github.com/XavierCHN/fetch-keys */
+const encryptDedicatedServerKeyRelease = `Here you need to fill in the result of the official release key GetDedicatedServerKeyV3('version')`;
 
-/** 验证配置是否合法 */
+/**Verify that the configuration is legal */
 const assert = require('assert');
 assert(
     addon_name.match(/^[a-z][a-z0-9_]*$/),
-    'addon_name 必须为字母开头，而且只能包含小写字母、数字和下划线，请到 addon.config.js 修改\nplease change addon_name in addon.config.js to match /^[a-z][a-z0-9_]*$/'
+    `addon_name must start with a letter and can only contain lowercase letters, numbers and underscores. Please go to addon.config.js to modify
+    please change addon_name in addon.config.js to match /^[a-z][a-z0-9_]*$/`
 );
 assert(
     addon_name !== 'x_template',
-    '请到 scripts/addon.config.js 修改 addon_name 为你的项目名称，不能为 x_template\nplease change addon_name in addon.config.js to your project name, not x_template'
+    `Please go to scripts/addon.config.js to modify addon_name to your project name, not x_template
+     please change addon_name in addon.config.js to your project name, not x_template`
 );
 
 module.exports = {

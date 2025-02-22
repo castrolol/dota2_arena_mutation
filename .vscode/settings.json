@@ -13,4 +13,7 @@
     },
     "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
     "eslint.run": "onSave",
+    "[less]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
 }

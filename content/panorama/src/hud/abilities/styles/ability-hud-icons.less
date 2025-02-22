@@ -1,0 +1,167 @@
+.AbilityHud-icons {
+    flow-children: down;
+    padding: 0 12px;
+    padding-top: 12px;
+    height: fill-parent-flow(1);
+
+    .row {
+        flow-children: right;
+        height: fill-parent-flow(1);
+    }
+
+    .item {
+        width: fill-parent-flow(1);
+        height: 100%;
+        horizontal-align: center;
+        flow-children: down;
+
+        &.upgradable {
+            DOTAAbilityImage {
+                animation-name: UpgradableGlow;
+                animation-duration: 1.5s;
+                animation-timing-function: ease-in-out;
+                animation-iteration-count: infinite;
+            }
+        }
+
+        &.inactive {
+            DOTAAbilityImage {
+                saturation: 0.5;
+            }
+        }
+
+        &.locked {
+            DOTAAbilityImage {
+                border: 1px solid black;
+                box-shadow: inset rgba(0, 0, 0, 0.777) 0px 0px 8px 0px !important;
+                saturation: 0.5;
+            }
+        }
+
+        DOTAAbilityImage {
+            height: 54px;
+            width: 54px;
+            horizontal-align: center;
+            box-shadow: fill black 0px 0px 0px 2px !important;
+            border-top: 2px solid #bbbbbb67;
+            border-right: 2px solid #1d1c1c88;
+            border-left: 2px solid #bbbbbb67;
+            border-bottom: 2px solid #1d1c1c88;
+        }
+
+        .progress {
+            margin-top: 8px;
+            width: fit-children;
+            max-width: 54px;
+            height: 4px;
+            horizontal-align: center;
+            flow-children: right;
+
+            .gauge {
+                width: fill-parent-flow(1);
+                max-width: 8px;
+                height: 4px;
+                margin: 0 1px;
+                background-color: rgb(0, 0, 0);
+                horizontal-align: center;
+                box-shadow: rgba(87, 87, 87, 0.052) 0px 0px 1px 1px !important;
+
+                &.active {
+                    background-color: gradient(linear, 0% 0%, 0% 100%, from(#ffcc33), to(#ffbb00));
+                }
+
+                &.upgradable {
+                    animation-name: UpgradableGlow;
+                    animation-duration: 1.5s;
+                    animation-timing-function: ease-in-out;
+                    animation-iteration-count: infinite;
+                }
+            }
+        }
+    }
+
+    .empty-ability {
+        width: fill-parent-flow(1);
+        height: 100%;
+    }
+
+    .level-requirement {
+        ignore-parent-flow: true;
+        height: 33px;
+        width: 100%;
+        flow-children: left;
+        margin-top: -10px;
+        z-index: 2;
+
+        .level-requirement-container {
+        }
+
+        .level-requirement-indicator {
+            width: 28px;
+            height: 28px;
+            border-radius: 100%;
+            border-width: 2px;
+            border-color: white;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .level-requirement-border-background {
+            x: 1px;
+            y: 1px;
+            width: 26px;
+            height: 26px;
+            border-radius: 100%;
+            border: 4px solid rgb(57, 57, 57);
+            background-color: transparent;
+        }
+
+        .level-requirement-border-amount {
+            x: 1px;
+            y: 1px;
+            width: 26px;
+            height: 26px;
+            border-radius: 100%;
+            border: 2px solid rgb(252, 225, 156);
+            background-color: transparent;
+            clip: radial(50% 50%, 0deg, 0deg);
+            transition: clip 400ms ease-in-out 0s;
+        }
+
+        .level-requirement-text {
+            x: 3px;
+            y: 3px;
+            width: 22px;
+            height: 22px;
+            border-radius: 100%;
+            border-color: white;
+            background-color: rgb(0, 0, 0);
+            text-overflow: noclip;
+            overflow: noclip noclip;
+        }
+
+        .level-requirement-text-label {
+            width: 100%;
+            vertical-align: middle;
+            horizontal-align: center;
+            text-align: center;
+            color: rgb(252, 225, 156);
+            text-shadow: 0px 0px 1px 0 rgba(246, 102, 24, 0.6901960784);
+            font-size: 12px;
+            overflow: noclip;
+        }
+    }
+}
+
+@keyframes UpgradableGlow {
+    0% {
+        box-shadow: rgba(255, 225, 1, 0.353) 0px 0px 3px 1px !important;
+    }
+
+    50% {
+        box-shadow: rgba(255, 225, 1, 0.103) 0px 0px 0.1px 1px !important;
+    }
+
+    100% {
+        box-shadow: rgba(255, 225, 1, 0.453) 0px 0px 3px 1px !important;
+    }
+}
