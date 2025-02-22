@@ -1,15 +1,39 @@
-@import "ability-hud-header.less";
-@import "ability-hud-paths.less";
-@import "ability-hud-icons.less";
+@import 'ability-hud-header.less';
+@import 'ability-hud-paths.less';
+@import 'ability-hud-icons.less';
 
 .AbilityHud {
     &-root {
         height: 480px;
         width: 650px;
         background-color: #29353b;
-        position: 0 190px 0px;
+        position: 0px 190px 0px;
         border: 1px solid rgba(255, 255, 255, 0.06);
         box-shadow: 0px 3px 12px -2px rgba(0, 0, 0, 0.8);
         flow-children: down;
+        transform: translateX(-650px);
+        
+    transition: transform 200ms ease-in-out 0.0s;    
+        &.open {
+           transform: translateX(0);
+        }
+    }
+
+    &-toggle {
+        position: 650px 190px 0px;
+        height: 42px;
+        width: 42px;
+        background-color: gradient(radial, 50% 30%, 0% 10%, 65% 75%, from(#45715b), to(#1a423e55));
+        box-shadow: fill #48d07d00 1px 1px 8px 1px;
+        border-top: 2px solid #48d07d22;
+        border-right: 2px solid #00000088;
+        border-left: 0;
+        border-bottom: 2px solid #00000088;
+        transform: translateX(-650px);
+
+        transition: transform 200ms ease-in-out 0.0s;    
+        &.open {
+            transform: translateX(0px);
+        }
     }
 }
