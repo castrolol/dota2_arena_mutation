@@ -1,0 +1,26 @@
+diff --git a/node_modules/gulp-dotax/lib/imagePrecache.js b/node_modules/gulp-dotax/lib/imagePrecache.js
+index 1d672a9..a3ab3ab 100644
+--- a/node_modules/gulp-dotax/lib/imagePrecache.js
++++ b/node_modules/gulp-dotax/lib/imagePrecache.js
+@@ -37,7 +37,7 @@ function imagePrecacche(root) {
+             const file = new vinyl_1.default({
+                 cwd: firstFile.cwd,
+                 base: firstFile.base,
+-                path: path_1.default.join(firstFile.base, `image_precache${i}.css`),
++                path: path_1.default.join(firstFile.base, `image_precache${i}.less`),
+                 contents: Buffer.from(content),
+             });
+             //@ts-ignore
+diff --git a/node_modules/gulp-dotax/src/imagePrecache.ts b/node_modules/gulp-dotax/src/imagePrecache.ts
+index e695c1a..ca37188 100644
+--- a/node_modules/gulp-dotax/src/imagePrecache.ts
++++ b/node_modules/gulp-dotax/src/imagePrecache.ts
+@@ -32,7 +32,7 @@ export function imagePrecacche(root: string) {
+             const file = new Vinyl({
+                 cwd: firstFile.cwd,
+                 base: firstFile.base,
+-                path: path.join(firstFile.base, `image_precache${i}.css`),
++                path: path.join(firstFile.base, `image_precache${i}.less`),
+                 contents: Buffer.from(content),
+             });
+             //@ts-ignore

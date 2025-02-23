@@ -10,4 +10,5 @@ export interface LocalEvent {
         key: string;
         content: any;
     };
+    talent_button_pressed: { player_id: PlayerID };
 }

@@ -1,0 +1,179 @@
+.TalentButton {
+    horizontal-align: center;
+
+    &:active {
+        sound: "ui_friends_slide_in";
+    }
+    
+
+    .LabelBackground {
+        visibility: collapse;
+        width: 110%;
+        ignore-parent-flow: true;
+        height: 100%;
+        opacity: 0.5;
+        border-radius: 2px;
+        opacity-mask: url('s2r://panorama/images/masks/facet_label_mask_png.vtex');
+    }
+
+    .FacetContainer {
+        width: 56px;
+        height: 56px;
+        border-radius: 2px;
+        box-shadow: 0px 2px 8px -2px rgba(0, 0, 0, 0.8);
+        tooltip-position: bottom;
+
+        .FacetBackgroundContainer {
+            width: 100%;
+            height: 100%;
+            overflow: clip;
+            box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.04);
+        }
+
+        .FacetBackground {
+            width: 100%;
+            height: 100%;
+            transform: rotateZ(90deg);
+            horizontal-align: center;
+            vertical-align: center;
+            overflow: noclip;
+            opacity: 0.4;
+            background-color: gradient(linear, 0% 0%, 100% 0%, from(#94b5ba), to(#385b59));
+        }
+
+        .FacetBackgroundTexture {
+            width: 100%;
+            height: 100%;
+            background-image: url('s2r://panorama/images/hud/facets/ripple_texture_png.vtex');
+            background-size: cover;
+            background-position: center;
+            -s2-mix-blend-mode: screen;
+            horizontal-align: right;
+            wash-color: #94b5ba;
+            opacity: 0.6;
+        }
+
+        .IconContainer {
+            opacity: 0.8;
+            width: 100%;
+            height: 100%;
+        }
+
+        .FacetIcon {
+            width: 54px;
+            height: 54px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            horizontal-align: center;
+            vertical-align: center;
+            img-shadow: 0px 2px 8px black;
+            background-image: url('file://{images}/custom_game/talents_upgrade.png');
+            z-index: 1;
+            box-shadow: fill #385b59 0px 0px 0px 0px;
+        }
+    }
+
+    .FacetIconGlow {
+        background-image: url('file://{images}/custom_game/talents_upgrade_glow.png');
+
+        visibility: collapse;
+        width: 72px;
+        height: 72px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        horizontal-align: center;
+        vertical-align: center;
+
+        z-index: 2;
+    }
+    .FacetIconDisabled {
+        background-image: url('file://{images}/custom_game/talents_upgrade_disabled_bevel.png');
+
+        visibility: collapse;
+        width: 72px;
+        height: 72px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        horizontal-align: center;
+        vertical-align: center;
+        z-index: 2;
+    }
+}
+
+.TalentButton {
+    &.disabled {
+        .FacetIconDisabled {
+            visibility: visible;
+        }
+        .FacetIcon {
+            visibility: collapse;
+        }
+        .FacetBackground {
+            background-color: transparent;
+        }
+        .FacetBackgroundContainer {
+            box-shadow: inset 0px 0px 0px 2px rgba(139, 139, 139, 0.04);
+        }
+        .FacetBackgroundTexture {
+            wash-color: none;
+            background-image: none;
+        }
+    }
+    &.available_upgrade:not(.disabled) {
+        .FacetBackgroundTexture {
+            background-color: gradient(linear, 0% 0%, 100% 0%, from(#aeba94), to(#385b59));
+            wash-color: #e8e83e;
+            opacity: 0.6;
+        }
+
+        .FacetIconGlow {
+            visibility: visible;
+            animation-name: button_blink;
+            animation-duration: 1s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+    }
+
+    &:active:not(.disabled) {
+        transform: scale3d(0.95, 0.95, 1);
+
+        .FacetContainer {
+            box-shadow: none;
+        }
+
+        .FacetBackgroundContainer {
+            box-shadow: none;
+        }
+    }
+}
+
+
+@keyframes button_blink {
+    0% {
+        opacity: 0.2;
+    } 
+    100% {
+        opacity: 0.9;
+    }
+}
+
+ 
+@keyframes blinking {
+    0% {
+        box-shadow: fill white 0px 0px 0px 0px;
+        brightness: 0.7;
+    }
+    50% {
+        box-shadow: fill gold 0px 0px 2px 0px;
+        brightness: 2;
+    }
+    100% {
+        box-shadow: fill white 0px 0px 0px 0px;
+        brightness: 0.7;
+    }
+  }

@@ -106,7 +106,7 @@ const create_image_precache =
     () => {
         const imageFiles = `${paths.panorama}/images/**/*.{jpg,png,psd}`;
         const createImagePrecache = () => {
-            return gulp.src(imageFiles).pipe(dotax.imagePrecacche(`content/panorama/images/`)).pipe(gulp.dest(paths.panorama));
+            return gulp.src(imageFiles).pipe(dotax.imagePrecacche(`content/panorama/images/`)).pipe(gulp.dest(path.join(paths.panorama, 'src')));
         };
         if (watch) {
             return gulp.watch(imageFiles, createImagePrecache);
