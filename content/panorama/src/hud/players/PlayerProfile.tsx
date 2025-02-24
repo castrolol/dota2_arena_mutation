@@ -11,6 +11,7 @@ export function PlayerProfile({ player }: PlayerProfileProps) {
     return (
         <Panel className={clsx('PlayerProfile-root', { dead: player.isDead, your })}>
             <Panel className="background ">
+                
                 <Panel className={clsx("player-color", `hero-slot-${player.playerId}-bg`)} />
                 <Panel className="picture">
                     <DOTAHeroImage heroname={player.heroName} heroimagestyle="landscape" />

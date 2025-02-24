@@ -1,5 +1,6 @@
-#base "abilities.txt"
+#base "heroes\crystal_maiden\base_abilities.txt"
 
 "DOTAAbilities"
 {
+
 }

@@ -1,3 +1,5 @@
+const IS_LUA = _G !== null;
+
 export interface BaseAbility extends CDOTA_Ability_Lua {}
 export class BaseAbility {}
 
@@ -34,18 +36,22 @@ export class BaseModifierMotionVertical extends BaseModifier {}
 export interface BaseModifierMotionBoth extends CDOTA_Modifier_Lua_Motion_Both {}
 export class BaseModifierMotionBoth extends BaseModifier {}
 
-// Add standard base classes to prototype chain to make `super.*` work as `self.BaseClass.*`
-setmetatable(BaseAbility.prototype, { __index: CDOTA_Ability_Lua ?? C_DOTA_Ability_Lua });
-setmetatable(BaseItem.prototype, { __index: CDOTA_Item_Lua ?? C_DOTA_Item_Lua });
-setmetatable(BaseModifier.prototype, { __index: CDOTA_Modifier_Lua });
+if (IS_LUA) {
+    //Add standard base classes to prototype chain to make `super.*` work as `self.BaseClass.*`
+    setmetatable(BaseAbility.prototype, { __index: CDOTA_Ability_Lua ?? C_DOTA_Ability_Lua });
+    setmetatable(BaseItem.prototype, { __index: CDOTA_Item_Lua ?? C_DOTA_Item_Lua });
+    setmetatable(BaseModifier.prototype, { __index: CDOTA_Modifier_Lua });
+}
 
 export const registerAbility = (name?: string) => (ability: new () => CDOTA_Ability_Lua | CDOTA_Item_Lua) => {
     if (name !== undefined) {
-        // @ts-ignore
+        //@ts-ignore
         ability.name = name;
     } else {
         name = ability.name;
     }
+
+    if (!IS_LUA) return;
 
     const [env] = getFileScope();
 
@@ -64,11 +70,13 @@ export const registerAbility = (name?: string) => (ability: new () => CDOTA_Abil
 
 export const registerModifier = (name?: string) => (modifier: new () => CDOTA_Modifier_Lua) => {
     if (name !== undefined) {
-        // @ts-ignore
+        //@ts-ignore
         modifier.name = name;
     } else {
         name = modifier.name;
     }
+
+    if (!IS_LUA) return;
 
     const [env, source] = getFileScope();
     const [fileName] = string.gsub(source, '.*scripts[\\/]vscripts[\\/]', '');
@@ -118,14 +126,14 @@ function getFileScope(): [any, string] {
         if (
             info &&
             info.what === 'main' &&
-            // 此处是为了修正加密后的脚本因为使用 loadstring 载入之后
-            // 导致的 info.source 不是正确的文件名的问题
-            // 需要往上再来一级才行
-            // loadstring的 main short_src 为'[string "local a = 1"] blah blah
-            // 如果你没有加密使用这个方法的脚本（目前为包含registerAbility与registerModifier的代码）
-            // 可以注释或忽略下面这两行代码
+            //This is to correct the encrypted script because it is loaded using loadstring.
+            //The problem caused by info.source is not the correct file name
+            //You need to go up one more level.
+            //The main short_src of loadstring is '[string "local a = 1"] blah blah
+            //If you are not encrypting the script using this method (currently the code containing registerAbility and registerModifier)
+            //You can comment or ignore the following two lines of code
             info.source &&
-            info.source.startsWith('@') // ensure this is the main script
+            info.source.startsWith('@') //ensure this is the main script
         ) {
             return [getfenv(level), info.source];
         }
@@ -138,8 +146,8 @@ function toDotaClassInstance(instance: any, table: new () => any) {
     let { prototype } = table;
     while (prototype) {
         for (const key in prototype) {
-            // Using hasOwnProperty to ignore methods from metatable added by ExtendInstance
-            // https://github.com/SteamDatabase/GameTracking-Dota2/blob/7edcaa294bdcf493df0846f8bbcd4d47a5c3bd57/game/core/scripts/vscripts/init.lua#L195
+            //Using hasOwnProperty to ignore methods from metatable added by ExtendInstance
+            //https://github.com/SteamDatabase/GameTracking-Dota2/blob/7edcaa294bdcf493df0846f8bbcd4d47a5c3bd57/game/core/scripts/vscripts/init.lua#L195
             if (!instance.hasOwnProperty(key)) {
                 if (key != '__index') {
                     instance[key] = prototype[key];

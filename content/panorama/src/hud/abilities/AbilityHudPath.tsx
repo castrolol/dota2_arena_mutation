@@ -1,30 +1,56 @@
+import { useMemo } from 'react';
+import { ClassIcon, HeroDefinition } from '../../def/defs';
 import { AbilityHudHeader } from './AbilityHudHeader';
 import { AbilityHudIcons } from './AbilityHudIcons';
 
-export function AbilityHudPaths() {
+export type AbilityHudPathsProps = {
+    hero: HeroDefinition;
+    active: string;
+};
+
+export function AbilityHudPaths({ hero, active }: AbilityHudPathsProps) {
+    const paths = useMemo(() => {
+        const paths = Object.values(hero?.classes[active]?.paths ?? {});
+
+        return paths;
+    }, [active]);
+
     return (
         <Panel className="AbilityHud-paths">
-            <AbilityHudPath />
-            <Panel className="path-divider" />
-            <AbilityHudPath />
+            {paths.map((path, i) => (
+                <>
+                    {i > 0 ? <Panel className="path-divider" /> : null}
+                    <AbilityHudPath pathName={path.l18n} icon={path.icon} />
+                </>
+            ))}
         </Panel>
     );
 }
 
-export function AbilityHudPath() {
+export function AbilityHudPath({ pathName, icon }: { pathName: string; icon: ClassIcon }) {
     return (
         <Panel className="path">
             <Panel className="title">
-                <Panel className="points">
-                    <Label className="points-text" text={`${22}`} />
-                </Panel>
+                <Image className="icon" src={resolveIcon(icon)} />
+
                 <Panel className="title-container">
                     <Label className="title" text="Path of" />
-                    <Label className="name" text="Frosty Overlord" />
+                    <Label className="name" text={pathName} />
+                </Panel>
+
+                <Panel className="points">
+                    <Label className="points-text" text={`${22}`} />
                 </Panel>
             </Panel>
             <Panel className="path-sub-divider" />
             <AbilityHudIcons />
         </Panel>
     );
+}
+
+function resolveIcon(icon: ClassIcon) {
+    if (icon.type == 'file') {
+        return `file://{images}/custom_game/talent_icons/${icon.icon}.png`;
+    }
+    return `s2r://panorama/images/hud/facets/icons/${icon.icon}_png.vtex`;
 }

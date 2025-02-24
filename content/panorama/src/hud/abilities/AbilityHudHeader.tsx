@@ -1,29 +1,30 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import clsx from '../../utils/clsx';
+import { ClassColors, ClassIcon, HeroDefinition } from '../../def/defs';
+import { useHeroInfo } from '../../hooks/useHeroInfo';
 
-export function AbilityHudHeader() {
-    const [active, setActive] = useState(1);
+export type AbilityHudHeaderProps = {
+    hero: HeroDefinition;
+    active: string;
+    setActive: (id: string) => void;
+};
+export function AbilityHudHeader({ hero, active, setActive }: AbilityHudHeaderProps) {
+    const classes = useMemo(() => {
+        const classes = Object.values(hero?.classes ?? {});
 
-    const items = [
-        { id: 1, text: 'Queen of Frost Forest', points: 20 },
-        { id: 2, text: 'Ethereal Enchantress', points: 5 },
-        { id: 3, text: 'Stealth Assassin', points: 0 },
-    ];
-
+        return classes;
+    }, [hero]);
     return (
         <Panel className="AbilityHud-header">
-            {items.map(item => (
+            {classes.map(item => (
                 <AbilityHudHeaderItem
-                    key={item.id}
-                    icon={{
-                        type: 'file',
-                        icon: "wand"
-                    }}
-                    color="blue-0"
-                    points={item.points}
-                    active={active === item.id}
-                    onClick={() => setActive(item.id)}
-                    name={item.text}
+                    key={item.name}
+                    icon={item.icon}
+                    color={item.color}
+                    points={0}
+                    active={active === item.name}
+                    onClick={() => setActive(item.name)}
+                    name={item.l18n}
                 />
             ))}
         </Panel>
@@ -35,7 +36,7 @@ export type AbilityHudHeaderItemProps = {
     active?: boolean;
     points: number;
     name: string;
-    color: ClassColor;
+    color: ClassColors;
     icon: ClassIcon;
 };
 
@@ -65,5 +66,5 @@ function resolveIcon(icon: ClassIcon) {
     if (icon.type == 'file') {
         return `file://{images}/custom_game/talent_icons/${icon.icon}.png`;
     }
-    return `s2r://panorama/images/hud/facets/icons/${icon.icon}.vtex`;
+    return `s2r://panorama/images/hud/facets/icons/${icon.icon}_png.vtex`;
 }
