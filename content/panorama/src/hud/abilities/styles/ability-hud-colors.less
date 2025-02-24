@@ -1,0 +1,176 @@
+@red-colors:
+    red #f13131     #4a2040     #ca4444     #943846,
+    red #9f3c3c     #4a2040     #9f3c3c     #4a2040,
+    red #954533     #452732     #954533     #452732,
+    red #a3735e     #4f2a25     #a3735e     #4f2a25;
+
+@yellow-colors:
+    yellow #c8a45c     #6f3d21     #c8a45c     #6f3d21,
+    yellow #c6a158     #604928     #c6a158     #8c7a61,
+    yellow #cac194     #433828     #cac194     #433828,
+    yellow #c3a99a     #4d352b     #c3a99a     #4d352b;
+
+@green-colors:
+    green #a2b23e     #2d5a18     #a2b23e     #2d5a18,
+    green #7ec2b2     #29493a     #7ec2b2     #29493a,
+    green #538564     #1c3d3f     #538564     #1c3d3f,
+    green #9a9f6a     #223824     #9a9f6a     #223824;
+
+@blue-colors:
+    blue #727cb2     #342d5b     #727cb2     #342d5b,
+    blue #547ea6     #2a385e     #547ea6     #2a385e,
+    blue #6baebc     #135459     #6baebc     #135459,
+    blue #94b5ba     #385b59     #94b5ba     #385b59;
+
+@purple-colors:
+    purple #d177e1     #5d2149     #b57798     #55274c,
+    purple #9c70a4     #412755     #b57789     #412755,
+    purple #b57789     #282752     #9c70a4     #282752,
+    purple #675cae     #261c44     #675cae     #261c44;
+
+@gray-colors: 
+    gray #565c61     #1b1b21      #565c61     #1b1b21,
+    gray #6a6d73     #29272c      #6a6d73     #29272c,
+    gray #95a9b1     #3e464f      #95a9b1     #3e464f,
+    gray #adb6be     #4e5557      #adb6be     #4e5557;
+   
+@orange-colors:
+    orange #FFB300     #B27A00     #FFB733     #A96800,
+    orange #FF7F50     #C95A3D     #FF9473     #BF5035,
+    orange #FF8C00     #B35900     #FF9933     #B85D00,
+    orange #E65100     #A83A00     #EF6C00     #B03A00;
+
+    @cyan-colors:
+    cyan #009e94     #007d7a     #00b3a8     #008b88,
+    cyan #00bfa6     #008f78     #00cfb6     #009e87,
+    cyan #00a8c2     #007a9f     #00b8d2     #0088ae,
+    cyan #009197     #006b74     #00a0a9     #007d85;
+
+    @pink-colors:
+    pink #FF6E95    #D05573    #FF809F    #D8657D,
+    pink #FF3399    #CC287C    #FF4FAE    #D12688,
+    pink #D81B60    #A31648    #E0407A    #B21A55,
+    pink #B8536C    #932B53    #C96B7F    #A12C5E;
+
+
+
+@color-sets: 
+    @gray-colors,
+    @red-colors,
+    @yellow-colors,
+    @green-colors,
+    @blue-colors,
+    @purple-colors,
+    @orange-colors,
+    @cyan-colors,
+    @pink-colors ;
+
+
+.AbilityHud-header .AbilityHud-header-item {
+  
+each(@color-sets, {
+
+each(@value, {  
+    @basename: extract(@value, 1);
+    @ii: @key - 1;
+  
+    @name: ~"@{basename}-@{ii}";
+    @color: extract(@value, 2);
+    @shadow: extract(@value, 3);
+    @gradient1: extract(@value, 4);
+    @gradient2: extract(@value, 5);
+
+    &.colorset-@{name} {
+
+        .background {        
+            background-color: gradient(linear, 0% 0%, 100% 0%, from(@gradient1), to(@gradient2));
+        }
+
+        .background-texture {
+            wash-color: @color;
+        }
+
+        .content {
+
+            .icon {
+                img-shadow: 0px 2px 8px @shadow;
+            }
+
+            .name {
+                text-shadow: 2px 2px 8px 3 @shadow;
+            }
+        }
+    }
+});
+});
+
+}
+
+
+@heroSlot0Color: #3375FFFF;
+@heroSlot1Color: #66FFBFFF;
+@heroSlot2Color: #BF00BFFF;
+@heroSlot3Color: #F3F00BFF;
+@heroSlot4Color: #FF6B00FF;
+@heroSlot5Color: #FE86C2FF;
+@heroSlot6Color: #A1B447FF;
+@heroSlot7Color: #65D9F7FF;
+@heroSlot8Color: #008321FF;
+@heroSlot9Color: #A46900FF;
+
+@heroSlot0ColorHalf: #3375FF33;
+@heroSlot1ColorHalf: #66FFBF44;
+@heroSlot2ColorHalf: #BF00BF88;
+@heroSlot3ColorHalf: #F3F00B33;
+@heroSlot4ColorHalf: #FF6B0033;
+@heroSlot5ColorHalf: #FE86C244;
+@heroSlot6ColorHalf: #A1B44766;
+@heroSlot7ColorHalf: #65D9F733;
+@heroSlot8ColorHalf: #00832133;
+@heroSlot9ColorHalf: #A4690033;
+
+@heroSlotColors: 
+    @heroSlot0Color,
+    @heroSlot1Color,
+    @heroSlot2Color,
+    @heroSlot3Color,
+    @heroSlot4Color,
+    @heroSlot5Color,
+    @heroSlot6Color,
+    @heroSlot7Color,
+    @heroSlot8Color,
+    @heroSlot9Color;
+
+
+@heroSlotColorHalfs: 
+    @heroSlot0ColorHalf,
+    @heroSlot1ColorHalf,
+    @heroSlot2ColorHalf,
+    @heroSlot3ColorHalf,
+    @heroSlot4ColorHalf,
+    @heroSlot5ColorHalf,
+    @heroSlot6ColorHalf,
+    @heroSlot7ColorHalf,
+    @heroSlot8ColorHalf,
+    @heroSlot9ColorHalf;
+
+    
+each(@heroSlotColorHalfs, {
+    @ii: @key - 1;
+    @color: @value;
+    @name: ~"hero-slot-@{ii}-half-bg";
+    
+    .@{name} {
+        background-color: @value;
+    }
+})
+
+
+each(@heroSlotColors, {
+    @ii: @key - 1;
+    @color: @value;
+    @name: ~"Players-topbar .PlayerProfile-root .hero-slot-@{ii}-bg";
+    .@{name} {
+        background-color: @value;
+    }
+})

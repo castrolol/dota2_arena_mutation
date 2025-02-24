@@ -17,6 +17,7 @@ export function setupDefaultUI() {
         if (craftHolder) craftHolder.style.visibility = 'collapse';
     }, 1000);
 }
+
 setupDefaultUI();
 
 export function Hud() {

@@ -15,6 +15,11 @@ export function AbilityHudHeader() {
             {items.map(item => (
                 <AbilityHudHeaderItem
                     key={item.id}
+                    icon={{
+                        type: 'file',
+                        icon: "wand"
+                    }}
+                    color="blue-0"
                     points={item.points}
                     active={active === item.id}
                     onClick={() => setActive(item.id)}
@@ -30,21 +35,23 @@ export type AbilityHudHeaderItemProps = {
     active?: boolean;
     points: number;
     name: string;
+    color: ClassColor;
+    icon: ClassIcon;
 };
 
-export function AbilityHudHeaderItem({ onClick, name, points, active = false }: AbilityHudHeaderItemProps) {
+export function AbilityHudHeaderItem({ onClick, name, points, icon, color, active = false }: AbilityHudHeaderItemProps) {
     return (
         <Panel
             onactivate={() => {
                 onClick();
             }}
-            className={clsx(`AbilityHud-header-item`, { active })}
+            className={clsx(`AbilityHud-header-item`, `colorset-${color}`, { active })}
         >
             <Panel className="background" hittest={false} />
             <Panel className="background-texture" hittest={false} />
             <Panel className="background-shine" hittest={false} />
             <Panel className="content">
-                <Image className="icon" src="s2r://panorama/images/hud/facets/icons/slow_png.vtex" />
+                <Image className="icon" src={resolveIcon(icon)} />
                 <Label className="name" text={name} />
                 <Panel className="points">
                     <Label className="points-text" text={`${points}`} />
@@ -52,4 +59,11 @@ export function AbilityHudHeaderItem({ onClick, name, points, active = false }: 
             </Panel>
         </Panel>
     );
+}
+
+function resolveIcon(icon: ClassIcon) {
+    if (icon.type == 'file') {
+        return `file://{images}/custom_game/talent_icons/${icon.icon}.png`;
+    }
+    return `s2r://panorama/images/hud/facets/icons/${icon.icon}.vtex`;
 }

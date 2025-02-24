@@ -1,25 +1,32 @@
 import { Debug } from './Debug';
 import { GameConfig } from './GameConfig';
+import { GameMode } from './GameMode';
+import { GoldNotifier } from './GoldNotifier';
 import { XNetTable } from './xnet-table';
 
 declare global {
     interface CDOTAGameRules {
-        // 声明所有的GameRules模块，这个主要是为了方便其他地方的引用（保证单例模式）
+        //Declare all GameRules modules, this is mainly for the convenience of references in other places (guaranteed singleton mode)
         XNetTable: XNetTable;
+        Mode: GameMode;
     }
 }
 
 /**
- * 这个方法会在game_mode实体生成之后调用，且仅调用一次
- * 因此在这里作为单例模式使用
+ *This method will be called after the game_mode entity is generated and only once
+ *So here is used as a singleton mode
  **/
 export function ActivateModules() {
     if (GameRules.XNetTable == null) {
-        // 初始化所有的GameRules模块
+        GameRules.Mode = new GameMode();        
+        GameRules.Mode.config = new GameConfig();
+        GameRules.Mode.config.setup();
+        
+        new GoldNotifier();
+        //Initialize all GameRules modules
         GameRules.XNetTable = new XNetTable();
-        // 如果某个模块不需要在其他地方使用，那么直接在这里使用即可
-        new GameConfig();
-        // 初始化测试模块xD
+        //If a module does not need to be used elsewhere, then use it directly here
+        //Initialize the test module xD
         new Debug();
     }
 }

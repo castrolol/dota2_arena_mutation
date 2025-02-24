@@ -1,20 +1,31 @@
 declare interface CustomNetTableDeclarations {
-    game_timer: {
-        game_timer: {
-            current_time: number;
-            current_state: 1 | 2 | 3 | 4 | 5;
-            current_round: number;
+    player_gold: {
+        [player_id: string]: {
+            gold: number;
         };
     };
-    hero_list: {
-        hero_list: Record<string, string> | string[];
+
+    player_heroes: {
+        [player_id: string]: {
+            hero_name: string;
+        };
     };
-    custom_net_table_1: {
-        key_1: number;
-        key_2: string;
+
+    player_points: {
+        [player_id: string]: {
+            points: number;
+            spent: number;
+        };
     };
-    custom_net_table_3: {
-        key_1: number;
-        key_2: string;
+
+    player_talents: {
+        [player_id: string]: {
+            learned_talents: TalentInfo[];
+        };
     };
+}
+
+declare interface TalentInfo {
+    talent: string;
+    level: number;
 }

@@ -67,7 +67,9 @@ module.exports = {
                     additionalData: content => {
                         content = content.replace(/@keyframes\s*(-?[_a-zA-Z]+[_a-zA-Z0-9-]*)/g, (match, name) => {
                             // add apostrophe to satisfy valve
-                            return match.replace(name, `'${name}'`);
+                            const result = match.replace(name, `'${name}'`);
+                            console.log(`[Webpack] Replaced: ${match} => ${result}`);
+                            return result;
                         });
                         return content;
                     },

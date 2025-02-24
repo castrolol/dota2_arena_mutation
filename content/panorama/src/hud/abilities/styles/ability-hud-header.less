@@ -26,7 +26,7 @@
             brightness: 1.2;
             horizontal-align: center;
             vertical-align: center;
-            background-color: gradient(linear, 0% 0%, 100% 0%, from(#9f3c3c), to(#4a2040));
+            background-color: gradient(linear, 0% 0%, 100% 0%, from(#9c9b9b), to(#454545));
         }
 
         .background-texture {
@@ -38,7 +38,7 @@
             background-position: center;
             -s2-mix-blend-mode: screen;
             opacity: 0.6;
-            wash-color: #9f3c3c;
+            wash-color: #9b7575;
         }
 
         .content {
@@ -46,8 +46,8 @@
             vertical-align: center;
             padding: 0 4px;
             .icon {
-                width: 24px;
-                height: 24px;
+                width: 16px;
+                height: 16px;
                 background-size: contain;
                 background-position: center;
                 background-repeat: no-repeat;
@@ -60,7 +60,7 @@
             .name {
                 padding-left: 8px;
                 padding-right: 8px;
-                color: LightestGrey;
+                color: white;
                 width: fit-children;
                 margin-bottom: 0px;
                 font-size: 12px;
@@ -113,6 +113,10 @@
             }
 
             .content {
+                .icon {
+                    width: 24px;
+                    height: 24px;
+                }
                 .name {
                     font-weight: semi-bold;
                     font-size: 14px;
@@ -121,3 +125,5 @@
         }
     }
 }
+
+@import "ability-hud-colors.less";

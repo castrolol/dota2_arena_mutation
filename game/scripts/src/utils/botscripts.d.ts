@@ -1,0 +1,1 @@
+declare function GetBot(): any;

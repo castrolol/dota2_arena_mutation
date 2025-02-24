@@ -1,0 +1,129 @@
+.Players {
+    &-topbar {
+        width: fit-children;
+        height: 80px;
+        horizontal-align: center;
+        flow-children: right;
+    }
+}
+
+.PlayerProfile {
+    &-root {
+        height: 165px;
+        overflow: noclip;
+        width: 84px;
+        margin: 0 2px;
+        padding: 2px 2px;
+        background-color: #2a363c;
+        border-radius: 4px;
+        flow-children: down;
+        border: 1px solid #51575a;
+
+        &.dead {
+            .picture {
+                wash-color: #898989;
+                saturation: 0;
+            }
+            .dead-timer {
+                visibility: visible;
+            }
+        }
+
+        &.your {
+            background-color: #2a363c;
+            border: 1px solid #bdc680;
+        }
+
+        .player-color {
+            background-color: white;
+            width: 100%;
+            height: 4px;
+            z-index: 7;
+            background-image: url('s2r://panorama/images/hud/reborn/topbar_playerslot_vignette_psd.vtex');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        .overlay {
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            margin-top: 4px;
+            visibility: collapse;
+        }
+        .player-color-shadow {
+            width: 100%;
+            height: 44px;
+            margin-top: 4px;
+            z-index: 4;
+            background-color: gradient(
+                linear,
+                0% 0%,
+                0% 100%,
+                from(#000),
+                color-stop(0.03, #000a),
+                color-stop(0.1, #0000),
+                color-stop(0.91, #0000),
+                color-stop(0.95, #0006),
+                to(#000a)
+            );
+        }
+
+        .dead-timer {
+            width: 80px;
+            height: 44px;
+            vertical-align: center;
+            horizontal-align: center;
+            z-index: 6;
+            color: red;
+            font-size: 26px;
+            font-weight: bold;
+            text-shadow: 2px 2px 0px 1 #000000c0;
+            text-align: center;
+            visibility: collapse;
+        }
+
+        .picture {
+            transition-property: wash-color, saturation, brightness, contrast;
+            transition-duration: 0.4s;
+            z-index: 3;
+
+            background-color: #222;
+            background-color: gradient(linear, 0% 0%, 0% 100%, from(#333), color-stop(0.2, #444), color-stop(0.5, #333), to(#111));
+            width: 80px;
+            height: 44px;
+            margin-top: 4px;
+            vertical-align: top;
+            transition-duration: 0.1s;
+            saturation: 1;
+            brightness: 1;
+            contrast: 1;
+        }
+        .gold-container {
+            y: 50px;
+            width: 100%;
+            height: 24px;
+            z-index: 7;
+            horizontal-align: center;
+            flow-children: right;
+        }
+        .gold {
+            font-size: 16px;
+            font-weight: bold;
+            horizontal-align: center;
+            vertical-align: center;
+            text-align: center;
+            text-overflow: shrink;
+            color: #ffcc33;
+            letter-spacing: 1.1px;
+            width: fill-parent-flow(1);
+        }
+        .gold-icon {
+            background-image: url('s2r://panorama/images/hud/reborn/gold_small_psd.vtex');
+            background-size: 100% 100%;
+            width: 16px;
+            height: 16px;
+            margin-left: 2px;
+            vertical-align: center;
+        }
+    }
+}
