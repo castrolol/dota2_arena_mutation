@@ -28,14 +28,17 @@ export function AbilityHudPaths({ hero, active }: AbilityHudPathsProps) {
 }
 
 export function AbilityHudPath({ path, pathName, icon }: { path: HeroPathDefinition, pathName: string; icon: ClassIcon }) {
+
+    const localizedText = useMemo(() => $.Localize(`#${pathName}`), [pathName]);
+
     return (
         <Panel className="path">
             <Panel className="title">
                 <Image className="icon" src={resolveIcon(icon)} />
 
                 <Panel className="title-container">
-                    <Label className="title" text="Path of" />
-                    <Label className="name" text={pathName} />
+                    <Label className="title" localizedText="#CUSTOM_path_of" />
+                    <Label className="name" text={localizedText} />
                 </Panel>
 
                 <Panel className="points">

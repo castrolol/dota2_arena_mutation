@@ -168,7 +168,6 @@ const start_file_server = (callback: Function) => {
 
 gulp.task('start_file_server', start_file_server);
 
-gulp.task('localization_2_csv', localization_2_csv);
 
 gulp.task(`create_image_precache`, create_image_precache());
 gulp.task('create_image_precache:watch', create_image_precache(true));
@@ -176,14 +175,11 @@ gulp.task('create_image_precache:watch', create_image_precache(true));
 gulp.task('kv_2_js', kv_2_js());
 gulp.task('kv_2_js:watch', kv_2_js(true));
 
-gulp.task('csv_to_localization', csv_to_localization());
-gulp.task('csv_to_localization:watch', csv_to_localization(true));
-
 gulp.task('compile_less', compile_less());
 gulp.task('compile_less:watch', compile_less(true));
 
-gulp.task('predev', gulp.series('kv_2_js', 'csv_to_localization', 'create_image_precache'));
-gulp.task('dev', gulp.parallel('csv_to_localization:watch', 'create_image_precache:watch', 'kv_2_js:watch', 'compile_less:watch'));
+gulp.task('predev', gulp.series('kv_2_js',   'create_image_precache'));
+gulp.task('dev', gulp.parallel( 'create_image_precache:watch', 'kv_2_js:watch', 'compile_less:watch'));
 gulp.task('build', gulp.series('predev'));
 gulp.task('jssync', gulp.series('kv_2_js'));
 gulp.task('kv_to_local', kv_to_local());

@@ -41,6 +41,9 @@ export type AbilityHudHeaderItemProps = {
 };
 
 export function AbilityHudHeaderItem({ onClick, name, points, icon, color, active = false }: AbilityHudHeaderItemProps) {
+
+    const localizedText = useMemo(() => $.Localize(`#${name}`), [name]);
+
     return (
         <Panel
             onactivate={() => {
@@ -53,7 +56,7 @@ export function AbilityHudHeaderItem({ onClick, name, points, icon, color, activ
             <Panel className="background-shine" hittest={false} />
             <Panel className="content">
                 <Image className="icon" src={resolveIcon(icon)} />
-                <Label className="name" text={name} />
+                <Label className="name" text={localizedText} />
                 <Panel className="points">
                     <Label className="points-text" text={`${points}`} />
                 </Panel>

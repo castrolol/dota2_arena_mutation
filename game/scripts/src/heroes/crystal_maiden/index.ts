@@ -18,7 +18,7 @@ export const HERO: HeroDefinition = {
     classes: {
         ice_stronghold: {
             name: 'ice_stronghold',
-            l18n: 'Ice Stronghold',
+            l18n: 'CUSTOM_crystal_maiden_ice_stronghold',
             icon: {
                 icon: 'ice_tower',
                 type: 'file',
@@ -27,7 +27,7 @@ export const HERO: HeroDefinition = {
             paths: {
                 arcane_illusionist: {
                     name: 'frosty_fortress',
-                    l18n: 'Frosty Fortress',
+                    l18n: 'CUSTOM_crystal_maiden_ice_stronghold_frosty_fortress',
                     icon: {
                         icon: 'armor',
                         type: 'local',
@@ -41,7 +41,7 @@ export const HERO: HeroDefinition = {
                 },
                 magical_shade: {
                     name: 'freezing_mountain',
-                    l18n: 'Freezing Mountain',
+                    l18n: 'CUSTOM_crystal_maiden_ice_stronghold_freezing_mountain',
                     icon: {
                         icon: 'full_heart',
                         type: 'local',
@@ -58,7 +58,7 @@ export const HERO: HeroDefinition = {
         
         frost_mage: {
             name: 'frost_mage',
-            l18n: 'Frost Mage',
+            l18n: 'CUSTOM_crystal_maiden_frost_mage',
             icon: {
                 icon: 'snowflake',
                 type: 'local',
@@ -67,7 +67,7 @@ export const HERO: HeroDefinition = {
             paths: {
                 arcane_illusionist: {
                     name: 'sudden_freeze',
-                    l18n: 'Sudden Freeze',
+                    l18n: 'CUSTOM_crystal_maiden_frost_mage_sudden_freeze',
                     icon: {
                         icon: 'wand',
                         type: 'file',
@@ -81,7 +81,7 @@ export const HERO: HeroDefinition = {
                 },
                 magical_shade: {
                     name: 'frost_archmage',
-                    l18n: 'Frost Archmage',
+                    l18n: 'CUSTOM_crystal_maiden_frost_mage_frost_archmage',
                     icon: {
                         icon: 'snowflake',
                         type: 'local',
@@ -99,7 +99,7 @@ export const HERO: HeroDefinition = {
         
         snow_walker: {
             name: 'snow_walker',
-            l18n: 'Snow Walker',
+            l18n: 'CUSTOM_crystal_maiden_snow_walker',
             icon: {
                 icon: 'focus_fire',
                 type: 'local',
@@ -108,7 +108,7 @@ export const HERO: HeroDefinition = {
             paths: {
                 arcane_illusionist: {
                     name: 'snow_hawkeye',
-                    l18n: 'Snow Hawkeye',
+                    l18n: 'CUSTOM_crystal_maiden_snow_walker_snow_hawkeye',
                     icon: {
                         icon: 'execute',
                         type: 'local',
@@ -122,7 +122,7 @@ export const HERO: HeroDefinition = {
                 },
                 magical_shade: {
                     name: 'snow_shade',
-                    l18n: 'Snow Shade',
+                    l18n: 'CUSTOM_crystal_maiden_snow_walker_snow_shade',
                     icon: {
                         icon: 'speed',
                         type: 'local',
