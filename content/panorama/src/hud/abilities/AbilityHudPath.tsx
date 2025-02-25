@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { ClassIcon, HeroDefinition } from '../../def/defs';
+import { ClassIcon, HeroDefinition, HeroPathDefinition } from '../../def/defs';
 import { AbilityHudHeader } from './AbilityHudHeader';
 import { AbilityHudIcons } from './AbilityHudIcons';
 
@@ -14,20 +14,20 @@ export function AbilityHudPaths({ hero, active }: AbilityHudPathsProps) {
 
         return paths;
     }, [active]);
-
+    
     return (
         <Panel className="AbilityHud-paths">
             {paths.map((path, i) => (
                 <>
                     {i > 0 ? <Panel className="path-divider" /> : null}
-                    <AbilityHudPath pathName={path.l18n} icon={path.icon} />
+                    <AbilityHudPath path={path} pathName={path.l18n} icon={path.icon} />
                 </>
             ))}
         </Panel>
     );
 }
 
-export function AbilityHudPath({ pathName, icon }: { pathName: string; icon: ClassIcon }) {
+export function AbilityHudPath({ path, pathName, icon }: { path: HeroPathDefinition, pathName: string; icon: ClassIcon }) {
     return (
         <Panel className="path">
             <Panel className="title">
@@ -43,7 +43,7 @@ export function AbilityHudPath({ pathName, icon }: { pathName: string; icon: Cla
                 </Panel>
             </Panel>
             <Panel className="path-sub-divider" />
-            <AbilityHudIcons />
+            <AbilityHudIcons path={path} />
         </Panel>
     );
 }

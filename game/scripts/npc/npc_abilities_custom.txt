@@ -1,4 +1,8 @@
+#base "heroes\crystal_maiden\ice_stronghold.txt"
+#base "heroes\crystal_maiden\frost_mage.txt"
+#base "heroes\crystal_maiden\snow_walker.txt"
 #base "heroes\crystal_maiden\base_abilities.txt"
+#base "shared\generic_abilities.txt"
 
 "DOTAAbilities"
 {

@@ -2,6 +2,8 @@ import { Debug } from './Debug';
 import { GameConfig } from './GameConfig';
 import { GameMode } from './GameMode';
 import { GoldNotifier } from './GoldNotifier';
+import { HeroesModule } from './HeroesModule';
+import { UIModule } from './UIModule';
 import { XNetTable } from './xnet-table';
 
 declare global {
@@ -9,6 +11,8 @@ declare global {
         //Declare all GameRules modules, this is mainly for the convenience of references in other places (guaranteed singleton mode)
         XNetTable: XNetTable;
         Mode: GameMode;
+        Heroes: HeroesModule;
+        UI: UIModule;
     }
 }
 
@@ -18,6 +22,8 @@ declare global {
  **/
 export function ActivateModules() {
     if (GameRules.XNetTable == null) {
+        GameRules.Heroes = new HeroesModule();
+        GameRules.UI = new UIModule();
         GameRules.Mode = new GameMode();        
         GameRules.Mode.config = new GameConfig();
         GameRules.Mode.config.setup();

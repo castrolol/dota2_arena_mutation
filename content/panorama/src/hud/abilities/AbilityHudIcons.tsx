@@ -1,13 +1,13 @@
 import { useCallback, useMemo } from 'react';
 import clsx from '../../utils/clsx';
+import { HeroPathDefinition, TalentItem, TalentRow } from '../../def/defs';
+import { useAbilityInfo } from '../../hooks/useAbilityInfo';
 
-export function AbilityHudIcons() {
-    const rows = [0, 1, 2, 3];
-
+export function AbilityHudIcons({ path }: { path: HeroPathDefinition }) {
     return (
         <Panel className="AbilityHud-icons">
-            {rows.map(row => (
-                <AbilityIconsRow key={row} />
+            {path.talents.map((row, index) => (
+                <AbilityIconsRow key={index} row={row} />
             ))}
         </Panel>
     );
@@ -15,24 +15,31 @@ export function AbilityHudIcons() {
 
 type IconState = 'learned' | 'upgradable' | 'unlearned' | 'locked';
 
-export function AbilityIconsRow() {
-    const items = [0, 1, 2, 3];
-
+export function AbilityIconsRow({ row }: { row: TalentRow }) {
     return (
         <Panel className="row">
-            {items.map(item => (
-                <>{item == 1 ? <Panel className="empty-ability" /> : <AbilityItem state={'unlearned'} max={3} current={0} key={item} />}</>
-            ))}
+            {row?.map(item => (
+                <>
+                    {item == null ? (
+                        <Panel className="empty-ability" />
+                    ) : (
+                        <AbilityItem item={item} state={'unlearned'} max={3} current={0} key={item} />
+                    )}
+                </>
+            )) ?? null}
         </Panel>
     );
 }
 
-export function AbilityItem({ current, max, state }: { current: number; max: number; state: IconState }) {
+export function AbilityItem({ item, current, state }: { item: TalentItem; current: number; max: number; state: IconState }) {
+    const ability = useAbilityInfo(item ?? '');
+    const max = ability.maxLevel ?? 0;
     const canUpgrade = state === 'upgradable' && current < max;
     const locked = state === 'locked' && current === 0;
 
     const learnIt = useCallback(() => {
-        if (!canUpgrade) return;
+        //if (!canUpgrade) return;
+        GameEvents.SendCustomGameEventToServer('talent_upgrade_request', { talent_name: item! });
         $.Msg('aprende!');
     }, [canUpgrade]);
 
@@ -59,7 +66,7 @@ export function AbilityItem({ current, max, state }: { current: number; max: num
             })}
         >
             {!locked ? null : <AbilityLevelRequirement current={1} max={4} />}
-            <DOTAAbilityImage onactivate={learnIt} showtooltip abilityname="sven_warcry" />
+            <DOTAAbilityImage onactivate={learnIt} showtooltip abilityname={item ?? ''} />
             <AbilityItemsProgress gauges={gauges} canUpgrade={canUpgrade} />
         </Panel>
     );

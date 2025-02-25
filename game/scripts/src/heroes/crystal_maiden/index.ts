@@ -3,6 +3,7 @@ import { base_ability_crystal_maiden_brilliance_aura } from "./abilities/base_ab
 import { base_ability_crystal_maiden_crystal_nova } from "./abilities/base_ability_crystal_maiden_crystal_nova";
 import { base_ability_crystal_maiden_freezing_field } from "./abilities/base_ability_crystal_maiden_freezing_field";
 import { base_ability_crystal_maiden_frostbite } from "./abilities/base_ability_crystal_maiden_frostbite";
+import { talent_frosty_fortress_ice_block } from "./ice_stronghold/frosty_fortress/talents/talent_frosty_fortress_ice_block";
 
 export const HERO: HeroDefinition = {
     name: 'npc_dota_hero_crystal_maiden',
@@ -32,7 +33,7 @@ export const HERO: HeroDefinition = {
                         type: 'local',
                     },
                     talents: [
-                        [null, null, null, null],
+                        [talent_frosty_fortress_ice_block.name, null, null, null],
                         [null, null, null, null], 
                         [null, null, null, null],
                         [null, null, null, null],

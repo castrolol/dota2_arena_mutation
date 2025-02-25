@@ -86,7 +86,29 @@ export type HeroDefinition = {
         };
     };
 };
-
+export type HeroPathDefinition = {
+    name: string;
+    l18n: string;
+    icon: {
+      icon: string;
+      type: "local" | "file";
+    };
+    talents: [TalentRow, TalentRow, TalentRow, TalentRow];
+  };
+  
+  export type TalentsMatrix = [
+    TalentsRow | "none",
+    TalentsRow | "none",
+    TalentsRow | "none",
+    TalentsRow | "none"
+  ];
+  
+  export type TalentsRow = [
+    string | "none",
+    string | "none",
+    string | "none",
+    string | "none"
+  ];
 
 export type PartialRecord<K extends keyof any, T> = {
     [P in K]?: T;

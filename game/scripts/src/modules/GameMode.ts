@@ -14,6 +14,7 @@ declare global {
 export class GameMode {
     config: GameConfig = null as any;
     players: PlayerID[] = [];
+    
 
     public static Activate(this: void) {
         GameRules.Addon = new GameMode();
@@ -29,7 +30,7 @@ export class GameMode {
             },
             undefined
         );
-        // ListenToGameEvent('npc_spawned', event => this.OnNpcSpawned(event), undefined);
+        ListenToGameEvent('npc_spawned', event => this.OnNpcSpawned(event), undefined);
         // ListenToGameEvent('dota_player_gained_level', event => this.OnHeroLevelUp(event), undefined);
     }
     OnPlayerSpawned(event: GameEventProvidedProperties & DotaPlayerSpawnedEvent) {
@@ -106,7 +107,7 @@ export class GameMode {
         // Give all real heroes (not illusions) the meepo_earthbind_ts_example spell
         if (unit.IsRealHero()) {
             unit as CDOTA_BaseNPC_Hero;
-            //GameRules.Heroes.joinOrUpdate(unit.GetPlayerOwnerID(), unit.GetUnitName());
+            GameRules.Heroes.joinOrUpdate(unit.GetPlayerOwnerID(), unit.GetUnitName());
 
             unit.NotifyWearablesOfModelChange(true);
         }

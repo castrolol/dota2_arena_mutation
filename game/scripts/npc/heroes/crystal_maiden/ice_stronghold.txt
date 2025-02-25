@@ -1,0 +1,43 @@
+"DOTAAbilities"
+{
+    "special_ability_crystal_maiden_frosty_fortress_ice_block"
+    {
+        "name"    "special_ability_crystal_maiden_frosty_fortress_ice_block"
+        "AbilityTextureName"    "crystal_maiden_frosty_fortress_ice_block"
+        "CustomAbilityType"    "TRAIT"
+        "ScriptFile"    "heroes/crystal_maiden/ice_stronghold/frosty_fortress/special_abilities/special_ability_crystal_maiden_frosty_fortress_ice_block"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "FightRecapLevel"    "1"
+        "MaxLevel"    "3"
+        "RequiredLevel"    "100"
+        "AbilityIndex"    "4"
+        "AbilityCastPoint"    "0 0 0 0"
+        "AbilityCooldown"    "60 45 30"
+        "AbilityManaCost"    "150 175 200"
+        "AbilityValues"
+        {
+            "ice_block_duration"    "0.75 1.0 1.5"
+        }
+        "BaseClass"    "ability_lua"
+    }
+    "talent_frosty_fortress_ice_block"
+    {
+        "name"    "talent_frosty_fortress_ice_block"
+        "AbilityTextureName"    "crystal_maiden_frosty_fortress_ice_block"
+        "CustomAbilityType"    "TRAIT"
+        "ScriptFile"    "heroes/crystal_maiden/ice_stronghold/frosty_fortress/talents/talent_frosty_fortress_ice_block"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+        "FightRecapLevel"    "1"
+        "MaxLevel"    "3"
+        "RequiredLevel"    "-3"
+        "AbilityIndex"    "4"
+        "AbilityCastPoint"    "0 0 0 0"
+        "AbilityCooldown"    "60 45 30"
+        "AbilityManaCost"    "150 175 200"
+        "AbilityValues"
+        {
+            "ice_block_duration"    "0.75 1.0 1.5"
+        }
+        "BaseClass"    "ability_lua"
+    }
+}
