@@ -4,19 +4,18 @@ import { TalentBaseModifier } from '../../../../talent_base_modifier';
 import { special_ability_crystal_maiden_frosty_fortress_ice_block } from '../special_abilities/special_ability_crystal_maiden_frosty_fortress_ice_block';
 
 @registerAbility()
-export class talent_frosty_fortress_ice_block extends BaseAbility {
+export class talent_crystal_maiden_frosty_fortress_ice_block extends BaseAbility {
     GetIntrinsicModifierName(): string {
-        return modifier_talent_frosty_fortress_ice_block.name;
+        return modifier_talent_crystal_maiden_frosty_fortress_ice_block.name;
     }
 }
 
 @registerModifier()
-export class modifier_talent_frosty_fortress_ice_block extends TalentBaseModifier {
-    OnCreated(params: any): void {
+export class modifier_talent_crystal_maiden_frosty_fortress_ice_block extends TalentBaseModifier {
+    OnTalentCreated(params: any): void {
         if (IsClient()) return;
 
         const parent = this.GetParent();
-        print('Adicionou? ');
         if (!parent.HasAbility(special_ability_crystal_maiden_frosty_fortress_ice_block.name)) {
             parent.AddAbility(special_ability_crystal_maiden_frosty_fortress_ice_block.name);
             const abilityOn4 = parent.GetAbilityByIndex(3);
@@ -27,13 +26,24 @@ export class modifier_talent_frosty_fortress_ice_block extends TalentBaseModifie
         ability.SetLevel(params.level);
     }
 
-    OnDestroy(): void {
-        const parent = this.GetParent();
+    GetAbilityName(): string {
+        return talent_crystal_maiden_frosty_fortress_ice_block.name;
+    }
+
+    DeclareFunctions(): ModifierFunction[] {
+        return [ModifierFunction.MANA_REGEN_CONSTANT];
+    }
+
+    GetModifierConstantManaRegen(): number {
+        return this.GetAbilityValueFor('ice_block_duration');
+    }
+
+    OnDestroy(): void { 
     }
 }
 
 export const $_DEFINITION: AbilityDefinition = {
-    name: talent_frosty_fortress_ice_block.name,
+    name: talent_crystal_maiden_frosty_fortress_ice_block.name,
     AbilityTextureName: 'crystal_maiden_frosty_fortress_ice_block',
     CustomAbilityType: CustomAbilityType.Trait,
     ScriptFile: __dirname,

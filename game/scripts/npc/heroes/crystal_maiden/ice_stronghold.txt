@@ -20,12 +20,12 @@
         }
         "BaseClass"    "ability_lua"
     }
-    "talent_frosty_fortress_ice_block"
+    "talent_crystal_maiden_frosty_fortress_ice_block"
     {
-        "name"    "talent_frosty_fortress_ice_block"
+        "name"    "talent_crystal_maiden_frosty_fortress_ice_block"
         "AbilityTextureName"    "crystal_maiden_frosty_fortress_ice_block"
         "CustomAbilityType"    "TRAIT"
-        "ScriptFile"    "heroes/crystal_maiden/ice_stronghold/frosty_fortress/talents/talent_frosty_fortress_ice_block"
+        "ScriptFile"    "heroes/crystal_maiden/ice_stronghold/frosty_fortress/talents/talent_crystal_maiden_frosty_fortress_ice_block"
         "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
         "FightRecapLevel"    "1"
         "MaxLevel"    "3"
