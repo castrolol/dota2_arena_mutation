@@ -26,20 +26,7 @@ export class modifier_talent_crystal_maiden_frosty_fortress_ice_block extends Ta
         ability.SetLevel(params.level);
     }
 
-    GetAbilityName(): string {
-        return talent_crystal_maiden_frosty_fortress_ice_block.name;
-    }
-
-    DeclareFunctions(): ModifierFunction[] {
-        return [ModifierFunction.MANA_REGEN_CONSTANT];
-    }
-
-    GetModifierConstantManaRegen(): number {
-        return this.GetAbilityValueFor('ice_block_duration');
-    }
-
-    OnDestroy(): void { 
-    }
+    OnDestroy(): void {}
 }
 
 export const $_DEFINITION: AbilityDefinition = {
