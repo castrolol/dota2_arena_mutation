@@ -7,7 +7,7 @@ export class HeroesModule {
 
     constructor() {
         CustomGameEventManager.RegisterListener('talent_upgrade_request', (userId, { talent_name, PlayerID }) => {
-            print(talent_name);
+            
 
             this.learnTalent(PlayerID, talent_name);
         });
@@ -20,7 +20,7 @@ export class HeroesModule {
     learnTalent(playerId: PlayerID, talentName: string) {
         const heroInfo = this.heroes.get(playerId);
         if (!heroInfo) {
-            print('Nao tem hero');
+            
             GameRules.UI.notifyError('Talents', 'NotFound');
             // throw error...
             return;
@@ -28,7 +28,7 @@ export class HeroesModule {
         const hero = PlayerResource.GetSelectedHeroEntity(heroInfo.playerId);
         const currentLevel = heroInfo.talents.get(talentName) ?? 0;
 
-        print('hero: ' + hero.GetUnitName());
+        
 
         let ability: CDOTABaseAbility;
 
@@ -40,7 +40,7 @@ export class HeroesModule {
         };
 
         const abilityType = abilitiesKv.CustomAbilityType;
-        print('abilityType: ' + abilityType);
+        
 
         if (abilityType === CustomAbilityType.Base) {
             GameRules.UI.notifyError('Talents', 'InvalidTalentType');
@@ -63,19 +63,19 @@ export class HeroesModule {
             }
         } else if (abilityType === CustomAbilityType.Trait) {
             const level = currentLevel + 1;
-            print('vai ser ' + level);
+            
 
             const incrementAbility = hero.FindModifierByName(`modifier_${talentName}`);
 
-            print('vai ser ' + incrementAbility);
+            
 
             if (incrementAbility !== null) {
-                print('vai ser removido' );
+                
                 hero.RemoveModifierByName(`modifier_${talentName}`);
             }
-
+            
             const item = hero.AddNewModifier(hero, null, `modifier_${talentName}`, { level });
-            print("item: " + item);
+            
 
         } else if (abilityType === CustomAbilityType.Increment) {
             const values = Object.entries(abilitiesKv.AbilityValues);

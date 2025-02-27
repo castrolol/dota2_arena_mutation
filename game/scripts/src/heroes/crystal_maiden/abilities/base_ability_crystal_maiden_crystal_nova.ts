@@ -1,5 +1,6 @@
 import { registerAbility, BaseAbility, registerModifier, BaseModifier } from '../../../utils/dota_ts_adapter';
 import { AbilityDefinition, CustomAbilityType } from '../../static_definitions';
+import { modifier_talent_crystal_maiden_frosty_fortress_brain_freeze, talent_crystal_maiden_frosty_fortress_brain_freeze } from '../ice_stronghold/frosty_fortress/talents/talent_crystal_maiden_frosty_fortress_brain_freeze';
 
 @registerAbility()
 export class base_ability_crystal_maiden_crystal_nova extends BaseAbility {
@@ -83,28 +84,28 @@ export class base_ability_crystal_maiden_crystal_nova extends BaseAbility {
             vision_radius: this.vision_radius,
         });
 
-        const target = this.GetCursorTarget();
-        if (target) {
-            let extraExplosions = 0; // this.GetInnerNovaExtraExplosions();
-            let damageOpts = {
-                duration: this.duration,
-                position: target_position,
-                damage: this.nova_damage,
-                radius: this.radius,
-                vision_duration: this.vision_duration,
-                vision_radius: this.vision_radius,
-            };
+        // const target = this.GetCursorTarget();
+        // if (target) {
+        //     let extraExplosions = 0; // this.GetInnerNovaExtraExplosions();
+        //     let damageOpts = {
+        //         duration: this.duration,
+        //         position: target_position,
+        //         damage: this.nova_damage,
+        //         radius: this.radius,
+        //         vision_duration: this.vision_duration,
+        //         vision_radius: this.vision_radius,
+        //     };
 
-            while (extraExplosions > 0) {
-                Timers.CreateTimer(extraExplosions * 0.33, () => {
-                    this.ExplodeNovaAt({
-                        ...damageOpts,
-                        position: target.GetAbsOrigin(),
-                    });
-                });
-                extraExplosions--;
-            }
-        }
+        //     while (extraExplosions > 0) {
+        //         Timers.CreateTimer(extraExplosions * 0.33, () => {
+        //             this.ExplodeNovaAt({
+        //                 ...damageOpts,
+        //                 position: target.GetAbsOrigin(),
+        //             });
+        //         });
+        //         extraExplosions--;
+        //     }
+        // }
     }
 
     ExplodeNovaAt({
@@ -148,6 +149,8 @@ export class base_ability_crystal_maiden_crystal_nova extends BaseAbility {
             false
         );
 
+        const isBrainFreezeActive = modifier_talent_crystal_maiden_frosty_fortress_brain_freeze.IsActiveOnCaster(this.GetCaster());
+
         for (const enemy of enemies) {
             // Deal damage to each enemy
             const acutal_damage = this.GetActualDamage(enemy, damage);
@@ -159,6 +162,15 @@ export class base_ability_crystal_maiden_crystal_nova extends BaseAbility {
                 ability: this,
                 damage_flags: DamageFlag.NONE,
             });
+
+            if (isBrainFreezeActive) {
+                modifier_talent_crystal_maiden_frosty_fortress_brain_freeze.ApplyCooldownReduction(
+                    this.GetCaster(),
+                    enemy,
+                    this,
+                    actualDuration
+                )
+            }
 
             enemy.AddNewModifier(this.caster, this, custom_modifier_crystal_maiden_crystal_nova_slow.name, { duration: actualDuration });
         }
@@ -397,7 +409,7 @@ export const $_DEFINITION: AbilityDefinition = {
     AbilityManaCost: '130 145 160 175',
 
     AffectedBy: [
-         
+
     ],
 
     AbilityValues: {

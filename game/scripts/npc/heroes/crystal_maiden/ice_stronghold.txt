@@ -20,6 +20,46 @@
         }
         "BaseClass"    "ability_lua"
     }
+    "talent_crystal_maiden_frosty_fortress_brain_freeze"
+    {
+        "name"    "talent_crystal_maiden_frosty_fortress_brain_freeze"
+        "AbilityTextureName"    "crystal_maiden_frosty_fortress_brain_freeze"
+        "CustomAbilityType"    "TRAIT"
+        "ScriptFile"    "heroes/crystal_maiden/ice_stronghold/frosty_fortress/talents/talent_crystal_maiden_frosty_fortress_brain_freeze"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "FightRecapLevel"    "1"
+        "SpellDispellableType"    "SPELL_DISPELLABLE_YES"
+        "MaxLevel"    "4"
+        "RequiredLevel"    "-3"
+        "AbilityIndex"    "4"
+        "AbilityCastPoint"    "0 0 0 0"
+        "AbilityValues"
+        {
+            "cooldown_reduction"    "12 20 38 50"
+        }
+        "BaseClass"    "ability_lua"
+    }
+    "talent_crystal_maiden_frosty_fortress_frostbite_amputation"
+    {
+        "name"    "talent_crystal_maiden_frosty_fortress_frostbite_amputation"
+        "AbilityTextureName"    "crystal_maiden_frosty_fortress_frostbite_amputation"
+        "CustomAbilityType"    "TRAIT"
+        "ScriptFile"    "heroes/crystal_maiden/ice_stronghold/frosty_fortress/talents/talent_crystal_maiden_frosty_fortress_frostbite_amputation"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "FightRecapLevel"    "1"
+        "SpellDispellableType"    "SPELL_DISPELLABLE_YES"
+        "MaxLevel"    "4"
+        "RequiredLevel"    "-3"
+        "AbilityIndex"    "4"
+        "AbilityCastPoint"    "0 0 0 0"
+        "AbilityCooldown"    "16 13 9 9"
+        "AbilityValues"
+        {
+            "disarm_duration"    "1 1 1 1.75"
+            "cooldown_duration"    "16 13 9 9"
+        }
+        "BaseClass"    "ability_lua"
+    }
     "talent_crystal_maiden_frosty_fortress_ice_block"
     {
         "name"    "talent_crystal_maiden_frosty_fortress_ice_block"

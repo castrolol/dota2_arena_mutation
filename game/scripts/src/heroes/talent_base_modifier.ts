@@ -5,7 +5,7 @@ export class TalentBaseModifier extends BaseModifier {
     abilityKV: any;
 
     IsHidden(): boolean {
-        return false;
+        return true;
     }
 
     GetAbilityName(): string {
@@ -34,9 +34,7 @@ export class TalentBaseModifier extends BaseModifier {
 
     GetAbilityValueFor(valueName: string): number {
 
-        if(this.map === null || this.abilityKV === null){
-            print("Ability Name:" + this.GetAbilityName());
-            print("Ability Name:" + this.GetAbilityName());
+        if(this.map === null || this.abilityKV === null){ 
             this.abilityKV = GetAbilityKeyValuesByName(this.GetAbilityName());
             this.map = new Map();
             for (const abilityValueName in this.abilityKV.AbilityValues) {
