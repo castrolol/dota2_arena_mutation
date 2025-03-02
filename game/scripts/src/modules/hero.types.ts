@@ -1,39 +1,18 @@
-import "../heroes/index";
-import { HeroController } from './HeroController';
 
 
-export class HeroesModule {
-    
-    heroes: Map<PlayerID, HeroController> = new Map();
-
-    constructor() {
-        this.heroes = new Map();
-    }
-
-    joinOrUpdate(playerId: PlayerID, heroName: string) {
-        this.heroes.set(playerId, new HeroController(playerId, heroName))
-    }
-
-}
-
-export interface HeroInfo {
-    playerId: PlayerID;
-    heroName: string;
-    talents: Map<string, number>;
-    heroScheme: HeroScheme
-}
 
 
-type Ability = string;
 
-type Facet = {
+export type Ability = string;
+
+export type Facet = {
     Icon: string;
     Color: string;
     GradientID: number;
     Deprecated: string;
 };
 
-type TalentRow = {
+export type TalentRow = {
     Talents: {
         Talent01: Ability;
         Talent02: Ability;
@@ -42,18 +21,18 @@ type TalentRow = {
     }
 };
 
-type Path = {
+export type Path = {
     name: string;
     TalentRow01: TalentRow;
     TalentRow02: TalentRow;
     TalentRow03: TalentRow;
     TalentRow04: TalentRow;
 };
-type Class = {
+export type Class = {
     name: string;
     Paths: Record<string, Path>;
 };
-type Hero = {
+export type Hero = {
     Ability1: Ability;
     Ability2: Ability;
     Ability3: Ability;
@@ -82,25 +61,22 @@ type Hero = {
     CustomClasses: Record<string, Class>;
 };
 
-type PathScheme = {
+export type PathScheme = {
     name: string;
     talentRows: Map<number, Ability[]>;
 }
-type ClassScheme = {
+export type ClassScheme = {
     name: string;
     paths: Map<string, PathScheme>;
 };
-type TalentAddress = {
+export type TalentAddress = {
     className: string,
     pathName: string,
     rowIndex: number,
     index: number
 };
-type HeroScheme = {
-    abilities: Map<number, Ability>;
-    classes: Map<string, ClassScheme>;
-    talentsAddress: Map<string, TalentAddress>;
-}
 
 
-type Heroes = Record<string, Hero>;
+
+
+export type Heroes = Record<string, Hero>;

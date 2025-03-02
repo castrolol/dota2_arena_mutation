@@ -16,6 +16,7 @@ export class modifier_talent_crystal_maiden_frosty_fortress_brain_freeze extends
         return caster.HasModifier(modifier_talent_crystal_maiden_frosty_fortress_brain_freeze.name);
     }
 
+
     static ApplyCooldownReduction(caster: CDOTA_BaseNPC, target: CDOTA_BaseNPC, ability: CDOTABaseAbility, duration: number) {
         if (!IsEnemy(caster, target)) return;
         if (!target.IsRealHero()) return;

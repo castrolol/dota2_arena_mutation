@@ -1,7 +1,8 @@
 const path = require('path');
+const ReplacePluginLess = require('../../scripts/less/less-replace');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const { PanoramaManifestPlugin, PanoramaTargetPlugin } = require('webpack-panorama-x');
-const { WatchIgnorePlugin } = require('webpack');
+const { WatchIgnorePlugin, ContextReplacementPlugin } = require('webpack');
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
@@ -54,26 +55,18 @@ module.exports = {
                 options: { presets: ['@babel/preset-react', '@babel/preset-env'] },
             },
             {
-                test: /\.css$/,
-                test: /\.(css|less)$/,
+                test: /\.(le|c)ss$/,
                 issuer: /\.xml$/,
                 loader: 'file-loader',
                 options: { name: '[path][name].css', esModule: false },
             },
+
             {
                 test: /\.less$/,
                 loader: 'less-loader',
                 options: {
-                    additionalData: content => {
-                        content = content.replace(/@keyframes\s*(-?[_a-zA-Z]+[_a-zA-Z0-9-]*)/g, (match, name) => {
-                            // add apostrophe to satisfy valve
-                            const result = match.replace(name, `'${name}'`);
-                            console.log(`[Webpack] Replaced: ${match} => ${result}`);
-                            return result;
-                        });
-                        return content;
-                    },
                     lessOptions: {
+                        plugins: [new ReplacePluginLess()],
                         relativeUrls: false,
                     },
                 },
@@ -88,6 +81,7 @@ module.exports = {
                 configFile: path.resolve(__dirname, 'tsconfig.json'),
             },
         }),
+
         new PanoramaManifestPlugin({
             entries: [
                 // js entires will be loaded in the scripts tag in the manifest

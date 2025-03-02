@@ -1,5 +1,7 @@
 import { BaseAbility, BaseModifier, registerAbility, registerModifier } from '../../../utils/dota_ts_adapter';
+import { IsEnemy } from '../../../utils/util';
 import { AbilityDefinition, CustomAbilityType } from '../../static_definitions';
+import { modifier_talent_crystal_maiden_frosty_fortress_heavy_frost_armor } from '../ice_stronghold/frosty_fortress/talents/talent_crystal_maiden_frosty_fortress_heavy_frost_armor';
 
 @registerAbility()
 export class base_ability_crystal_maiden_frostbite extends BaseAbility {
@@ -27,12 +29,14 @@ export class base_ability_crystal_maiden_frostbite extends BaseAbility {
                 this.caster.GetTeamNumber()
             );
         } // Check on allies for disable help
-        else {
+        else if (modifier_talent_crystal_maiden_frosty_fortress_heavy_frost_armor.IsActiveOnCaster(this.caster)) {
             if (PlayerResource.IsDisableHelpSetForPlayerID(target.GetPlayerOwnerID(), this.caster.GetPlayerOwnerID())) {
                 return UnitFilterResult.FAIL_DISABLE_HELP;
             }
-
-            return UnitFilterResult.FAIL_FRIENDLY; // UnitFilter(target, this.GetAbilityTargetTeam(), this.GetAbilityTargetType(), this.GetAbilityTargetFlags(), this.caster.GetTeamNumber());
+            if (target.IsConsideredHero()) {
+                return UnitFilterResult.SUCCESS; // UnitFilter(target, this.GetAbilityTargetTeam(), this.GetAbilityTargetType(), this.GetAbilityTargetFlags(), this.caster.GetTeamNumber());
+            }
+            return UnitFilterResult.FAIL_CONSIDERED_HERO;
         }
     }
 
@@ -51,12 +55,19 @@ export class base_ability_crystal_maiden_frostbite extends BaseAbility {
     OnSpellStart(): void {
         // Ability properties
         const target = this.GetCursorTarget()!;
+        this.duration = this.GetSpecialValueFor('duration');
+        EmitSoundOn(this.sound_cast, target);
+
+        if (!IsEnemy(target, this.caster)) {
+
+            modifier_talent_crystal_maiden_frosty_fortress_heavy_frost_armor.ApplyOn(this.caster, this);
+
+            return;
+        }
 
         // Ability specials
-        this.duration = this.GetSpecialValueFor('duration');
 
         // Play cast sound
-        EmitSoundOn(this.sound_cast, target);
 
         if (target.TriggerSpellAbsorb(this)) return;
 

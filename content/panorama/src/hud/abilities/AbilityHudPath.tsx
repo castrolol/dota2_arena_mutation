@@ -6,29 +6,51 @@ import { AbilityHudIcons } from './AbilityHudIcons';
 export type AbilityHudPathsProps = {
     hero: HeroDefinition;
     active: string;
+    playerId: PlayerID;
+    hasPoints: boolean;
 };
 
-export function AbilityHudPaths({ hero, active }: AbilityHudPathsProps) {
+export function AbilityHudPaths({ hasPoints, playerId, hero, active }: AbilityHudPathsProps) {
     const paths = useMemo(() => {
         const paths = Object.values(hero?.classes[active]?.paths ?? {});
 
         return paths;
     }, [active]);
-    
+
     return (
         <Panel className="AbilityHud-paths">
             {paths.map((path, i) => (
                 <>
                     {i > 0 ? <Panel className="path-divider" /> : null}
-                    <AbilityHudPath path={path} pathName={path.l18n} icon={path.icon} />
+                    <AbilityHudPath
+                        heroName={hero.name}
+                        playerId={playerId}
+                        hasPoints={hasPoints}
+                        path={path}
+                        pathName={path.l18n}
+                        icon={path.icon}
+                    />
                 </>
             ))}
         </Panel>
     );
 }
 
-export function AbilityHudPath({ path, pathName, icon }: { path: HeroPathDefinition, pathName: string; icon: ClassIcon }) {
-
+export function AbilityHudPath({
+    hasPoints,
+    heroName,
+    playerId,
+    path,
+    pathName,
+    icon,
+}: {
+    hasPoints: boolean;
+    heroName: string;
+    playerId: PlayerID;
+    path: HeroPathDefinition;
+    pathName: string;
+    icon: ClassIcon;
+}) {
     const localizedText = useMemo(() => $.Localize(`#${pathName}`), [pathName]);
 
     return (
@@ -46,7 +68,7 @@ export function AbilityHudPath({ path, pathName, icon }: { path: HeroPathDefinit
                 </Panel>
             </Panel>
             <Panel className="path-sub-divider" />
-            <AbilityHudIcons path={path} />
+            <AbilityHudIcons heroName={heroName} playerId={playerId} hasPoints={hasPoints} path={path} />
         </Panel>
     );
 }

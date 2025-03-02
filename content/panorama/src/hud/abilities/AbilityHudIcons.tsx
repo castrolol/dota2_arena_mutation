@@ -3,11 +3,21 @@ import clsx from '../../utils/clsx';
 import { HeroPathDefinition, TalentItem, TalentRow } from '../../def/defs';
 import { useAbilityInfo } from '../../hooks/useAbilityInfo';
 
-export function AbilityHudIcons({ path }: { path: HeroPathDefinition }) {
+export function AbilityHudIcons({
+    hasPoints,
+    heroName,
+    playerId,
+    path,
+}: {
+    hasPoints: boolean;
+    heroName: string;
+    playerId: PlayerID;
+    path: HeroPathDefinition;
+}) {
     return (
         <Panel className="AbilityHud-icons">
             {path.talents.map((row, index) => (
-                <AbilityIconsRow key={index} row={row} />
+                <AbilityIconsRow heroName={heroName} playerId={playerId} hasPoints={hasPoints} key={index} row={row} />
             ))}
         </Panel>
     );
@@ -15,7 +25,17 @@ export function AbilityHudIcons({ path }: { path: HeroPathDefinition }) {
 
 type IconState = 'learned' | 'upgradable' | 'unlearned' | 'locked';
 
-export function AbilityIconsRow({ row }: { row: TalentRow }) {
+export function AbilityIconsRow({
+    hasPoints,
+    heroName,
+    playerId,
+    row,
+}: {
+    hasPoints: boolean;
+    heroName: string;
+    playerId: PlayerID;
+    row: TalentRow;
+}) {
     return (
         <Panel className="row">
             {row?.map(item => (
@@ -23,7 +43,7 @@ export function AbilityIconsRow({ row }: { row: TalentRow }) {
                     {item == null ? (
                         <Panel className="empty-ability" />
                     ) : (
-                        <AbilityItem item={item} state={'unlearned'} max={3} current={0} key={item} />
+                        <AbilityItem heroName={heroName} playerId={playerId} hasPoints={hasPoints} item={item} key={item} />
                     )}
                 </>
             )) ?? null}
@@ -31,16 +51,17 @@ export function AbilityIconsRow({ row }: { row: TalentRow }) {
     );
 }
 
-export function AbilityItem({ item, current, state }: { item: TalentItem; current: number; max: number; state: IconState }) {
-    const ability = useAbilityInfo(item ?? '');
+export function AbilityItem({ hasPoints, heroName, playerId, item }: { hasPoints: boolean; heroName: string; playerId: PlayerID; item: TalentItem }) {
+    const ability = useAbilityInfo(playerId, heroName, item ?? '');
+    const current = ability.currentLevel;
     const max = ability.maxLevel ?? 0;
-    const canUpgrade = state === 'upgradable' && current < max;
-    const locked = state === 'locked' && current === 0;
+    const canUpgrade = hasPoints && ability.canLearn && current < max;
+    const locked = ability.requiredRowLevel > 0 && ability.currentLevel <= 0 && !hasPoints;
+    const shouldShowRequirement = ability.requiredRowLevel > ability.rowLevel;
 
     const learnIt = useCallback(() => {
-        //if (!canUpgrade) return;
+        if (!canUpgrade) return;
         GameEvents.SendCustomGameEventToServer('talent_upgrade_request', { talent_name: item! });
-        $.Msg('aprende!');
     }, [canUpgrade]);
 
     const gauges = useMemo(() => {
@@ -55,7 +76,7 @@ export function AbilityItem({ item, current, state }: { item: TalentItem; curren
             }
         }
         return items;
-    }, [max, current]);
+    }, [max, current, canUpgrade]);
 
     return (
         <Panel
@@ -65,7 +86,7 @@ export function AbilityItem({ item, current, state }: { item: TalentItem; curren
                 locked: locked && !gauges.includes('active'),
             })}
         >
-            {!locked ? null : <AbilityLevelRequirement current={1} max={4} />}
+            {!shouldShowRequirement ? null : <AbilityLevelRequirement current={ability.rowLevel} max={ability.requiredRowLevel} />}
             <DOTAAbilityImage onactivate={learnIt} showtooltip abilityname={item ?? ''} />
             <AbilityItemsProgress gauges={gauges} canUpgrade={canUpgrade} />
         </Panel>

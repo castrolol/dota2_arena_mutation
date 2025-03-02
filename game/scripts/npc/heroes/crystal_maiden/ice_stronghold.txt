@@ -60,6 +60,26 @@
         }
         "BaseClass"    "ability_lua"
     }
+    "talent_crystal_maiden_frosty_fortress_heavy_frost_armor"
+    {
+        "name"    "talent_crystal_maiden_frosty_fortress_heavy_frost_armor"
+        "AbilityTextureName"    "crystal_maiden_frosty_fortress_heavy_frost_armor"
+        "CustomAbilityType"    "TRAIT"
+        "ScriptFile"    "heroes/crystal_maiden/ice_stronghold/frosty_fortress/talents/talent_crystal_maiden_frosty_fortress_heavy_frost_armor"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "FightRecapLevel"    "1"
+        "SpellDispellableType"    "SPELL_DISPELLABLE_YES"
+        "MaxLevel"    "4"
+        "RequiredLevel"    "-3"
+        "AbilityIndex"    "4"
+        "AbilityCastPoint"    "0 0 0 0"
+        "AbilityValues"
+        {
+            "armor"    "14 14 33 33"
+            "slow"    "30 22 22 15"
+        }
+        "BaseClass"    "ability_lua"
+    }
     "talent_crystal_maiden_frosty_fortress_ice_block"
     {
         "name"    "talent_crystal_maiden_frosty_fortress_ice_block"

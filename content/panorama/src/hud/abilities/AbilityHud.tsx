@@ -5,13 +5,13 @@ import clsx from '../../utils/clsx';
 import { useLocalEvent } from '../../utils/event-bus';
 import { PlayersTopBar } from '../players/PlayersTopBar';
 import { useHeroInfo } from '../../hooks/useHeroInfo';
+import { useNetTableKey } from 'react-panorama-x';
 
 export function AbilityHud() {
     const [opened, setOpened] = useState(true);
     const [active, setActive] = useState('');
-    const heroDefinition = useHeroInfo('npc_dota_hero_crystal_maiden');
-
-  
+    const { hero: heroDefinition, playerId } = useHeroInfo();
+    const { points, spent } = useNetTableKey('player_points', `${playerId}`) ?? { points: 0, spent: 0 };
 
     useEffect(() => {
         const classes = Object.values(heroDefinition?.classes ?? []);
@@ -27,7 +27,7 @@ export function AbilityHud() {
             <PlayersTopBar />
             <Panel oncancel={() => setOpened(false)} className={clsx('AbilityHud-root', { open: opened })}>
                 <AbilityHudHeader hero={heroDefinition!} active={active} setActive={setActive} />
-                <AbilityHudPaths hero={heroDefinition!} active={active}  />
+                <AbilityHudPaths playerId={playerId} hasPoints={points > 0} hero={heroDefinition!} active={active} />
             </Panel>
             <AbilityHudToggle opened={opened} onClick={() => setOpened(!opened)} />
         </>

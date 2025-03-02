@@ -5,6 +5,7 @@ import { base_ability_crystal_maiden_freezing_field } from "./abilities/base_abi
 import { base_ability_crystal_maiden_frostbite } from "./abilities/base_ability_crystal_maiden_frostbite";
 import { talent_crystal_maiden_frosty_fortress_brain_freeze } from "./ice_stronghold/frosty_fortress/talents/talent_crystal_maiden_frosty_fortress_brain_freeze";
 import { talent_crystal_maiden_frosty_fortress_frostbite_amputation } from "./ice_stronghold/frosty_fortress/talents/talent_crystal_maiden_frosty_fortress_frostbite_amputation";
+import { talent_crystal_maiden_frosty_fortress_heavy_frost_armor } from "./ice_stronghold/frosty_fortress/talents/talent_crystal_maiden_frosty_fortress_heavy_frost_armor";
 import { talent_crystal_maiden_frosty_fortress_ice_block } from "./ice_stronghold/frosty_fortress/talents/talent_crystal_maiden_frosty_fortress_ice_block";
 
 export const HERO: HeroDefinition = {
@@ -35,8 +36,8 @@ export const HERO: HeroDefinition = {
                         type: 'local',
                     },
                     talents: [
-                        [talent_crystal_maiden_frosty_fortress_ice_block.name, talent_crystal_maiden_frosty_fortress_frostbite_amputation.name, talent_crystal_maiden_frosty_fortress_brain_freeze.name, null],
-                        [null, null, null, null], 
+                        [talent_crystal_maiden_frosty_fortress_ice_block.name, talent_crystal_maiden_frosty_fortress_heavy_frost_armor.name, talent_crystal_maiden_frosty_fortress_brain_freeze.name, null],
+                        [talent_crystal_maiden_frosty_fortress_frostbite_amputation.name, null, null, null],
                         [null, null, null, null],
                         [null, null, null, null],
                     ],
@@ -57,7 +58,7 @@ export const HERO: HeroDefinition = {
                 },
             },
         },
-        
+
         frost_mage: {
             name: 'frost_mage',
             l18n: 'CUSTOM_crystal_maiden_frost_mage',
@@ -76,7 +77,7 @@ export const HERO: HeroDefinition = {
                     },
                     talents: [
                         [null, null, null, null],
-                        [null, null, null, null], 
+                        [null, null, null, null],
                         [null, null, null, null],
                         [null, null, null, null],
                     ],
@@ -98,7 +99,7 @@ export const HERO: HeroDefinition = {
             },
         },
 
-        
+
         snow_walker: {
             name: 'snow_walker',
             l18n: 'CUSTOM_crystal_maiden_snow_walker',
@@ -117,7 +118,7 @@ export const HERO: HeroDefinition = {
                     },
                     talents: [
                         [null, null, null, null],
-                        [null, null, null, null], 
+                        [null, null, null, null],
                         [null, null, null, null],
                         [null, null, null, null],
                     ],
@@ -139,6 +140,6 @@ export const HERO: HeroDefinition = {
             },
         },
 
-        
+
     },
 };

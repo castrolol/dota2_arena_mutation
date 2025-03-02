@@ -6,6 +6,7 @@ export const ErrorMessages = {
         NotAvailable: 'Talent not available',
         InvalidTalentType: 'Invalid talent type',
         MaxLevel: 'Talent is already at max level',
+        NotEnoughPoints: 'There are not enough points',
     }
 }
 type ErrorMessages = typeof ErrorMessages;
