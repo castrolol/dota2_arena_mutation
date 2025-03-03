@@ -77,6 +77,7 @@
         {
             "armor"    "14 14 33 33"
             "slow"    "30 22 22 15"
+            "buff_duration"    "4 5 6 7"
         }
         "BaseClass"    "ability_lua"
     }
@@ -97,6 +98,26 @@
         "AbilityValues"
         {
             "ice_block_duration"    "0.75 1.0 1.5"
+        }
+        "BaseClass"    "ability_lua"
+    }
+    "talent_crystal_maiden_frosty_fortress_inner_block"
+    {
+        "name"    "talent_crystal_maiden_frosty_fortress_inner_block"
+        "AbilityTextureName"    "crystal_maiden_frosty_fortress_inner_block"
+        "CustomAbilityType"    "TRAIT"
+        "ScriptFile"    "heroes/crystal_maiden/ice_stronghold/frosty_fortress/talents/talent_crystal_maiden_frosty_fortress_inner_block"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "FightRecapLevel"    "1"
+        "SpellDispellableType"    "SPELL_DISPELLABLE_YES"
+        "MaxLevel"    "4"
+        "RequiredLevel"    "-3"
+        "AbilityIndex"    "4"
+        "AbilityCastPoint"    "0 0 0 0"
+        "AbilityValues"
+        {
+            "mana_drained"    "150 110 80"
+            "buff_cooldown"    "15 13 11"
         }
         "BaseClass"    "ability_lua"
     }

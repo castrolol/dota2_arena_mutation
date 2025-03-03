@@ -7,6 +7,7 @@ import { talent_crystal_maiden_frosty_fortress_brain_freeze } from "./ice_strong
 import { talent_crystal_maiden_frosty_fortress_frostbite_amputation } from "./ice_stronghold/frosty_fortress/talents/talent_crystal_maiden_frosty_fortress_frostbite_amputation";
 import { talent_crystal_maiden_frosty_fortress_heavy_frost_armor } from "./ice_stronghold/frosty_fortress/talents/talent_crystal_maiden_frosty_fortress_heavy_frost_armor";
 import { talent_crystal_maiden_frosty_fortress_ice_block } from "./ice_stronghold/frosty_fortress/talents/talent_crystal_maiden_frosty_fortress_ice_block";
+import { talent_crystal_maiden_frosty_fortress_inner_block } from "./ice_stronghold/frosty_fortress/talents/talent_crystal_maiden_frosty_fortress_inner_block";
 
 export const HERO: HeroDefinition = {
     name: 'npc_dota_hero_crystal_maiden',
@@ -36,7 +37,7 @@ export const HERO: HeroDefinition = {
                         type: 'local',
                     },
                     talents: [
-                        [talent_crystal_maiden_frosty_fortress_ice_block.name, talent_crystal_maiden_frosty_fortress_heavy_frost_armor.name, talent_crystal_maiden_frosty_fortress_brain_freeze.name, null],
+                        [talent_crystal_maiden_frosty_fortress_ice_block.name, talent_crystal_maiden_frosty_fortress_heavy_frost_armor.name, talent_crystal_maiden_frosty_fortress_brain_freeze.name, talent_crystal_maiden_frosty_fortress_inner_block.name],
                         [talent_crystal_maiden_frosty_fortress_frostbite_amputation.name, null, null, null],
                         [null, null, null, null],
                         [null, null, null, null],

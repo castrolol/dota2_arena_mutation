@@ -81,7 +81,9 @@ export class modifier_talent_crystal_maiden_frosty_fortress_brain_freeze_debuff 
     HandleCustomTransmitterData(data: { cooldown_reduction: number }) {
         // -- on client
         this.cooldown_reduction = data.cooldown_reduction;
-
+        this.GetModifierPercentageCooldown = function(event: ModifierAbilityEvent): number {
+            return data.cooldown_reduction;
+        }
     }
 
     GetModifierPercentageCooldown(event: ModifierAbilityEvent): number {

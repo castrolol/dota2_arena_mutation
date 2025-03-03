@@ -74,16 +74,16 @@
                                 "Talent01"    "talent_crystal_maiden_frosty_fortress_ice_block"
                                 "Talent02"    "talent_crystal_maiden_frosty_fortress_heavy_frost_armor"
                                 "Talent03"    "talent_crystal_maiden_frosty_fortress_brain_freeze"
-                                "Talent04"    "none"
+                                "Talent04"    "talent_crystal_maiden_frosty_fortress_inner_block"
                             }
                         }
                         "TalentRow02"
                         {
                             "Talents"
                             {
-                                "Talent01"    "none"
+                                "Talent01"    "talent_crystal_maiden_frosty_fortress_frostbite_amputation"
                                 "Talent02"    "none"
-                                "Talent03"    "talent_crystal_maiden_frosty_fortress_frostbite_amputation"
+                                "Talent03"    "none"
                                 "Talent04"    "none"
                             }
                         }
