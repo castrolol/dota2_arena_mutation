@@ -1,0 +1,60 @@
+"DOTAAbilities"
+{
+    "special_ability_antimage_shadow_dancer_shadow"
+    {
+        "name"    "special_ability_antimage_shadow_dancer_shadow"
+        "AbilityTextureName"    "antimage_shadow_dancer_shadow_clone"
+        "CustomAbilityType"    "SPECIAL_ABILITY"
+        "ScriptFile"    "heroes/antimage/shadow_rogue/shadow_dancer/special_abilities/special_ability_antimage_shadow_dancer_shadow"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "FightRecapLevel"    "1"
+        "MaxLevel"    "4"
+        "AbilityCastPoint"    "0 0 0 0"
+        "AbilityValues"
+        {
+            "shadow_clone_damage"    "50 66 82 100"
+            "shadow_clone_chance"    "17 17 17 17"
+            "attacks_until_die"    "1 1 2 2"
+        }
+        "BaseClass"    "ability_lua"
+    }
+    "talent_antimage_shadow_dancer_bodyguard_of_shadows"
+    {
+        "name"    "talent_antimage_shadow_dancer_bodyguard_of_shadows"
+        "AbilityTextureName"    "antimage_shadow_dancer_bodyguard_of_shadow"
+        "CustomAbilityType"    "TRAIT"
+        "ScriptFile"    "heroes/antimage/shadow_rogue/shadow_dancer/talents/talent_antimage_shadow_dancer_bodyguard_of_shadows"
+        "IsBreakable"    "1"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "FightRecapLevel"    "1"
+        "MaxLevel"    "3"
+        "RequiredLevel"    "-3"
+        "AbilityCastPoint"    "0 0 0 0"
+        "AbilityValues"
+        {
+            "shadow_clone_damage"    "75 100 124"
+            "attacks_until_die"    "2 2 2"
+        }
+        "BaseClass"    "ability_lua"
+    }
+    "talent_antimage_shadow_dancer_shadow"
+    {
+        "name"    "talent_antimage_shadow_dancer_shadow"
+        "AbilityTextureName"    "antimage_shadow_dancer_shadow_clone"
+        "CustomAbilityType"    "TRAIT"
+        "ScriptFile"    "heroes/antimage/shadow_rogue/shadow_dancer/talents/talent_antimage_shadow_dancer_shadow"
+        "IsBreakable"    "1"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "FightRecapLevel"    "1"
+        "MaxLevel"    "4"
+        "RequiredLevel"    "-3"
+        "AbilityCastPoint"    "0 0 0 0"
+        "AbilityValues"
+        {
+            "shadow_clone_damage"    "50 66 82 100"
+            "shadow_clone_chance"    "17 17 17 17"
+            "attacks_until_die"    "1 1 2 2"
+        }
+        "BaseClass"    "ability_lua"
+    }
+}

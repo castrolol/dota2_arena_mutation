@@ -4,9 +4,7 @@ import { IsEnemy, HasBit } from './util';
 export class ModifierUtils {
     public static ApplyLifesteal(event: ModifierAttackEvent, modifiers: CDOTA_Modifier_Lua[]): void {
         //If there was no damage done, or somehow it's negative, do nothing
-        print('event.damage ', event.damage);
-        print('vent.target.IsBuilding()', event.target.IsBuilding());
-
+       
         if (event.damage <= 0) return;
 
         //Ignore buildings
@@ -18,7 +16,6 @@ export class ModifierUtils {
         let lifesteal = 0;
 
         for (const modifier of modifiers) {
-            print('vendo modifier');
             //Calculate lifesteal percentage on attacker
             if (modifier.GetModifierLifeStealStacking && (modifier.GetModifierLifeStealStacking() || 0) > 0) {
                 lifesteal_pct += modifier.GetModifierLifeStealStacking();
@@ -30,9 +27,7 @@ export class ModifierUtils {
             }
         }
 
-        print('lifesteal_pct', lifesteal_pct);
-        print('lifesteal_multiplier', lifesteal_multiplier);
-        print('lifesteal', lifesteal);
+       
 
         //Calculate actual lifesteal based on damage dealt
         if (lifesteal_pct > 0) {

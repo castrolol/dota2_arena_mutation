@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import abilities from '../json/npc_abilities_custom.json';
 import { useHeroInfo } from './useHeroInfo';
 import { useNetTableKey, useNetTableValues } from 'react-panorama-x';
@@ -29,14 +29,62 @@ function getRowLevel(
     return [totalLevel, talentAddress.rowIndex];
 }
 
-export function useAbilityInfo(
-
+export function useAbilityPath(
     playerId: PlayerID,
     heroName: string,
+    className: string,
+    pathName: string
+) {
 
+    const talentLevels = useNetTableKey("player_talents", `${playerId}`)
+
+    const talents = useMemo(() => {
+        const hero = getHeroScheme(heroName);
+
+        if (!hero || !hero.classes) return [];
+
+        const heroClass = hero?.classes.get(className)
+        console.log(`achou classe ${heroClass?.name}`)
+        console.log(`achou classe ${className}`)
+        if (!heroClass || !heroClass.paths) return [];
+        console.log(`achou path ${pathName}`)
+
+        const path = heroClass.paths.get(pathName);
+        console.log(`items ${[...heroClass.paths.keys()]}`)
+        if (!path || !path.talentRows) return [];
+        console.log("achou path?")
+
+        const talents = [...path.talentRows.values()].reduce((prev, curr) => {
+            return prev.concat(curr);
+        }, [] as string[]);
+
+        console.log({ talents })
+
+        return talents;
+
+    }, [heroName, className, pathName])
+
+    const spentPoints = useMemo(() => {
+
+        const talentsLearned = talentLevels ? Object.values(talentLevels?.learned_talents ?? {}) : [];
+
+        return talentsLearned.reduce((prev, curr) => {
+            if (talents.includes(curr.talent)) {
+                return prev + curr.level;
+            }
+            return prev;
+        }, 0);
+
+
+    }, [talents, talentLevels])
+
+    return [talents, spentPoints];
+}
+
+export function useAbilityInfo(
+    playerId: PlayerID,
+    heroName: string,
     abilityName: string,
-
-
 ) {
     const talents = useNetTableKey("player_talents", `${playerId}`)
 

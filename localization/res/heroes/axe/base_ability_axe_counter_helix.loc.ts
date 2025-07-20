@@ -1,0 +1,81 @@
+import { AbilityLocalizationMounted, L, Language, ignore } from "../../../loc_utils";
+
+
+export default function ability(): AbilityLocalizationMounted {
+    const abilityName = "DOTA_Tooltip_ability_base_ability_axe_counter_helix"
+    return {
+        isToken: true,
+        langs: {
+			[Language.Brazilian]: {							
+			[`${abilityName}`]: 				"Contraespiral",
+			[`${abilityName}_Description`]: 				"Em inglês: <b><font color='#F2A93E'>Counter Helix</font></b>\n \nApós sofrer uma quantidade definida de ataques, o Axe desfere um contra-ataque em espiral, causando dano puro a todos os inimigos próximos.",
+			[`${abilityName}_scepter_description`]: 				"A <b><font color='#F2A93E'>Contraespiral</font></b> passa a aplicar um efeito negativo acumulável contra inimigos. O efeito faz com que a unidade cause menos dano de ataque contra o Axe. Remove o intervalo entre usos de <b><font color='#F2A93E'>Contraespiral</font></b> e o seu contador também avança com ataques do Axe.",
+			[`${abilityName}_Note1`]: 				"Cetro: os contadores de ilusões não aumentam quando atacam.",
+			[`${abilityName}_debuff_duration`]: 				"DURAÇÃO DO EFEITO:",
+			[`${abilityName}_damage_reduction`]: 				"%REDUÇÃO DO DANO DE ATAQUE:",
+			[`${abilityName}_max_stacks`]: 				"MÁX. DE ACÚMULOS:",
+			[`${abilityName}_Note0`]: 				"Contraespiral é ativada ao ser atingido pelo ataque.",
+			[`${abilityName}_Lore`]: 				"O Axe é o único reforço que este exército precisa.",
+			[`${abilityName}_damage`]: 				"DANO:",
+			[`${abilityName}_radius`]: 				"RAIO:",
+			[`${abilityName}_trigger_attacks`]: 				"ATAQUES ATÉ O CONTRA-ATAQUE:",
+			},
+			[Language.English]: {							
+			[`${abilityName}`]: 				"Counter Helix",
+			[`${abilityName}_Description`]: 				"After a set number of attacks, Axe will perform a helix counter attack, dealing pure damage to all nearby enemies.",
+			[`${abilityName}_scepter_description`]: 				"Counter Helix now applies a stacking debuff to enemies hit by it that causes them to deal less total attack damage to Axe. Counter Helix no longer has a cooldown and its counter advances when Axe attacks.",
+			[`${abilityName}_Note1`]: 				"Illusions' counters don't increase when they attack when you have a Scepter.",
+			[`${abilityName}_debuff_duration`]: 				"DEBUFF DURATION:",
+			[`${abilityName}_damage_reduction`]: 				"%ATTACK DAMAGE REDUCTION:",
+			[`${abilityName}_max_stacks`]: 				"MAX STACKS:",
+			[`${abilityName}_Note0`]: 				"Counter Helix triggers when the attack hits.",
+			[`${abilityName}_Lore`]: 				"Axe is the only reinforcement this army needs.",
+			[`${abilityName}_damage`]: 				"DAMAGE:",
+			[`${abilityName}_radius`]: 				"RADIUS:",
+			[`${abilityName}_trigger_attacks`]: 				"ATTACKS TO HELIX:",
+			},
+			[Language.Spanish]: {							
+			[`${abilityName}`]: 				"Contraataque Espiral",
+			[`${abilityName}_Description`]: 				"En inglés: <b><font color='#F2A93E'>Counter Helix</font></b>.\n\nTras un número determinado de ataques, Axe realizará un contraataque espiral que infligirá daño puro a todos los enemigos cercanos.",
+			[`${abilityName}_scepter_description`]: 				"Contraataque Espiral ahora aplica un efecto negativo acumulable a los enemigos alcanzados que hace que inflijan menos daño de ataque total a Axe. Contraataque Espiral ya no tiene tiempo de recarga y su contador sube con los ataques de Axe.",
+			[`${abilityName}_Note1`]: 				"Los contadores de ilusiones no aumentan si atacan cuando tienes un Cetro.",
+			[`${abilityName}_debuff_duration`]: 				"DURACIÓN DEL EFECTO NEGATIVO:",
+			[`${abilityName}_damage_reduction`]: 				"%REDUCCIÓN DE DAÑO DE ATAQUE:",
+			[`${abilityName}_max_stacks`]: 				"ACUMULACIONES MÁXIMAS:",
+			[`${abilityName}_Note0`]: 				"Contraataque Espiral se activa cuando impacta el ataque.",
+			[`${abilityName}_Lore`]: 				"Axe es el único refuerzo que necesita este ejército.",
+			[`${abilityName}_damage`]: 				"DAÑO:",
+			[`${abilityName}_radius`]: 				"RADIO:",
+			[`${abilityName}_trigger_attacks`]: 				"ATAQUES PARA CONTRAATACAR:",
+			},
+			[Language.Russian]: {							
+			[`${abilityName}`]: 				"Counter Helix",
+			[`${abilityName}_Description`]: 				"После определённого числа полученных атак герой прокручивает вокруг себя топор, нанося чистый урон всем врагам неподалёку.",
+			[`${abilityName}_scepter_description`]: 				"Убирает перезарядку способности. Каждое её срабатывание применяет на жертв складывающийся эффект, уменьшающий урон их атак по владельцу способности. При подсчёте атак для срабатывания учитываются и атаки владельца.",
+			[`${abilityName}_Note1`]: 				"Атаки иллюзий не учитываются при подсчёте атак для срабатывания с Aghanim's Scepter.",
+			[`${abilityName}_debuff_duration`]: 				"ВРЕМЯ ДЕЙСТВИЯ ЭФФЕКТА:",
+			[`${abilityName}_damage_reduction`]: 				"%СНИЖЕНИЕ УРОНА ОТ АТАК:",
+			[`${abilityName}_max_stacks`]: 				"МАКСИМУМ ЭФФЕКТОВ:",
+			[`${abilityName}_Note0`]: 				"Срабатывает при завершении атаки по владельцу способности.",
+			[`${abilityName}_Lore`]: 				"Могул-хан — сам себе войско.",
+			[`${abilityName}_damage`]: 				"УРОН:",
+			[`${abilityName}_radius`]: 				"РАДИУС:",
+			[`${abilityName}_trigger_attacks`]: 				"АТАК ДЛЯ СРАБАТЫВАНИЯ:",
+			},
+			[Language.Schinese]: {							
+			[`${abilityName}`]: 				"反击螺旋",
+			[`${abilityName}_Description`]: 				"受到一定次数攻击后，斧王就会做出螺旋反击，对附近所有敌方单位造成纯粹伤害。",
+			[`${abilityName}_scepter_description`]: 				"反击螺旋现在对击中的敌人施加一个可叠加的负面效果，使其对斧王造成的攻击伤害减少。反击螺旋不再具有冷却时间，并且斧王的攻击也会计入触发记数。",
+			[`${abilityName}_Note1`]: 				"拥有神杖后自身幻象的攻击不会计入触发计数。",
+			[`${abilityName}_debuff_duration`]: 				"负面状态持续时间：",
+			[`${abilityName}_damage_reduction`]: 				"%攻击力降低：",
+			[`${abilityName}_max_stacks`]: 				"最大叠加层数：",
+			[`${abilityName}_Note0`]: 				"反击螺旋会在斧王受到攻击时触发。",
+			[`${abilityName}_Lore`]: 				"这支军队只要有斧王就不需要援军了。",
+			[`${abilityName}_damage`]: 				"伤害：",
+			[`${abilityName}_radius`]: 				"作用范围：",
+			[`${abilityName}_trigger_attacks`]: 				"螺旋所需攻击次数：",
+			},
+        }
+    }
+}

@@ -3,6 +3,7 @@ import * as dotax from 'gulp-dotax';
 import path from 'path';
 import less from 'gulp-less';
 import replace from 'gulp-replace';
+import { createIconTypings } from './scripts/gulpscripts/create_icon_typings';
 
 const paths: { [key: string]: string } = {
     excels: 'excels',
@@ -11,6 +12,7 @@ const paths: { [key: string]: string } = {
     panorama_json: 'content/panorama/src/json',
     panorama: 'content/panorama',
     game_resource: 'game/resource',
+    definitions: 'game/scripts/src/heroes'
 };
 
 /**
@@ -117,6 +119,18 @@ const create_image_precache =
         }
     };
 
+const create_icon_typings = (watch: boolean = false) => () => {
+    const imageFiles = `${paths.panorama}/images/custom_game/talent_icons/*.{jpg,png,psd}`;
+    const iconTypings = () => {
+        return gulp.src(imageFiles).pipe(createIconTypings(`content/panorama/images/`)).pipe(gulp.dest(paths.definitions));
+    };
+    if (watch) {
+        return gulp.watch(imageFiles, iconTypings);
+    } else {
+        return iconTypings();
+    }
+}
+
 /**compile all less files to panorama path */
 const compile_less =
     (watch: boolean = false) =>
@@ -172,14 +186,17 @@ gulp.task('start_file_server', start_file_server);
 gulp.task(`create_image_precache`, create_image_precache());
 gulp.task('create_image_precache:watch', create_image_precache(true));
 
+gulp.task('create_icon_typings', create_icon_typings());
+gulp.task('create_icon_typings:watch', create_icon_typings(true));
+
 gulp.task('kv_2_js', kv_2_js());
 gulp.task('kv_2_js:watch', kv_2_js(true));
 
 gulp.task('compile_less', compile_less());
 gulp.task('compile_less:watch', compile_less(true));
 
-gulp.task('predev', gulp.series('kv_2_js',   'create_image_precache'));
-gulp.task('dev', gulp.parallel( 'create_image_precache:watch', 'kv_2_js:watch', 'compile_less:watch'));
+gulp.task('predev', gulp.series('kv_2_js', 'create_icon_typings', 'create_image_precache'));
+gulp.task('dev', gulp.parallel( "predev", 'create_icon_typings:watch', 'create_image_precache:watch', 'kv_2_js:watch', 'compile_less:watch'));
 gulp.task('build', gulp.series('predev'));
 gulp.task('jssync', gulp.series('kv_2_js'));
 gulp.task('kv_to_local', kv_to_local());

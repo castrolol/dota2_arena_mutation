@@ -1,0 +1,43 @@
+"DOTAAbilities"
+{
+    "custom_ability_empty_slot_4"
+    {
+        "BaseClass" "ability_lua"
+        "ScriptFile" "mechanics/custom_ability_empty_slot"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "MaxLevel" "1"
+        "RequiredLevel" "0"
+    }
+    "custom_ability_empty_slot_5"
+    {
+        "BaseClass" "ability_lua"
+        "ScriptFile" "mechanics/custom_ability_empty_slot"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "MaxLevel" "1"
+        "RequiredLevel" "0"
+    }
+    "custom_ability_attributes_bonus"
+    {
+        "BaseClass" "ability_lua"
+        "ScriptFile" "mechanics/custom_ability_attributes_bonus"
+        "AbilityTextureName" "custom_spell_evasion_agi"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "MaxLevel" "1"
+        "RequiredLevel" "0"
+        // Special
+        //-------------------------------------------------------------------------------------------------------------
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type" "FIELD_FLOAT"
+                "value" "1.0"
+            }
+            "02"
+            {
+                "var_type" "FIELD_FLOAT"
+                "max" "30.0"
+            }
+        }
+    }
+}

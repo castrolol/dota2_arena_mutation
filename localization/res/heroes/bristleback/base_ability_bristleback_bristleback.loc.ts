@@ -1,0 +1,81 @@
+import { AbilityLocalizationMounted, L, Language, ignore } from "../../../loc_utils";
+
+
+export default function ability(): AbilityLocalizationMounted {
+    const abilityName = "DOTA_Tooltip_ability_base_ability_bristleback_bristleback"
+    return {
+        isToken: true,
+        langs: {
+			[Language.Brazilian]: {							
+			[`${abilityName}`]: 				"Proteção de Cerdas",
+			[`${abilityName}_abilitydraft_note`]: 				"Requer <b><font color='#F2A93E'>Rajada de Espinhos</font></b> para que os espinhos também sejam lançados ao alcançar o limiar de dano.",
+			[`${abilityName}_Description`]: 				"Em inglês: <b><font color='#F2A93E'>Bristleback</font></b>\n \nO Bristleback sofre menos dano de ataques físicos se atacado pelas costas ou laterais. Se sofrer %quill_release_threshold% de dano pelas costas, ele borrifará automaticamente uma Rajada de Espinhos equivalente ao nível da própria habilidade.",
+			[`${abilityName}_Facet_bristleback_snot_rocket`]: 				"Em vez de lançar Rajada de Espinhos ao sofrer dano, lança o nível atual de Gosma Nasal Viscosa em todos os inimigos próximos.",
+			[`${abilityName}_Lore`]: 				"Dar as costas a uma briga pode acabar sendo a melhor escolha.",
+			[`${abilityName}_Note0`]: 				"É considerada costas a área localizada a 70 graus da parte traseira de Bristleback.",
+			[`${abilityName}_Note1`]: 				"É considerada lateral a área localizada a 110 graus da parte traseira de Bristleback.",
+			[`${abilityName}_side_damage_reduction`]: 				"%REDUÇÃO DE DANO NA LATERAL:",
+			[`${abilityName}_back_damage_reduction`]: 				"%REDUÇÃO DE DANO NAS COSTAS:",
+			[`${abilityName}_quill_release_threshold`]: 				"LIMIAR DE DANO:",
+			[`${abilityName}_goo_radius`]: 				"RAIO DE APLICAÇÃO DA GOSMA:",
+			[`${abilityName}_scepter_description`]: 				"Transforma a <b><font color='#F2A93E'>Proteção de Cerdas</font></b> em uma habilidade ativa. O Bristleback vira as costas rumo à direção alvejada e, após %activation_delay%s, dispara %activation_num_quill_sprays% <b><font color='#F2A93E'>Rajadas de Espinhos</font></b> seguidas em uma pequena área cônica a cada %activation_spray_interval%s. O Bristleback não pode virar e nem atacar durante a habilidade, mas move-se normalmente com menos %activation_movement_speed_pct%%% de velocidade de movimento.",
+			},
+			[Language.English]: {							
+			[`${abilityName}`]: 				"Bristleback",
+			[`${abilityName}_abilitydraft_note`]: 				"Quill Spray must be drafted also to release when damage threshold reached.",
+			[`${abilityName}_Description`]: 				"Bristleback takes less damage if hit on the sides or rear.  If Bristleback takes %quill_release_threshold% damage from the rear, he releases a Quill Spray of the current level.",
+			[`${abilityName}_Facet_bristleback_snot_rocket`]: 				"Instead of releasing Quill Spray from taking damage, he instead launches Nasal Goo of the current level at all nearby enemies.",
+			[`${abilityName}_Lore`]: 				"Turning his back to a fight might be just the thing.",
+			[`${abilityName}_Note0`]: 				"Bristleback's rear is considered to be within 70 degrees from the back.",
+			[`${abilityName}_Note1`]: 				"Bristleback's side is considered to be within 110 degrees from the back.",
+			[`${abilityName}_side_damage_reduction`]: 				"%SIDE DAMAGE REDUCTION:",
+			[`${abilityName}_back_damage_reduction`]: 				"%BACK DAMAGE REDUCTION:",
+			[`${abilityName}_quill_release_threshold`]: 				"DAMAGE THRESHOLD:",
+			[`${abilityName}_goo_radius`]: 				"NASAL GOO RADIUS:",
+			[`${abilityName}_scepter_description`]: 				"Adds active ability to Bristleback. Bristleback rotates towards the targeted direction and, after %activation_delay%s, forcefully ejects %activation_num_quill_sprays% sequential Quill Sprays in a tight conical pattern out of his back every %activation_spray_interval%s. Bristleback's facing is locked during this time, he is disarmed, and his speed is reduced by %activation_movement_speed_pct%%%.",
+			},
+			[Language.Spanish]: {							
+			[`${abilityName}`]: 				"Espalda Espinosa",
+			[`${abilityName}_abilitydraft_note`]: 				"También se debe seleccionar Lluvia de Espinas para que se use al alcanzar el umbral de daño.",
+			[`${abilityName}_Description`]: 				"En inglés: <b><font color='#F2A93E'>Bristleback</font></b>.\n\nBristleback recibe menos daño si le atacan por el lateral o por detrás. Si Bristleback recibe %quill_release_threshold% de daño por detrás, lanza una Lluvia de Espinas del nivel actual.",
+			[`${abilityName}_Facet_bristleback_snot_rocket`]: 				"En lugar de liberar una Lluvia de Espinas al recibir daño, lanza una Viscosidad Nasal del nivel actual a todos los enemigos cercanos.",
+			[`${abilityName}_Lore`]: 				"Darle la espalda a una pelea podría ser justo lo que necesitas.",
+			[`${abilityName}_Note0`]: 				"Se considera como la parte trasera de Bristleback un ángulo de 70 grados desde su espalda.",
+			[`${abilityName}_Note1`]: 				"Se considera como el lateral de Bristleback un ángulo de 110 grados desde su espalda.",
+			[`${abilityName}_side_damage_reduction`]: 				"%REDUCCIÓN DE DAÑO LATERAL:",
+			[`${abilityName}_back_damage_reduction`]: 				"%REDUCCIÓN DE DAÑO TRASERO:",
+			[`${abilityName}_quill_release_threshold`]: 				"UMBRAL DE DAÑO:",
+			[`${abilityName}_goo_radius`]: 				"RADIO DE VISCOSIDAD NASAL:",
+			[`${abilityName}_scepter_description`]: 				"Añade una habilidad activa para Espalda Espinosa. Bristleback se gira en dirección al objetivo y, después de %activation_delay% s, expulsa enérgicamente por la espalda una Lluvia de Espinas en forma de cono estrecho %activation_num_quill_sprays% veces seguidas cada %activation_spray_interval% s. Durante este tiempo, Bristleback permanece inmóvil sin poder darse la vuelta, queda desarmado y ralentizado un %activation_movement_speed_pct% %%.",
+			},
+			[Language.Russian]: {							
+			[`${abilityName}`]: 				"Bristleback",
+			[`${abilityName}_abilitydraft_note`]: 				"Если не выбрать способность Quill Spray, герой не будет применять её при достижении порога урона.",
+			[`${abilityName}_Description`]: 				"Герой получает меньше урона от атак со спины и с боков. При получении %quill_release_threshold% урона со спины применяется способность Quill Spray текущего уровня.",
+			[`${abilityName}_Facet_bristleback_snot_rocket`]: 				"Вместо игл герой выпускает во всех врагов неподалёку сопли от способности Viscous Nasal Goo текущего уровня.",
+			[`${abilityName}_Lore`]: 				"Иногда бывает полезно повернуться спиной к врагу во время битвы.",
+			[`${abilityName}_Note0`]: 				"Спиной героя считаются 70 градусов от середины его спины.",
+			[`${abilityName}_Note1`]: 				"Боками героя считаются 110 градусов от середины его спины.",
+			[`${abilityName}_side_damage_reduction`]: 				"%СНИЖЕНИЕ УРОНА ОТ АТАК С БОКОВ:",
+			[`${abilityName}_back_damage_reduction`]: 				"%СНИЖЕНИЕ УРОНА ОТ АТАК В СПИНУ:",
+			[`${abilityName}_quill_release_threshold`]: 				"ПОРОГ УРОНА:",
+			[`${abilityName}_goo_radius`]: 				"РАДИУС РАЗБРЫЗГИВАНИЯ СОПЛЕЙ:",
+			[`${abilityName}_scepter_description`]: 				"Позволяет применить эту способность на точку. Герой разворачивается к ней спиной и спустя %activation_delay% сек. выпускает %activation_num_quill_sprays% волн игл от Quill Spray в конусовидной области. Под действием этой способности герой замедлен на %activation_movement_speed_pct%%% и не может поворачиваться и атаковать, но может применять заклинания в любом направлении. Интервал волн: %activation_spray_interval% сек.",
+			},
+			[Language.Schinese]: {							
+			[`${abilityName}`]: 				"钢毛后背",
+			[`${abilityName}_abilitydraft_note`]: 				"必须拥有技能“刺针扫射”才会在伤害触发临界值后生效。",
+			[`${abilityName}_Description`]: 				"如果伤害来自钢背兽的侧面或者背后，他所受的伤害将会降低。钢背兽每次从背后受到%quill_release_threshold%点伤害会自动释放一次当前等级的刺针扫射。",
+			[`${abilityName}_Facet_bristleback_snot_rocket`]: 				"他受到伤害时不再释放刺针扫射，而是对附近所有敌人发射当前等级的粘稠鼻液。",
+			[`${abilityName}_Lore`]: 				"在战斗中背部迎人或许正好合适。",
+			[`${abilityName}_Note0`]: 				"钢背兽的背面是以背部中心点为原点，向左向右各呈70度角的扇形区域。",
+			[`${abilityName}_Note1`]: 				"钢背兽的侧面是以背部中心点为原点，向左向右各呈110度角的扇形区域，背面的扇形区域不算在内。",
+			[`${abilityName}_side_damage_reduction`]: 				"%侧面伤害减少：",
+			[`${abilityName}_back_damage_reduction`]: 				"%背后伤害减少：",
+			[`${abilityName}_quill_release_threshold`]: 				"伤害临界值：",
+			[`${abilityName}_goo_radius`]: 				"鼻液作用范围：",
+			[`${abilityName}_scepter_description`]: 				"钢毛后背增加主动效果。钢背兽将背部转向目标方向，%activation_delay%秒后以%activation_spray_interval%秒间隔朝背部前方的锥形范围强行连续喷出%activation_num_quill_sprays%次刺针扫射。钢背兽在这段时间内面朝方向被锁定，被缴械，并且移动速度减缓%activation_movement_speed_pct%%%。",
+			},
+        }
+    }
+}

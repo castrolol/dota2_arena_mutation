@@ -1,0 +1,81 @@
+import { AbilityLocalizationMounted, L, Language, ignore } from "../../../loc_utils";
+
+
+export default function ability(): AbilityLocalizationMounted {
+    const abilityName = "DOTA_Tooltip_ability_base_ability_sven_warcry"
+    return {
+        isToken: true,
+        langs: {
+			[Language.Brazilian]: {							
+			[`${abilityName}`]: 				"Grito de Guerra",
+			[`${abilityName}_shard_description`]: 				"O <b><font color='#F2A93E'>Grito de Guerra</font></b> não pode ser dissipado e passa a conceder %shard_passive_armor% de armadura passivamente a todos os aliados próximos de Sven. Aumenta a velocidade de movimento adicional concedida quando ativado.",
+			[`${abilityName}_facet_sven_heavy_plate`]: 				"O Grito de Guerra concede uma barreira contra dano físico.",
+			[`${abilityName}_Description`]: 				"Em inglês: <b><font color='#F2A93E'>Warcry</font></b>\n \nO grito de guerra de Sven incentiva os heróis aliados para a batalha, aumentando as suas armaduras e velocidades de movimento. Dura %duration% segundos.",
+			[`${abilityName}_Lore`]: 				"Invocar algumas das linhas do Códice da Vigília fortifica a obediência de Sven ao seu código rebelde. Tão poético!",
+			[`${abilityName}_radius`]: 				"RAIO:",
+			[`${abilityName}_movespeed`]: 				"%VELOCIDADE ADICIONAL:",
+			[`${abilityName}_bonus_armor`]: 				"ARMADURA ADICIONAL:",
+			[`${abilityName}_duration`]: 				"DURAÇÃO:",
+			[`${abilityName}_shard_radius`]: 				"RAIO (PASSIVA):",
+			[`${abilityName}_shard_passive_armor`]: 				"ARMADURA ADICIONAL (PASSIVA):",
+			[`${abilityName}_base_barrier_amount`]: 				"BARREIRA CONTRA DANO FÍSICO:",
+			},
+			[Language.English]: {							
+			[`${abilityName}`]: 				"Warcry",
+			[`${abilityName}_shard_description`]: 				"Warcry is now undispellable and passively grants %shard_passive_armor% armor to all allies near Sven. Increases active movement speed bonus.",
+			[`${abilityName}_facet_sven_heavy_plate`]: 				"Warcry provides a physical damage barrier.",
+			[`${abilityName}_Description`]: 				"Sven's Warcry heartens his allied heroes for battle, increasing their armor and movement speed. Lasts %duration% seconds.",
+			[`${abilityName}_Lore`]: 				"Calling a few lines from the Vigil Codex fortifies Sven's obedience to his rogue code. So poetic!",
+			[`${abilityName}_radius`]: 				"RADIUS:",
+			[`${abilityName}_movespeed`]: 				"%BONUS SPEED:",
+			[`${abilityName}_bonus_armor`]: 				"BONUS ARMOR:",
+			[`${abilityName}_duration`]: 				"DURATION:",
+			[`${abilityName}_shard_radius`]: 				"PASSIVE RADIUS:",
+			[`${abilityName}_shard_passive_armor`]: 				"PASSIVE BONUS ARMOR:",
+			[`${abilityName}_base_barrier_amount`]: 				"PHYSICAL BARRIER AMOUNT:",
+			},
+			[Language.Spanish]: {							
+			[`${abilityName}`]: 				"Grito de Guerra",
+			[`${abilityName}_shard_description`]: 				"Grito de Guerra ahora no se puede disipar y otorga pasivamente %shard_passive_armor% de armadura a todos los aliados que se encuentren cerca de Sven. Aumenta la bonificación de velocidad de movimiento activa.",
+			[`${abilityName}_facet_sven_heavy_plate`]: 				"Grito de Guerra proporciona una barrera contra el daño físico.",
+			[`${abilityName}_Description`]: 				"En inglés: <b><font color='#F2A93E'>Warcry</font></b>.\n\nEl Grito de Guerra de Sven anima a los héroes aliados a combatir aumentando su armadura y velocidad de movimiento. Dura %duration% s.",
+			[`${abilityName}_Lore`]: 				"Recitando unas pocas líneas del Códice de la Vigilia, Sven refuerza su obediencia a su código de renegado. ¡Qué poético!",
+			[`${abilityName}_radius`]: 				"RADIO:",
+			[`${abilityName}_movespeed`]: 				"%VELOCIDAD ADICIONAL:",
+			[`${abilityName}_bonus_armor`]: 				"ARMADURA ADICIONAL:",
+			[`${abilityName}_duration`]: 				"DURACIÓN:",
+			[`${abilityName}_shard_radius`]: 				"RADIO PASIVO:",
+			[`${abilityName}_shard_passive_armor`]: 				"ARMADURA ADICIONAL PASIVA:",
+			[`${abilityName}_base_barrier_amount`]: 				"BARRERA CONTRA DAÑO FÍSICO:",
+			},
+			[Language.Russian]: {							
+			[`${abilityName}`]: 				"Warcry",
+			[`${abilityName}_shard_description`]: 				"Способность становится неразвеиваемой и пассивно увеличивает броню союзников неподалёку на %shard_passive_armor%. Увеличивает дополнительную скорость при активации.",
+			[`${abilityName}_facet_sven_heavy_plate`]: 				"Помимо брони, способность даёт физический барьер.",
+			[`${abilityName}_Description`]: 				"Боевой клич поднимает дух союзных героев и увеличивает их броню и урон на %duration% сек.",
+			[`${abilityName}_Lore`]: 				"Цитируя Вигильский кодекс во всеуслышание, рыцарь укрепляется в верности своим мятежным законам. Как поэтично!",
+			[`${abilityName}_radius`]: 				"РАДИУС:",
+			[`${abilityName}_movespeed`]: 				"%ДОП. СКОРОСТЬ:",
+			[`${abilityName}_bonus_armor`]: 				"ДОП. БРОНЯ:",
+			[`${abilityName}_duration`]: 				"ДЛИТЕЛЬНОСТЬ:",
+			[`${abilityName}_shard_radius`]: 				"РАДИУС АУРЫ:",
+			[`${abilityName}_shard_passive_armor`]: 				"ДОП. БРОНЯ ОТ АУРЫ:",
+			[`${abilityName}_base_barrier_amount`]: 				"ЗДОРОВЬЕ ФИЗИЧЕСКОГО БАРЬЕРА:",
+			},
+			[Language.Schinese]: {							
+			[`${abilityName}`]: 				"战吼",
+			[`${abilityName}_shard_description`]: 				"战吼无法被驱散，并且被动向斯温周围所有友军提供%shard_passive_armor%点护甲。提升主动效果的移动速度加成。",
+			[`${abilityName}_facet_sven_heavy_plate`]: 				"战吼会提供一个物理伤害护盾。",
+			[`${abilityName}_Description`]: 				"斯温的战吼激励着同伴作战，提升他们的护甲和移动速度。持续%duration%秒。",
+			[`${abilityName}_Lore`]: 				"吟诵守夜人法典的句子能够强化斯温对其流浪法则的遵从。太有诗意了！",
+			[`${abilityName}_radius`]: 				"作用范围：",
+			[`${abilityName}_movespeed`]: 				"%移动速度加成：",
+			[`${abilityName}_bonus_armor`]: 				"护甲加成：",
+			[`${abilityName}_duration`]: 				"持续时间：",
+			[`${abilityName}_shard_radius`]: 				"被动作用范围：",
+			[`${abilityName}_shard_passive_armor`]: 				"被动护甲加成：",
+			[`${abilityName}_base_barrier_amount`]: 				"物理护盾数值：",
+			},
+        }
+    }
+}

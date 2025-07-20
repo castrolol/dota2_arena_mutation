@@ -1,3 +1,4 @@
+import '../mechanics/custom_ability_attributes_bonus';
 import { Debug } from './Debug';
 import { GameConfig } from './GameConfig';
 import { GameMode } from './GameMode';

@@ -1,8 +1,13 @@
+#base "heroes\antimage\arcane_hunter.txt"
+#base "heroes\antimage\shadow_rogue.txt"
+#base "heroes\antimage\mana_addict.txt"
+#base "heroes\antimage\base_abilities.txt"
 #base "heroes\crystal_maiden\ice_stronghold.txt"
 #base "heroes\crystal_maiden\frost_mage.txt"
 #base "heroes\crystal_maiden\snow_walker.txt"
 #base "heroes\crystal_maiden\base_abilities.txt"
 #base "shared\generic_abilities.txt"
+#base "shared\common_abilities.txt"
 
 "DOTAAbilities"
 {

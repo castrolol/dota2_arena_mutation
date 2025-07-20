@@ -5,6 +5,11 @@ import { TalentBaseModifier } from '../../../../talent_base_modifier';
 
 @registerAbility()
 export class talent_crystal_maiden_frosty_fortress_heavy_frost_armor extends BaseAbility {
+
+    Precache(context: CScriptPrecacheContext): void {
+        PrecacheResource(PrecacheType.PARTICLE, 'particles/crystal_maiden/ice_stronghold/heavy_ice_armor.vpcf', context);
+    }
+
     GetIntrinsicModifierName(): string {
         return modifier_talent_crystal_maiden_frosty_fortress_heavy_frost_armor.name;
     }
@@ -116,7 +121,7 @@ export class modifier_talent_crystal_maiden_frosty_fortress_heavy_frost_armor_de
     DeclareFunctions(): ModifierFunction[] {
         return [
             ModifierFunction.PHYSICAL_ARMOR_BONUS,
-            ModifierFunction.MOVESPEED_BONUS_PERCENTAGE
+            ModifierFunction.MOVESPEED_BONUS_PERCENTAGE,
         ];
     }
 }

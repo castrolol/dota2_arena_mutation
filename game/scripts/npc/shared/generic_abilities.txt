@@ -1,43 +1,964 @@
 "DOTAAbilities"
 {
-    "custom_ability_empty_slot_4"
+    "talent_attributes_bonus_aoe_increase_uni"
     {
-        "BaseClass" "ability_lua"
-        "ScriptFile" "mechanics/custom_ability_empty_slot"
-        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "MaxLevel" "1"
-        "RequiredLevel" "0"
-    }
-    "custom_ability_empty_slot_5"
-    {
-        "BaseClass" "ability_lua"
-        "ScriptFile" "mechanics/custom_ability_empty_slot"
-        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "MaxLevel" "1"
-        "RequiredLevel" "0"
-    }
-    "custom_ability_attributes_bonus"
-    {
-        "BaseClass" "ability_lua"
-        "ScriptFile" "mechanics/custom_ability_attributes_bonus"
-        "AbilityTextureName" "custom_spell_evasion_agi"
-        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-        "MaxLevel" "1"
-        "RequiredLevel" "0"
-        // Special
-        //-------------------------------------------------------------------------------------------------------------
-        "AbilitySpecial"
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_aoe_increase_uni"
+        "MaxLevel"    "3"
+        "AbilityValues"
         {
-            "01"
-            {
-                "var_type" "FIELD_FLOAT"
-                "value" "1.0"
-            }
-            "02"
-            {
-                "var_type" "FIELD_FLOAT"
-                "max" "30.0"
-            }
+            "aoeBonus"    "50 75 125"
         }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_attack_speed_agi"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_attack_speed_agi"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "attackSpeedBonus"    "7 14 21 28"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_attack_speed_uni"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_attack_speed_uni"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "attackSpeedBonus"    "5 10 15 20"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_block_magical_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_block_magical_int"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "magicalBlockBonus"    "60 80 100 150"
+            "magicalBlockChance"    "17 17 17 25"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_block_physical_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_block_physical_int"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "physicalBlockBonus"    "15 30 45 60"
+            "physicalBlockChance"    "60 60 60 100"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_chance_of_disarm_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_chance_of_disarm_int"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "disarmChance"    "7 12 17"
+            "disarmDuration"    "0.7 1 1.4"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_change_attr_str"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_change_attr_str"
+        "MaxLevel"    "1"
+        "AbilityValues"
+        {
+            "changeMainAttribute"    "1"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_cooldown_reduction_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_cooldown_reduction_int"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "cooldownSpellReduction"    "5 12 20"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_damage_reduction_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_damage_reduction_int"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "damageReduction"    "2 3.5 5 8"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_damage_reduction_str"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_damage_reduction_str"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "damageReduction"    "4 8 12"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_defense_bonus_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_defense_bonus_int"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "armorBonus"    "1.5 2.25 3.5 5"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_defense_bonus_plus_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_defense_bonus_plus_int"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "armorBonus"    "3 6 12"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_defense_bonus_plus_str"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_defense_bonus_plus_str"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "armorBonus"    "5 10 15"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_defense_bonus_str"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_defense_bonus_str"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "armorBonus"    "2 4 6 10"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_dot_amplify_plus_uni"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_dot_amplify_plus_uni"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "dotAmplify"    "9 13 18"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_dot_amplify_uni"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_dot_amplify_uni"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "dotAmplify"    "6 9 12"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_dot_defense_uni"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_dot_defense_uni"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "dotDefense"    "5 10 15"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_evasion_agi"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_evasion_agi"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "evasionBonus"    "6 13 20"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_evasion_uni"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_evasion_uni"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "evasionBonus"    "3 9 16"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_gold_per_minute"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_gold_per_minute"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "goldPerMinute"    "30 60 90 120"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_hp_regen_amp_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_hp_regen_amp_int"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "intToStrPercentage"    "5 10 15 30"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_item_cooldown_reduction_agi"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_item_cooldown_reduction_agi"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "cooldownItemReduction"    "5 8 14"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_lifesteal_str"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_lifesteal_str"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "lifesteal"    "10 20 30 40"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_lifesteal_uni"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_lifesteal_uni"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "lifesteal"    "3 7 11 16"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_life_boost_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_life_boost_int"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "healthBonus"    "150 300 600"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_life_boost_str"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_life_boost_str"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "healthBonus"    "300 600 1200"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_life_regen_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_life_regen_int"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "healthRegen"    "3 4.5 6 7.5"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_life_regen_str"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_life_regen_str"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "healthRegen"    "5 7.5 10 13"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_magic_bonus_agi"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_magic_bonus_agi"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "magicDamagePerAgi"    "0.075 0.15 0.225 0.3"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_magic_bonus_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_magic_bonus_int"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "magicDamagePerInt"    "0.075 0.15 0.225 0.3"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_magic_bonus_str"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_magic_bonus_str"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "magicDamagePerStr"    "0.075 0.15 0.225 0.3"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_magic_defense_bonus_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_magic_defense_bonus_int"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "magicDefenseBonus"    "3.5 5.25 7 10"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_magic_defense_bonus_plus_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_magic_defense_bonus_plus_int"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "magicDefenseBonus"    "5 8 12"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_magic_defense_bonus_str"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_magic_defense_bonus_str"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "magicDefenseBonus"    "4 7 10 15"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_magic_lifesteal_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_magic_lifesteal_int"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "spellLifesteal"    "10 15 20 30"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_magic_lifesteal_uni"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_magic_lifesteal_uni"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "spellLifesteal"    "3 7 12 16"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_mana_boost_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_mana_boost_int"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "manaBonus"    "100 300 700"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_mana_boost_lesser_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_mana_boost_lesser_int"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "manaBonus"    "75 200 300 500"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_mana_regen_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_mana_regen_int"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "manaRegen"    "4 9 12"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_mana_regen_lesser_str"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_mana_regen_lesser_str"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "manaRegen"    "3 6 9 12"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_mana_regen_plus_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_mana_regen_plus_int"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "manaBonusPercentage"    "2 3 4"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_movespeed_agi"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_movespeed_agi"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "movespeedBonus"    "15 25 35"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_movespeed_uni"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_movespeed_uni"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "movespeedBonus"    "10 18 24"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_multiple_attack_agi"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_multiple_attack_agi"
+        "MaxLevel"    "3"
+        "AbilityCooldown"    "13 10 10"
+        "AbilityValues"
+        {
+            "extraAttacks"    "1 1 2"
+            "extraAttackCooldown"    "13 10 10"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_physical_bonus_agi"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_physical_bonus_agi"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "physicalBonusPerAgi"    "0.075 0.15 0.225 0.3"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_physical_bonus_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_physical_bonus_int"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "physicalBonusPerInt"    "0.075 0.15 0.225 0.3"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_physical_bonus_str"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_physical_bonus_str"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "physicalBonusPerStr"    "0.075 0.15 0.225 0.3"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_reflect_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_reflect_int"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "reflectBonus"    "5 7.5 11 16"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_reflect_str"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_reflect_str"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "reflectBonus"    "8 15 21"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_reflect_uni"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_reflect_uni"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "reflectBonus"    "5 11 18"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_slow_resistance_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_slow_resistance_int"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "slowResistance"    "6 12 18 24"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_spell_amp_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_amp_int"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "spellAmplification"    "4 7 12 18"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_spell_amp_plus_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_amp_plus_int"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "spellAmplification"    "5 11 18"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_spell_amp_uni"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_amp_uni"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "spellAmplification"    "5 10 15 20"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_stats_agi"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_stats_agi"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "agiBonus"    "3 6 12 18"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_stats_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_stats_int"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "intBonus"    "3 6 12 18"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_stats_int_to_str"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_stats_int_to_str"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "intToStrPercentage"    "8.75 17.5 26.25 35"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_stats_percentage_str"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_stats_percentage_str"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "strBonusPercentage"    "5 10 15 20"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_stats_plus_str"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_stats_plus_str"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "strBonus"    "8 15 24 40"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_stats_str"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_stats_str"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "strBonus"    "3 6 9 12"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_stats_uni"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_stats_uni"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "agiBonus"    "3 6 12 18"
+            "intBonus"    "3 6 12 18"
+            "strBonus"    "3 6 12 18"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_status_resistance_int"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_status_resistance_int"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "statusResistance"    "6 12 18 24"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "talent_attributes_bonus_status_resistance_str"
+    {
+        "BaseClass"    "ability_lua"
+        "AbilityTextureName"    "custom_spell_status_resistance_str"
+        "MaxLevel"    "4"
+        "AbilityValues"
+        {
+            "statusResistance"    "6 12 18 24"
+        }
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    }
+    "bonusAbility"
+    {
+        "BaseClass"    "ability_lua"
+        "ScriptFile"    "abilities/shared/attributes/talent_attributes_base"
+        "RequiredLevel"    "-3"
+        "CustomAbilityType"    "ATTRIBUTE"
+        "LevelsBetweenUpgrades"    "100"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
     }
 }

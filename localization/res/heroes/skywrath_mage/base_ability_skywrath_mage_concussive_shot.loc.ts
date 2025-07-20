@@ -1,0 +1,81 @@
+import { AbilityLocalizationMounted, L, Language, ignore } from "../../../loc_utils";
+
+
+export default function ability(): AbilityLocalizationMounted {
+    const abilityName = "DOTA_Tooltip_ability_base_ability_skywrath_mage_concussive_shot"
+    return {
+        isToken: true,
+        langs: {
+			[Language.Brazilian]: {							
+			[`${abilityName}`]: 				"Disparo Contusivo",
+			[`${abilityName}_Description`]: 				"Em inglês: <b><font color='#F2A93E'>Concussive Shot</font></b>\n \nO Skywrath Mage dispara um projétil de longo alcance que atinge o herói inimigo mais próximo dentro de uma grande área. No impacto, o projétil causa dano e retardo em área.",
+			[`${abilityName}_Lore`]: 				"Aqueles que servem à corte do Ninho Arrepiante estão fadados a uma guerra velada. É preciso saber por onde se esgueira a ameaça mais próxima.",
+			[`${abilityName}_Note0`]: 				"Caso não haja heróis inimigos no alcance do projétil ou eles estiverem na névoa, o Disparo Contusivo alveja a criatura inimiga mais próxima.",
+			[`${abilityName}_Note1`]: 				"Causa dano a criaturas ao redor da área de impacto.",
+			[`${abilityName}_Note2`]: 				"Fornece visão de 400 unidades ao redor do projétil e revela a área por 3,34 segundos após atingir o alvo.",
+			[`${abilityName}_launch_radius`]: 				"ALCANCE DO DISPARO:",
+			[`${abilityName}_slow_radius`]: 				"RAIO DO DANO:",
+			[`${abilityName}_damage`]: 				"DANO:",
+			[`${abilityName}_slow_duration`]: 				"DURAÇÃO DO RETARDO:",
+			[`${abilityName}_movement_speed_pct`]: 				"%RETARDO:",
+			[`${abilityName}_scepter_description`]: 				"Quando o Skywrath Mage lançar um <b><font color='#F2A93E'>Disparo Contusivo</font></b>, um alvo aleatório diferente em até %scepter_radius% unidades de distância do alvo original será atingido com a mesma habilidade. Prioriza heróis.",
+			},
+			[Language.English]: {							
+			[`${abilityName}`]: 				"Concussive Shot",
+			[`${abilityName}_Description`]: 				"Skywrath Mage sets off a long range shot that hits the closest hero within a long range.  Upon impact, it deals damage and slows in an area of effect.",
+			[`${abilityName}_Lore`]: 				"Those who serve the court of the Ghastly Eyrie are ever locked in covert war. One must always know where danger lurks nearest.",
+			[`${abilityName}_Note0`]: 				"If no enemy heroes are in range or they are in fog, Concussive Shot targets the nearest enemy creep.",
+			[`${abilityName}_Note1`]: 				"Damages creeps around the impact area.",
+			[`${abilityName}_Note2`]: 				"Provides 400 vision around the projectile, and reveals the target area for 3.34 seconds upon impact.",
+			[`${abilityName}_launch_radius`]: 				"SHOT RANGE:",
+			[`${abilityName}_slow_radius`]: 				"DAMAGE RADIUS:",
+			[`${abilityName}_damage`]: 				"DAMAGE:",
+			[`${abilityName}_slow_duration`]: 				"SLOW DURATION:",
+			[`${abilityName}_movement_speed_pct`]: 				"%SLOW:",
+			[`${abilityName}_scepter_description`]: 				"When Skywrath Mage casts Concussive Shot, a different random target within %scepter_radius% range of the original target will be hit with the same ability. Heroes will take priority.",
+			},
+			[Language.Spanish]: {							
+			[`${abilityName}`]: 				"Disparo Conmocionador",
+			[`${abilityName}_Description`]: 				"En inglés: <b><font color='#F2A93E'>Concussive Shot</font></b>.\n\nSkywrath Mage realiza un disparo de larga distancia que impacta al héroe que esté más cerca dentro de un largo alcance. Al impactar, inflige daño y ralentiza en un área de efecto.",
+			[`${abilityName}_Lore`]: 				"Aquellos que sirven a la corte del Nido Espectral siempre están involucrados en guerras encubiertas. Uno siempre debe saber dónde acecha el peligro más cercano.",
+			[`${abilityName}_Note0`]: 				"Si no hay héroes a su alcance o están en la niebla, Disparo Conmocionador tomará como objetivo al creep enemigo más cercano.",
+			[`${abilityName}_Note1`]: 				"Daña a creeps alrededor del área de impacto.",
+			[`${abilityName}_Note2`]: 				"Proporciona 400 de visión alrededor del proyectil y revela el área objetivo durante 3,34 segundos al impactar.",
+			[`${abilityName}_launch_radius`]: 				"ALCANCE DEL DISPARO:",
+			[`${abilityName}_slow_radius`]: 				"RADIO DEL DAÑO:",
+			[`${abilityName}_damage`]: 				"DAÑO:",
+			[`${abilityName}_slow_duration`]: 				"DURACIÓN DE LA RALENTIZACIÓN:",
+			[`${abilityName}_movement_speed_pct`]: 				"%RALENTIZACIÓN:",
+			[`${abilityName}_scepter_description`]: 				"Cuando Skywrath Mage lance Disparo Conmocionador, un objetivo aleatorio distinto dentro de un alcance de %scepter_radius% unidades del objetivo original se verá afectado por la misma habilidad. Los héroes tendrán prioridad.",
+			},
+			[Language.Russian]: {							
+			[`${abilityName}`]: 				"Concussive Shot",
+			[`${abilityName}_Description`]: 				"Делает выстрел по ближайшему вражескому герою в большой области. При попадании наносит урон врагам в области действия и замедляет их.",
+			[`${abilityName}_Lore`]: 				"Те, кто служат при дворе Жуткого гнезда, вечно участвуют в скрытой борьбе. Важно всегда знать, где скрывается опасность.",
+			[`${abilityName}_Note0`]: 				"Когда в радиусе применения нет вражеских героев или их не видно, применяется на ближайшего вражеского крипа.",
+			[`${abilityName}_Note1`]: 				"Наносит урон крипам в области действия.",
+			[`${abilityName}_Note2`]: 				"Снаряд даёт обзор в 400 единиц и показывает область вокруг цели в течение 3,34 секунды после попадания.",
+			[`${abilityName}_launch_radius`]: 				"ДАЛЬНОСТЬ ВЫСТРЕЛА:",
+			[`${abilityName}_slow_radius`]: 				"РАДИУС УРОНА:",
+			[`${abilityName}_damage`]: 				"УРОН:",
+			[`${abilityName}_slow_duration`]: 				"ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ:",
+			[`${abilityName}_movement_speed_pct`]: 				"%ЗАМЕДЛЕНИЕ:",
+			[`${abilityName}_scepter_description`]: 				"Каждое применение срабатывает на ещё одну случайную цель в радиусе %scepter_radius% от изначальной (в первую очередь на героев).",
+			},
+			[Language.Schinese]: {							
+			[`${abilityName}`]: 				"震荡光弹",
+			[`${abilityName}_Description`]: 				"天怒法师释放一个远距离的光弹，将击中超大范围内最近的英雄。击中后会对英雄附近范围内所有单位造成伤害和减速。",
+			[`${abilityName}_Lore`]: 				"侍奉苍白之巢王庭就会对身边的暗流涌动不加关注。必须要时刻明白周围最近的危险所在。",
+			[`${abilityName}_Note0`]: 				"如果作用范围内没有英雄或英雄处于迷雾中，震荡光弹将以最近的敌方小兵或中立生物为目标。",
+			[`${abilityName}_Note1`]: 				"击中英雄后附近的非英雄单位也会受到伤害。",
+			[`${abilityName}_Note2`]: 				"光弹将给予400范围的附近视野，击中后将获得目标区域的视野，持续3.34秒。",
+			[`${abilityName}_launch_radius`]: 				"光弹作用范围：",
+			[`${abilityName}_slow_radius`]: 				"伤害作用范围：",
+			[`${abilityName}_damage`]: 				"伤害：",
+			[`${abilityName}_slow_duration`]: 				"减速持续时间：",
+			[`${abilityName}_movement_speed_pct`]: 				"%移动速度减缓：",
+			[`${abilityName}_scepter_description`]: 				"天怒法师施放震荡光弹时，会随机对原目标附近%scepter_radius%范围内另一个敌人施放相同的技能。以英雄为首要目标。",
+			},
+        }
+    }
+}

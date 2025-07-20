@@ -13,8 +13,6 @@ export default function ability(): AbilityLocalizationMounted {
 			[`${abilityName}_Note0`]: 				"O Congelamento é considerado um enraizamento.",
 			[`${abilityName}_damage_per_second`]: 				"DANO POR SEGUNDO:",
 			[`${abilityName}_duration`]: 				"DURAÇÃO:",
-			[`${abilityName}_tick_rate`]: 				"INTERVALO DE DANO:",
-			[`${abilityName}_abilitydraft_note`]: 				"<span class=\"ADBlue\">Fragmento:</span> acesse o <span class=\"ADWhite\"><b>Clone Cristalino</b></span> ao alternar o uso automático do <span class=\"ADWhite\"><b>Congelamento</b></span>.",
 			},
 			[Language.English]: {							
 			[`${abilityName}`]: 				"Frostbite",
@@ -23,8 +21,6 @@ export default function ability(): AbilityLocalizationMounted {
 			[`${abilityName}_Note0`]: 				"Frostbite is considered a root.",
 			[`${abilityName}_damage_per_second`]: 				"DAMAGE PER SECOND:",
 			[`${abilityName}_duration`]: 				"DURATION:",
-			[`${abilityName}_tick_rate`]: 				"DAMAGE INTERVAL:",
-			[`${abilityName}_abilitydraft_note`]: 				"<span class=\"ADBlue\">Shard:</span> Access <span class=\"ADWhite\"><b>Crystal Clone</b></span> by toggling auto-cast on <span class=\"ADWhite\"><b>Frostbite</b></span>.",
 			},
 			[Language.Spanish]: {							
 			[`${abilityName}`]: 				"Congelación",
@@ -33,8 +29,6 @@ export default function ability(): AbilityLocalizationMounted {
 			[`${abilityName}_Note0`]: 				"Congelación inmoviliza a los enemigos.",
 			[`${abilityName}_damage_per_second`]: 				"DAÑO POR SEGUNDO:",
 			[`${abilityName}_duration`]: 				"DURACIÓN:",
-			[`${abilityName}_tick_rate`]: 				"INTERVALOS DE DAÑO:",
-			[`${abilityName}_abilitydraft_note`]: 				"<span class=\"ADBlue\">Fragmento:</span> Accede a <span class=\"ADWhite\"><b>Clon de Cristal</b></span> activando el lanzamiento automático en <span class=\"ADWhite\"><b>Congelación</b></span>.",
 			},
 			[Language.Russian]: {							
 			[`${abilityName}`]: 				"Frostbite",
@@ -43,8 +37,6 @@ export default function ability(): AbilityLocalizationMounted {
 			[`${abilityName}_Note0`]: 				"Накладывает эффект оцепенения.",
 			[`${abilityName}_damage_per_second`]: 				"УРОН В СЕКУНДУ:",
 			[`${abilityName}_duration`]: 				"ДЛИТЕЛЬНОСТЬ:",
-			[`${abilityName}_tick_rate`]: 				"ИНТЕРВАЛ УРОНА:",
-			[`${abilityName}_abilitydraft_note`]: 				"<span class=\"ADBlue\">Aghanim's Shard:</span> способность <span class=\"ADWhite\"><b>Crystal Clone</b></span> появляется при включении автоматического применения <span class=\"ADWhite\"><b>Frostbite</b></span>.",
 			},
 			[Language.Schinese]: {							
 			[`${abilityName}`]: 				"冰封禁制",
@@ -53,8 +45,6 @@ export default function ability(): AbilityLocalizationMounted {
 			[`${abilityName}_Note0`]: 				"冰封禁制为缠绕效果。",
 			[`${abilityName}_damage_per_second`]: 				"每秒伤害：",
 			[`${abilityName}_duration`]: 				"持续时间：",
-			[`${abilityName}_tick_rate`]: 				"伤害间隔：",
-			[`${abilityName}_abilitydraft_note`]: 				"<span class=\"ADBlue\">魔晶：</span> <span class=\"ADWhite\"><b>冰封禁制</b></span>开启自动施放后施放效果为<span class=\"ADWhite\"><b>冰晶克隆</b></span>。",
 			},
         }
     }

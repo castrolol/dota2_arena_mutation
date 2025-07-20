@@ -1,0 +1,37 @@
+"DOTAAbilities"
+{
+    "base_ability_mars_arena_of_blood"
+    {
+        "name"    "base_ability_mars_arena_of_blood"
+        "AbilityTextureName"    "mars_arena_of_blood"
+        "ScriptFile"    "heroes/mars/abilities/base_ability_mars_arena_of_blood"
+        "AbilityType"    "DOTA_ABILITY_TYPE_ULTIMATE"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+        "CustomAbilityType"    "BASE"
+        "FightRecapLevel"    "2"
+        "AbilityUnitTargetTeam"    "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"    "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitDamageType"    "DAMAGE_TYPE_MAGICAL"
+        "SpellImmunityType"    "SPELL_IMMUNITY_ENEMIES_NO"
+        "AbilityCastRange"    "400"
+        "AbilityCastPoint"    "0.1"
+        "AbilityCooldown"    "90 75 60"
+        "AbilityManaCost"    "200"
+        "MaxLevel"    "3"
+        "AbilityValues"
+        {
+            "duration"    "5 6 7"
+            "radius"    "550"
+            "width"    "100"
+            "spear_damage"    "150 200 250"
+            "formation_time"    "0.6"
+            "spear_distance_from_wall"    "160"
+            "spear_attack_interval"    "1.0"
+            "warrior_count"    "14"
+            "first_warrior_angle"    "0.0"
+            "warrior_fade_min_dist"    "350.0"
+            "warrior_fade_max_dist"    "450.0"
+        }
+        "BaseClass"    "ability_lua"
+    }
+}

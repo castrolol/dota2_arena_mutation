@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { ClassIcon, HeroDefinition, HeroPathDefinition } from '../../def/defs';
 import { AbilityHudHeader } from './AbilityHudHeader';
 import { AbilityHudIcons } from './AbilityHudIcons';
+import { useAbilityPath } from '../../hooks/useAbilityInfo';
 
 export type AbilityHudPathsProps = {
     hero: HeroDefinition;
@@ -12,8 +13,7 @@ export type AbilityHudPathsProps = {
 
 export function AbilityHudPaths({ hasPoints, playerId, hero, active }: AbilityHudPathsProps) {
     const paths = useMemo(() => {
-        const paths = Object.values(hero?.classes[active]?.paths ?? {});
-
+        const paths = Object.values(hero?.classes[active]?.paths ?? {});        
         return paths;
     }, [active]);
 
@@ -27,7 +27,9 @@ export function AbilityHudPaths({ hasPoints, playerId, hero, active }: AbilityHu
                         playerId={playerId}
                         hasPoints={hasPoints}
                         path={path}
-                        pathName={path.l18n}
+                        pathName={path.name}
+                        i18lName={path.l18n}
+                        className={active}
                         icon={path.icon}
                     />
                 </>
@@ -36,12 +38,15 @@ export function AbilityHudPaths({ hasPoints, playerId, hero, active }: AbilityHu
     );
 }
 
+
 export function AbilityHudPath({
     hasPoints,
     heroName,
     playerId,
     path,
     pathName,
+    i18lName,
+    className,
     icon,
 }: {
     hasPoints: boolean;
@@ -49,10 +54,13 @@ export function AbilityHudPath({
     playerId: PlayerID;
     path: HeroPathDefinition;
     pathName: string;
+    i18lName: string;
+    className: string;
     icon: ClassIcon;
 }) {
-    const localizedText = useMemo(() => $.Localize(`#${pathName}`), [pathName]);
-
+    const localizedText = useMemo(() => $.Localize(`#${i18lName}`), [i18lName]);
+    const [talents, spentPoints] = useAbilityPath(playerId, heroName, className, pathName);
+    console.log({ talents })
     return (
         <Panel className="path">
             <Panel className="title">
@@ -64,7 +72,7 @@ export function AbilityHudPath({
                 </Panel>
 
                 <Panel className="points">
-                    <Label className="points-text" text={`${22}`} />
+                    <Label className="points-text" text={`${spentPoints}`} />
                 </Panel>
             </Panel>
             <Panel className="path-sub-divider" />

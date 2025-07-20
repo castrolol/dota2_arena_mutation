@@ -1,0 +1,81 @@
+import { AbilityLocalizationMounted, L, Language, ignore } from "../../../loc_utils";
+
+
+export default function ability(): AbilityLocalizationMounted {
+    const abilityName = "DOTA_Tooltip_ability_base_ability_windranger_powershot"
+    return {
+        isToken: true,
+        langs: {
+			[Language.Brazilian]: {							
+			[`${abilityName}`]: 				"Disparo Poderoso",
+			[`${abilityName}_Description`]: 				"Em inglês: <b><font color='#F2A93E'>Powershot</font></b>\n \nCANALIZADA — Prepara, por até %abilitychanneltime%s, um único disparo poderoso, cujo dano aumenta com o tempo de carregamento. A flecha causa dano e retardo de movimento a inimigos no seu caminho. O dano e retardo são reduzidos a cada inimigo atingido.",
+			[`${abilityName}_Facet_windrunner_killshot`]: 				"Heróis inimigos atingidos são executados caso estejam abaixo do limiar de vida. O limiar de execução é baseado no tempo de carregamento da flecha.",
+			[`${abilityName}_Lore`]: 				"Durante os seus primeiros anos de treinamento, Lyralei aprendeu a disparar poderosas flechas que cortavam até mesmo árvores antes de chegarem aos seus alvos.",
+			[`${abilityName}_Note0`]: 				"Disparo Poderoso destruirá árvores na sua área de efeito.",
+			[`${abilityName}_arrow_range`]: 				"ALCANCE:",
+			[`${abilityName}_powershot_damage`]: 				"DANO:",
+			[`${abilityName}_slow`]: 				"%RETARDO:",
+			[`${abilityName}_min_execute_threshold`]: 				"%LIMIAR MÍN. DE EXECUÇÃO:",
+			[`${abilityName}_max_execute_threshold`]: 				"%LIMIAR MÁX. DE EXECUÇÃO:",
+			[`${abilityName}_slow_duration`]: 				"DURAÇÃO DO RETARDO:",
+			[`${abilityName}_damage_reduction`]: 				"%REDUÇÃO POR UNIDADE:",
+			},
+			[Language.English]: {							
+			[`${abilityName}`]: 				"Powershot",
+			[`${abilityName}_Description`]: 				"CHANNELED - Windranger charges her bow for up to %abilitychanneltime% second for a single powerful shot, which deals more damage the longer it is charged. The arrow damages and slows enemies' movement speed along its path. For each enemy that Powershot hits, its damage and slow is reduced.",
+			[`${abilityName}_Facet_windrunner_killshot`]: 				"Enemy heroes hit are executed if below a health threshold. The execute threshold is based on the arrow's power.",
+			[`${abilityName}_Lore`]: 				"During her early years of training, Lyralei learned to fire powerful arrows that cleaved even trees to reach their targets.",
+			[`${abilityName}_Note0`]: 				"Powershot will destroy trees in its area of effect.",
+			[`${abilityName}_arrow_range`]: 				"RANGE:",
+			[`${abilityName}_powershot_damage`]: 				"DAMAGE:",
+			[`${abilityName}_slow`]: 				"%SLOW:",
+			[`${abilityName}_min_execute_threshold`]: 				"%MIN EXECUTE THRESHOLD:",
+			[`${abilityName}_max_execute_threshold`]: 				"%MAX EXECUTE THRESHOLD:",
+			[`${abilityName}_slow_duration`]: 				"SLOW DURATION:",
+			[`${abilityName}_damage_reduction`]: 				"%REDUCTION PER UNIT:",
+			},
+			[Language.Spanish]: {							
+			[`${abilityName}`]: 				"Disparo Potenciado",
+			[`${abilityName}_Description`]: 				"En inglés: <b><font color='#F2A93E'>Powershot</font></b>.\n\nCANALIZADA: Windranger carga su arco hasta %abilitychanneltime% s para realizar un único y potente disparo, que cuanto más tiempo se cargue más daño hará. La flecha inflige daño y ralentiza la velocidad de movimiento de los enemigos que encuentra a su paso. Por cada enemigo alcanzado por Disparo Potenciado, su daño y ralentización se reducen.",
+			[`${abilityName}_Facet_windrunner_killshot`]: 				"Los héroes enemigos alcanzados son ejecutados si están por debajo del umbral de vida. El umbral de ejecución se basa en la potencia de la flecha.",
+			[`${abilityName}_Lore`]: 				"Durante sus primeros años de entrenamiento, Lyralei aprendió a disparar potentes flechas que partían incluso árboles para alcanzar a sus objetivos.",
+			[`${abilityName}_Note0`]: 				"Disparo Potenciado destruirá árboles en su área de efecto.",
+			[`${abilityName}_arrow_range`]: 				"ALCANCE:",
+			[`${abilityName}_powershot_damage`]: 				"DAÑO:",
+			[`${abilityName}_slow`]: 				"%RALENTIZACIÓN:",
+			[`${abilityName}_min_execute_threshold`]: 				"%UMBRAL DE EJECUCIÓN MÍNIMO:",
+			[`${abilityName}_max_execute_threshold`]: 				"%UMBRAL DE EJECUCIÓN MÁXIMO:",
+			[`${abilityName}_slow_duration`]: 				"DURACIÓN DE LA RALENTIZACIÓN:",
+			[`${abilityName}_damage_reduction`]: 				"%REDUCCIÓN POR UNIDAD:",
+			},
+			[Language.Russian]: {							
+			[`${abilityName}`]: 				"Powershot",
+			[`${abilityName}_Description`]: 				"ПРЕРЫВАЕМАЯ — герой заряжает лук, чтобы совершить мощный выстрел, наносящий врагам урон и замедляющий их передвижение. Урон и замедление увеличиваются по мере зарядки, но снижаются с каждым задетым врагом. Максимальное время зарядки: %abilitychanneltime% сек.",
+			[`${abilityName}_Facet_windrunner_killshot`]: 				"Мгновенно убивает поражённых вражеских героев со здоровьем ниже определённого значения. Порог здоровья для убийства увеличивается по мере зарядки.",
+			[`${abilityName}_Lore`]: 				"В ранние годы своих тренировок Лиралей научилась стрелять мощными стрелами, которые на пути к своей цели пробивают даже деревья.",
+			[`${abilityName}_Note0`]: 				"Уничтожает деревья в зоне действия способности.",
+			[`${abilityName}_arrow_range`]: 				"ДАЛЬНОСТЬ:",
+			[`${abilityName}_powershot_damage`]: 				"УРОН:",
+			[`${abilityName}_slow`]: 				"%ЗАМЕДЛЕНИЕ:",
+			[`${abilityName}_min_execute_threshold`]: 				"%МИН. ПОРОГ ДЛЯ УБИЙСТВА:",
+			[`${abilityName}_max_execute_threshold`]: 				"%МАКС. ПОРОГ ДЛЯ УБИЙСТВА:",
+			[`${abilityName}_slow_duration`]: 				"ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ:",
+			[`${abilityName}_damage_reduction`]: 				"%СНИЖЕНИЕ УРОНА ЗА СУЩЕСТВО:",
+			},
+			[Language.Schinese]: {							
+			[`${abilityName}`]: 				"强力击",
+			[`${abilityName}_Description`]: 				"持续施法 - 风行者为她的弓蓄力，射出一支强力的箭矢，最长可蓄力%abilitychanneltime%秒，其间可以打断蓄力，蓄力时间越长，箭矢伤害越高。这支箭会对穿过的所有敌方单位造成伤害和减速效果，并破坏树木。每伤害一个单位，箭矢的伤害和减速效果都会降低。",
+			[`${abilityName}_Facet_windrunner_killshot`]: 				"被击中的敌方英雄血量低于临界值就会被秒杀。秒杀血量是基于箭矢的威力。",
+			[`${abilityName}_Lore`]: 				"在早年的训练生涯，莱瑞蕾学会了射出足以破开树木击中目标的强力箭矢。",
+			[`${abilityName}_Note0`]: 				"强力击将摧毁作用范围内的树木。",
+			[`${abilityName}_arrow_range`]: 				"距离：",
+			[`${abilityName}_powershot_damage`]: 				"伤害：",
+			[`${abilityName}_slow`]: 				"%移动速度减缓：",
+			[`${abilityName}_min_execute_threshold`]: 				"%最低秒杀血量：",
+			[`${abilityName}_max_execute_threshold`]: 				"%最高秒杀血量：",
+			[`${abilityName}_slow_duration`]: 				"减速持续时间：",
+			[`${abilityName}_damage_reduction`]: 				"%每个单位减少效果：",
+			},
+        }
+    }
+}

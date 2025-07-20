@@ -1,3 +1,4 @@
+#base "heroes\antimage\antimage.txt"
 #base "heroes\crystal_maiden\crystal_maiden.txt"
 
 "DOTAHeroes"

@@ -1230,17 +1230,17 @@
   resolved "https://registry.npmmirror.com/@jsdevtools/ono/-/ono-7.1.3.tgz"
   integrity sha512-4JQNk+3mVzK3xh2rqd6RB4J46qUR19azEHBneZyTZM+c456qOrbbM/5xcR8huNCCcbVt7+UmizG6GuUvPvKUYg==
 
-"@moddota/dota-lua-types@4.36.0":
-  version "4.36.0"
-  resolved "https://registry.npmmirror.com/@moddota/dota-lua-types/-/dota-lua-types-4.36.0.tgz#8c929680041458e7ba35fb5ae3e81c0defdefb02"
-  integrity sha512-MCfffCJpKlOBs9li3ePz07Ez7TEcpoKGjc9BlY4KIuRuOKJbFh9XlrBBZXu4oWN4+DzzmduPzhOX1DEJ7IUkbg==
+"@moddota/dota-lua-types@4.37.0":
+  version "4.37.0"
+  resolved "https://registry.npmmirror.com/@moddota/dota-lua-types/-/dota-lua-types-4.37.0.tgz#fa16f6ff64f36e65f544ee9e8f0cd5d2ad8109e5"
+  integrity sha512-B85Z8SNoKS4wumrhb1vFw5DKbRR/b+kvZoh6sBv8a8MoYAn25zeY6Go3ZWvuPk4xhAMS5H+7S8WxHdnz8rySLw==
   dependencies:
     lua-types "^2.13.1"
 
-"@moddota/panorama-types@1.35.0":
-  version "1.35.0"
-  resolved "https://registry.npmmirror.com/@moddota/panorama-types/-/panorama-types-1.35.0.tgz#a9539d723638889125a2f68523e3f8da2bd67ada"
-  integrity sha512-PAF9vTqhIJnUyV2Nx9DNONlF7AwOVIyWbWjUcoAlK4Qg7y8qJOuE0QSSytpdmoD4rwTByZK/BLO5Qi2sHOCROQ==
+"@moddota/panorama-types@1.38.1":
+  version "1.38.1"
+  resolved "https://registry.npmmirror.com/@moddota/panorama-types/-/panorama-types-1.38.1.tgz#24371e14c4f54ae549b00f140fe67b7c85c50bdd"
+  integrity sha512-GMvXCPA5OdhNglv/6xdq1ecoLbT9TMaqWGmLAsruLX3biS1tq3gRuIj0IdiU92n9wuXADGYI46hgq8DirZViVg==
   dependencies:
     tslib "^2.0.3"
 
@@ -1440,6 +1440,13 @@
   version "7.5.0"
   resolved "https://registry.npmmirror.com/@types/semver/-/semver-7.5.0.tgz#591c1ce3a702c45ee15f47a42ade72c2fd78978a"
   integrity sha512-G8hZ6XJiHnuhQKR7ZmysCeJWE08o8T0AXtk5darsCaTVsYZhhgUrq53jizaR2FvsoeCwJhlmwTjkXBY5Pn/ZHw==
+
+"@types/through2@^2.0.41":
+  version "2.0.41"
+  resolved "https://registry.npmmirror.com/@types/through2/-/through2-2.0.41.tgz#3e5e1720d71ffdfa03c22f2aad6593d12a47034f"
+  integrity sha512-ryQ0tidWkb1O1JuYvWKyMLYEtOWDqF5mHerJzKz/gQpoAaJq2l/dsMPBF0B5BNVT34rbARYJ5/tsZwLfUi2kwQ==
+  dependencies:
+    "@types/node" "*"
 
 "@types/undertaker-registry@*":
   version "1.0.1"
@@ -6844,7 +6851,7 @@ string-replace-loader@^3.1.0:
     loader-utils "^2.0.0"
     schema-utils "^3.0.0"
 
-"string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0, string-width@^4.2.3:
+"string-width-cjs@npm:string-width@^4.2.0":
   version "4.2.3"
   resolved "https://registry.npmmirror.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -6869,6 +6876,15 @@ string-width@^1.0.1, string-width@^1.0.2:
   dependencies:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^4.0.0"
+
+string-width@^4.1.0, string-width@^4.2.3:
+  version "4.2.3"
+  resolved "https://registry.npmmirror.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
+  integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
+  dependencies:
+    emoji-regex "^8.0.0"
+    is-fullwidth-code-point "^3.0.0"
+    strip-ansi "^6.0.1"
 
 string-width@^5.0.1, string-width@^5.1.2:
   version "5.1.2"
@@ -7319,10 +7335,10 @@ typedarray@^0.0.6:
   resolved "https://registry.npmmirror.com/typedarray/-/typedarray-0.0.6.tgz"
   integrity sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==
 
-typescript-to-lua@1.30.1:
-  version "1.30.1"
-  resolved "https://registry.npmmirror.com/typescript-to-lua/-/typescript-to-lua-1.30.1.tgz#36f94c7572589c5f00b7d74296f90c95739dfcef"
-  integrity sha512-zBZoUjGxVv7c4JBkZYthYmb5CDrOf8rk4cGycYhAEiwM1/tWP1C0E/7QQ7vMg+oBy4O+KTnWvZbMVfCYD8eY1Q==
+typescript-to-lua@1.31.3:
+  version "1.31.3"
+  resolved "https://registry.npmmirror.com/typescript-to-lua/-/typescript-to-lua-1.31.3.tgz#e3c5322d9ee48e696c31bff7c2e58daa5aa11180"
+  integrity sha512-UidzuGj9s0BTLlk0gpfPHwjsYvooYSSGEqqaiWROQgk0ZPEoqx0NLgElPy34G1tGnfZcF4cuneRFIvuhw+IZPQ==
   dependencies:
     "@typescript-to-lua/language-extensions" "1.19.0"
     enhanced-resolve "5.8.2"

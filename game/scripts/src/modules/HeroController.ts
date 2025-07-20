@@ -48,10 +48,10 @@ export class HeroController {
     }
 
     prepareHeroScheme(heroName: string) {
-        
+
         const heroKV = heroesKV[heroName]
 
-        if(!heroKV) return;
+        if (!heroKV) return;
 
         const abilities: Map<number, Ability> = new Map();
         const classes: Map<string, ClassScheme> = new Map();
@@ -175,15 +175,21 @@ export class HeroController {
 
         if (abilityType === CustomAbilityType.Attribute) {
             const values = Object.entries(abilitiesKv.AbilityValues);
-            const attributesAbility = hero.FindAbilityByName(custom_ability_attributes_bonus.name) as custom_ability_attributes_bonus;
 
+
+            const attributesAbility = hero.FindAbilityByName(custom_ability_attributes_bonus.name) as custom_ability_attributes_bonus;
+            print("Current Level", currentLevel);
             for (let [key, value] of values) {
                 const specialValues = value.split(' ').map(x => Number(x));
                 const levelIndex = math.min(currentLevel, specialValues.length - 1);
-                let levelValue = specialValues[levelIndex];
+                let levelValue = Number(specialValues[levelIndex]);
+                print(key, levelValue);
+
                 if (levelIndex > 0 && levelIndex === currentLevel) {
-                    levelValue -= specialValues[levelIndex];
+                    levelValue -= specialValues[levelIndex - 1];
                 }
+                print("values", value);
+                print(key, levelValue);
                 attributesAbility.AddParam(key as any, levelValue);
             }
         } else if (abilityType === CustomAbilityType.Trait) {
@@ -225,7 +231,7 @@ export class HeroController {
 
     sendTalentLevels() {
 
-        const talents =  [...this.talents.entries()].map(([talent, level]) => {
+        const talents = [...this.talents.entries()].map(([talent, level]) => {
             return { talent, level }
         })
 

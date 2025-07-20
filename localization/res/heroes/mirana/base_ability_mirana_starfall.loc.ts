@@ -1,0 +1,81 @@
+import { AbilityLocalizationMounted, L, Language, ignore } from "../../../loc_utils";
+
+
+export default function ability(): AbilityLocalizationMounted {
+    const abilityName = "DOTA_Tooltip_ability_base_ability_mirana_starfall"
+    return {
+        isToken: true,
+        langs: {
+			[Language.Brazilian]: {							
+			[`${abilityName}`]: 				"Chuva Estelar",
+			[`${abilityName}_Description`]: 				"Em inglês: <b><font color='#F2A93E'>Starstorm</font></b>\n \nInvoca uma onda de meteoros que causam dano a unidades inimigas próximas. O inimigo mais próximo de Mirana dentro de um raio de %starfall_secondary_radius% unidades será atingido uma segunda vez.",
+			[`${abilityName}_Facet_mirana_starstruck`]: 				"O meteoro secundário da Chuva Estelar causa mais dano e cega o alvo.",
+			[`${abilityName}_Lore`]: 				"A deusa quebra a estratosfera para dar poder à princesa nas horas de necessidade.",
+			[`${abilityName}_Note0`]: 				"Chuva Estelar não é bloqueada pela Esfera de Linken.",
+			[`${abilityName}_Note1`]: 				"Chuva Estelar não atinge unidades invisíveis.",
+			[`${abilityName}_Note2`]: 				"A Chuva Estelar escolherá um novo alvo para o meteoro secundário caso o primeiro morra antes do impacto.",
+			[`${abilityName}_starfall_radius`]: 				"RAIO:",
+			[`${abilityName}_damage`]: 				"DANO:",
+			[`${abilityName}_secondary_starfall_damage_percent`]: 				"%DANO DO METEORO SECUNDÁRIO:",
+			[`${abilityName}_starstruck_blind_pct`]: 				"%TAXA DE ERRO DA CEGUEIRA:",
+			[`${abilityName}_starstruck_duration`]: 				"DURAÇÃO DA CEGUEIRA:",
+			},
+			[Language.English]: {							
+			[`${abilityName}`]: 				"Starstorm",
+			[`${abilityName}_Description`]: 				"Calls down a wave of meteors to damage nearby enemy units. The closest enemy unit to Mirana in a %starfall_secondary_radius% radius will be struck a second time.",
+			[`${abilityName}_Facet_mirana_starstruck`]: 				"Starstorm's second meteor deals more damage and blinds the target.",
+			[`${abilityName}_Lore`]: 				"The Goddess breaks the strata to empower her Princess in the time of need.",
+			[`${abilityName}_Note0`]: 				"Starstorm is not blocked by Linken's Sphere.",
+			[`${abilityName}_Note1`]: 				"Starstorm cannot hit invisible units.",
+			[`${abilityName}_Note2`]: 				"Starstorm will choose a new target for the second meteor if the first died before impact.",
+			[`${abilityName}_starfall_radius`]: 				"RADIUS:",
+			[`${abilityName}_damage`]: 				"DAMAGE:",
+			[`${abilityName}_secondary_starfall_damage_percent`]: 				"%SECOND METEOR DAMAGE:",
+			[`${abilityName}_starstruck_blind_pct`]: 				"%BLIND MISS RATE:",
+			[`${abilityName}_starstruck_duration`]: 				"BLIND DURATION:",
+			},
+			[Language.Spanish]: {							
+			[`${abilityName}`]: 				"Tormenta Estelar",
+			[`${abilityName}_Description`]: 				"En inglés: <b><font color='#F2A93E'>Starstorm</font></b>.\n\nInvoca una oleada de meteoritos para dañar a las unidades enemigas cercanas. La unidad más cercana a Mirana en un radio de %starfall_secondary_radius% recibirá un segundo impacto.",
+			[`${abilityName}_Facet_mirana_starstruck`]: 				"El segundo meteorito de Tormenta Estelar inflige más daño y ciega al objetivo.",
+			[`${abilityName}_Lore`]: 				"La Diosa rompe los estratos del cielo para dar poder a su Princesa en los momentos de necesidad.",
+			[`${abilityName}_Note0`]: 				"La Esfera de Linken no bloquea Tormenta Estelar.",
+			[`${abilityName}_Note1`]: 				"Tormenta Estelar no puede impactar en unidades invisibles.",
+			[`${abilityName}_Note2`]: 				"Tormenta Estelar elegirá un nuevo objetivo para el segundo meteorito si el primero muere antes del impacto.",
+			[`${abilityName}_starfall_radius`]: 				"RADIO:",
+			[`${abilityName}_damage`]: 				"DAÑO:",
+			[`${abilityName}_secondary_starfall_damage_percent`]: 				"%DAÑO DEL SEGUNDO METEORITO:",
+			[`${abilityName}_starstruck_blind_pct`]: 				"%FRECUENCIA DE FALLO POR CEGUERA:",
+			[`${abilityName}_starstruck_duration`]: 				"DURACIÓN DE LA CEGUERA:",
+			},
+			[Language.Russian]: {							
+			[`${abilityName}`]: 				"Starstorm",
+			[`${abilityName}_Description`]: 				"Призывает звёздный дождь, наносящий урон стоящим неподалёку противникам. Ближайший враг в радиусе %starfall_secondary_radius% получит второй удар.",
+			[`${abilityName}_Facet_mirana_starstruck`]: 				"Второй удар наносит больше урона и ослепляет жертву.",
+			[`${abilityName}_Lore`]: 				"Богиня разверзает небеса, чтобы в час нужды помочь своей принцессе.",
+			[`${abilityName}_Note0`]: 				"Не блокируется предметом Linken's Sphere.",
+			[`${abilityName}_Note1`]: 				"Не наносит урона невидимым врагам.",
+			[`${abilityName}_Note2`]: 				"Если цель второго удара умрёт до него, будет выбрана новая.",
+			[`${abilityName}_starfall_radius`]: 				"РАДИУС:",
+			[`${abilityName}_damage`]: 				"УРОН:",
+			[`${abilityName}_secondary_starfall_damage_percent`]: 				"%УРОН ВТОРОГО УДАРА:",
+			[`${abilityName}_starstruck_blind_pct`]: 				"%ШАНС ПРОМАХА:",
+			[`${abilityName}_starstruck_duration`]: 				"ДЛИТЕЛЬНОСТЬ ОСЛЕПЛЕНИЯ:",
+			},
+			[Language.Schinese]: {							
+			[`${abilityName}`]: 				"群星风暴",
+			[`${abilityName}_Description`]: 				"召唤一波流星砸向附近的敌方单位。%starfall_secondary_radius%范围内最近的敌方单位将会再受到一次冲击。",
+			[`${abilityName}_Facet_mirana_starstruck`]: 				"群星风暴的第二颗流星会造成更多伤害，并具有致盲效果。",
+			[`${abilityName}_Lore`]: 				"月之女神打破月亮的一部分地表，让她的公主在需要之时获得力量。",
+			[`${abilityName}_Note0`]: 				"群星风暴不会被林肯法球抵挡。",
+			[`${abilityName}_Note1`]: 				"群星风暴不能伤害隐身单位。",
+			[`${abilityName}_Note2`]: 				"如果原本要打击的目标死亡，群星风暴的第二次星落会重新选择一个目标。",
+			[`${abilityName}_starfall_radius`]: 				"作用范围：",
+			[`${abilityName}_damage`]: 				"伤害：",
+			[`${abilityName}_secondary_starfall_damage_percent`]: 				"%第二颗流星伤害：",
+			[`${abilityName}_starstruck_blind_pct`]: 				"%致盲丢失概率：",
+			[`${abilityName}_starstruck_duration`]: 				"致盲持续时间：",
+			},
+        }
+    }
+}

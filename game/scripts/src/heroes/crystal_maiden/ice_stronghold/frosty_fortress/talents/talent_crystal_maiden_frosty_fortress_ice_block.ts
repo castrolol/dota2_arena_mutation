@@ -2,7 +2,7 @@ import { BaseAbility, BaseModifier, registerAbility, registerModifier } from '..
 import { AbilityDefinition, CustomAbilityType } from '../../../../static_definitions';
 import { TalentBaseModifier } from '../../../../talent_base_modifier';
 import { special_ability_crystal_maiden_frosty_fortress_ice_block } from '../special_abilities/special_ability_crystal_maiden_frosty_fortress_ice_block';
-
+ 
 @registerAbility()
 export class talent_crystal_maiden_frosty_fortress_ice_block extends BaseAbility {
     GetIntrinsicModifierName(): string {

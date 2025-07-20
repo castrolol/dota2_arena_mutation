@@ -67,7 +67,6 @@ print("vamo la")
 
 	// Do not reflect towards allies
 	if (original_caster.GetTeamNumber() == parent.GetTeamNumber()) return false;
-	print("foi um")
 
 	// Do not reflect back at reflectors to prevent infinite loops
 	if (
@@ -75,18 +74,14 @@ print("vamo la")
 		original_caster.HasModifier("modifier_reimagined_antimage_counterspell_active") ||
 		original_caster.HasModifier("modifier_mirror_shield_delay")
 	){
-		print("enreou aqui...")
 		return false;
 	}
-	print("e dois")
 
 	// Do not reflect abilities inside the exception table
 	if (exceptionAbilities.includes(event.ability.GetAbilityName())) return false;
-	print("e mais")
 
 	// Do not reflect abilities that have the reflect tag
 	if (IsReflectedAbility(event.ability)) return false;
-	print("e foi")
 
 	// If the parent already knows the ability, reference it, otherwise add it
 	let reflected_ability_handle;

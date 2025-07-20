@@ -1,0 +1,81 @@
+import { AbilityLocalizationMounted, L, Language, ignore } from "../../../loc_utils";
+
+
+export default function ability(): AbilityLocalizationMounted {
+    const abilityName = "DOTA_Tooltip_ability_base_ability_centaur_double_edge"
+    return {
+        isToken: true,
+        langs: {
+			[Language.Brazilian]: {							
+			[`${abilityName}`]: 				"Arma de Dois Gumes",
+			[`${abilityName}_Description`]: 				"Em inglês: <b><font color='#F2A93E'>Double Edge</font></b>\n \nO Centaur realiza um golpe poderoso, causando dano tanto nele mesmo quanto em uma pequena área ao redor do alvo. Causa dano adicional de acordo com a sua Força. Esta habilidade não é letal para o Centaur.",
+			[`${abilityName}_facet_centaur_counter_strike`]: 				"O dano da Arma de Dois Gumes é aumentado em %pct_of_incoming_damage_as_bonus%%% do dano sofrido pelo Centaur nos últimos %stack_duration%s a partir de inimigos, até um máximo de %max_damage_increase_pct%%% do dano da Arma de Dois Gumes. Redefinido ao usar a Arma de Dois Gumes.",
+			[`${abilityName}_shard_description`]: 				"Faz com que a <b><font color='#F2A93E'>Arma de Dois Gumes</font></b> retarde heróis inimigos e aumente brevemente a Força do Centaur Warrunner por cada herói atingido. A duração é reiniciada a cada novo acúmulo (até um máximo de %shard_max_stacks%).",
+			[`${abilityName}_Lore`]: 				"No ápice do combate, os golpes perversos de Bradwarden às vezes causam dano colateral a si mesmo.",
+			[`${abilityName}_Note0`]: 				"Esta habilidade causa dano mágico tanto ao alvo quanto a si mesmo.",
+			[`${abilityName}_edge_damage`]: 				"DANO:",
+			[`${abilityName}_strength_damage`]: 				"%DANO POR FORÇA:",
+			[`${abilityName}_shard_str_pct`]: 				"%FORÇA ADICIONAL:",
+			[`${abilityName}_shard_str_duration`]: 				"DURAÇÃO DA FORÇA:",
+			[`${abilityName}_shard_movement_slow`]: 				"%RETARDO DE MOV.:",
+			[`${abilityName}_shard_movement_slow_duration`]: 				"DURAÇÃO DO RETARDO:",
+			},
+			[Language.English]: {							
+			[`${abilityName}`]: 				"Double Edge",
+			[`${abilityName}_Description`]: 				"Centaur strikes a mighty blow at melee range, damaging both himself and a small area around the target. Deals extra damage based on your strength. Centaur cannot die from Double Edge.",
+			[`${abilityName}_facet_centaur_counter_strike`]: 				"Double Edge damage is increased by %pct_of_incoming_damage_as_bonus%%% of the damage Centaur took in the last %stack_duration%s from enemies, up to a total of %max_damage_increase_pct%%% bonus Double Edge damage. Damage resets when Double Edge is cast.",
+			[`${abilityName}_shard_description`]: 				"Causes Double Edge to slow enemy heroes and increase Centaur's strength per hero hit for a short time. Duration refreshes per stack, up to a max of %shard_max_stacks% stacks.",
+			[`${abilityName}_Lore`]: 				"In the spurs of combat, Bradwarden's vicious strikes sometimes cause self-inflicted collateral damage.",
+			[`${abilityName}_Note0`]: 				"Double Edge deals magic type damage to both the targets and himself.",
+			[`${abilityName}_edge_damage`]: 				"DAMAGE:",
+			[`${abilityName}_strength_damage`]: 				"%STRENGTH DAMAGE:",
+			[`${abilityName}_shard_str_pct`]: 				"%BONUS STRENGTH:",
+			[`${abilityName}_shard_str_duration`]: 				"STRENGTH DURATION:",
+			[`${abilityName}_shard_movement_slow`]: 				"%MOVEMENT SLOW:",
+			[`${abilityName}_shard_movement_slow_duration`]: 				"SLOW DURATION:",
+			},
+			[Language.Spanish]: {							
+			[`${abilityName}`]: 				"Doble Filo",
+			[`${abilityName}_Description`]: 				"En inglés: <b><font color='#F2A93E'>Double Edge</font></b>.\n\nCentaur Warrunner realiza un poderoso ataque cuerpo a cuerpo que le inflige daño tanto a él como en una pequeña área alrededor del objetivo. Inflige daño adicional basado en tu fuerza. Centaur Warrunner no puede morir por Doble Filo.",
+			[`${abilityName}_facet_centaur_counter_strike`]: 				"El daño de Doble Filo aumenta mediante un %pct_of_incoming_damage_as_bonus% %% del daño que Centaur Warrunner recibió de enemigos en los últimos %stack_duration% s, hasta un total de un %max_damage_increase_pct% %% de daño de Doble Filo adicional. El daño se restablece cuando se lanza Doble Filo.",
+			[`${abilityName}_shard_description`]: 				"Hace que Doble Filo ralentice a los héroes enemigos y aumente la fuerza por héroe alcanzado de Centaur durante un breve período de tiempo. La duración se restablece por acumulación, hasta un máximo de %shard_max_stacks% acumulaciones.",
+			[`${abilityName}_Lore`]: 				"En el fragor del combate, los feroces ataques de Bradwarden a veces le infligen daño colateral a él mismo.",
+			[`${abilityName}_Note0`]: 				"Doble Filo inflige daño de tipo mágico tanto a los objetivos como al propio Centaur Warrunner.",
+			[`${abilityName}_edge_damage`]: 				"DAÑO:",
+			[`${abilityName}_strength_damage`]: 				"%DAÑO SEGÚN FUERZA:",
+			[`${abilityName}_shard_str_pct`]: 				"%FUERZA ADICIONAL:",
+			[`${abilityName}_shard_str_duration`]: 				"DURACIÓN DE LA FUERZA:",
+			[`${abilityName}_shard_movement_slow`]: 				"%RALENTIZACIÓN DE MOVIMIENTO:",
+			[`${abilityName}_shard_movement_slow_duration`]: 				"DURACIÓN DE LA RALENTIZACIÓN:",
+			},
+			[Language.Russian]: {							
+			[`${abilityName}`]: 				"Double Edge",
+			[`${abilityName}_Description`]: 				"Герой совершает сокрушительный удар, нанося урон себе, цели и всем врагам неподалёку от неё. Урон этой способности частично зависит от силы владельца, и он не может погибнуть от её применения.",
+			[`${abilityName}_facet_centaur_counter_strike`]: 				"Урон увеличивается на %pct_of_incoming_damage_as_bonus%%% от урона, который владелец способности получил от врагов за последние %stack_duration% сек. Накопленный урон сбрасывается при применении этой способности и не может превышать %max_damage_increase_pct%%% от её обычного урона.",
+			[`${abilityName}_shard_description`]: 				"Способность замедляет жертв и ненадолго увеличивает силу владельца за каждого задетого вражеского героя. Получение нового эффекта возобновляет длительность действия остальных. Максимум эффектов: %shard_max_stacks%.",
+			[`${abilityName}_Lore`]: 				"Иногда Брэдводен сражается так свирепо, что в пылу битвы может задеть даже самого себя.",
+			[`${abilityName}_Note0`]: 				"Наносит магический урон как цели, так и самому герою.",
+			[`${abilityName}_edge_damage`]: 				"УРОН:",
+			[`${abilityName}_strength_damage`]: 				"%УРОН ОТ СИЛЫ:",
+			[`${abilityName}_shard_str_pct`]: 				"%БОНУС К СИЛЕ:",
+			[`${abilityName}_shard_str_duration`]: 				"ДЛИТЕЛЬНОСТЬ БОНУСА:",
+			[`${abilityName}_shard_movement_slow`]: 				"%ЗАМЕДЛЕНИЕ ПЕРЕДВИЖЕНИЯ:",
+			[`${abilityName}_shard_movement_slow_duration`]: 				"ДЛИТЕЛЬНОСТЬ ЗАМЕДЛЕНИЯ:",
+			},
+			[Language.Schinese]: {							
+			[`${abilityName}`]: 				"双刃剑",
+			[`${abilityName}_Description`]: 				"半人马战行者以猛烈的力量进行近战攻击，对目标周围单位和自身造成伤害。将基于力量值造成额外伤害。此技能无法用于自杀。",
+			[`${abilityName}_facet_centaur_counter_strike`]: 				"双刃剑伤害提升，数值为半人马在最后%stack_duration%秒内受到来自敌人伤害的%pct_of_incoming_damage_as_bonus%%%，最高为%max_damage_increase_pct%%%双刃剑额外伤害。施放双刃剑后伤害累计会重置。",
+			[`${abilityName}_shard_description`]: 				"双刃剑可以对敌人造成减速，并且每击中一名英雄都会暂时提升半人马战行者的力量值。每次叠加都会刷新持续时间，最多叠加%shard_max_stacks%次。",
+			[`${abilityName}_Lore`]: 				"在激烈的战斗中，布拉德瓦登凶猛的撞击有时候会对自己造成伤害。",
+			[`${abilityName}_Note0`]: 				"双刃剑对目标和自身都造成魔法伤害。",
+			[`${abilityName}_edge_damage`]: 				"伤害：",
+			[`${abilityName}_strength_damage`]: 				"%力量伤害：",
+			[`${abilityName}_shard_str_pct`]: 				"%力量加成：",
+			[`${abilityName}_shard_str_duration`]: 				"力量持续时间：",
+			[`${abilityName}_shard_movement_slow`]: 				"%移动速度减缓：",
+			[`${abilityName}_shard_movement_slow_duration`]: 				"减速持续时间：",
+			},
+        }
+    }
+}

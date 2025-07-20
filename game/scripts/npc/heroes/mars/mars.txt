@@ -1,0 +1,335 @@
+"DOTAHeroes"
+{
+    "npc_dota_hero_mars"
+    {
+        "Ability1"    "base_ability_mars_arena_of_blood"
+        "Ability2"    ""
+        "Ability3"    ""
+        "Ability4"    "custom_ability_empty_slot_4"
+        "Ability5"    "custom_ability_empty_slot_5"
+        "Ability6"    ""
+        "Ability7"    ""
+        "Ability8"    ""
+        "Ability9"    ""
+        "Ability10"    ""
+        "Ability11"    ""
+        "Ability12"    ""
+        "Ability13"    ""
+        "Ability14"    ""
+        "Ability15"    ""
+        "Ability16"    ""
+        "Ability17"    ""
+        "Ability18"    ""
+        "Ability19"    ""
+        "Ability20"    ""
+        "Ability21"    ""
+        "Ability22"    ""
+        "Ability23"    ""
+        "Ability24"    "custom_ability_attributes_bonus"
+        "Facets"
+        {
+            "mars_victory_feast"
+            {
+                "Icon"    "healing"
+                "Color"    "Red"
+                "GradientID"    "2"
+                "Deprecated"    "true"
+            }
+            "mars_arena"
+            {
+                "Icon"    "no_vision"
+                "Color"    "Yellow"
+                "GradientID"    "0"
+                "Deprecated"    "true"
+            }
+        }
+        "CustomClasses"
+        {
+            "ice_stronghold"
+            {
+                "name"    "ice_stronghold"
+                "Paths"
+                {
+                    "arcane_illusionist"
+                    {
+                        "name"    "arcane_illusionist"
+                        "TalentRow01"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                        "TalentRow02"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                        "TalentRow03"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                        "TalentRow04"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                    }
+                    "magical_shade"
+                    {
+                        "name"    "magical_shade"
+                        "TalentRow01"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                        "TalentRow02"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                        "TalentRow03"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                        "TalentRow04"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                    }
+                }
+            }
+            "frost_mage"
+            {
+                "name"    "frost_mage"
+                "Paths"
+                {
+                    "arcane_illusionist"
+                    {
+                        "name"    "arcane_illusionist"
+                        "TalentRow01"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                        "TalentRow02"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                        "TalentRow03"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                        "TalentRow04"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                    }
+                    "magical_shade"
+                    {
+                        "name"    "magical_shade"
+                        "TalentRow01"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                        "TalentRow02"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                        "TalentRow03"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                        "TalentRow04"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                    }
+                }
+            }
+            "snow_walker"
+            {
+                "name"    "snow_walker"
+                "Paths"
+                {
+                    "arcane_illusionist"
+                    {
+                        "name"    "arcane_illusionist"
+                        "TalentRow01"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                        "TalentRow02"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                        "TalentRow03"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                        "TalentRow04"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                    }
+                    "magical_shade"
+                    {
+                        "name"    "magical_shade"
+                        "TalentRow01"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                        "TalentRow02"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                        "TalentRow03"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                        "TalentRow04"
+                        {
+                            "Talents"
+                            {
+                                "Talent01"    "none"
+                                "Talent02"    "none"
+                                "Talent03"    "none"
+                                "Talent04"    "none"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

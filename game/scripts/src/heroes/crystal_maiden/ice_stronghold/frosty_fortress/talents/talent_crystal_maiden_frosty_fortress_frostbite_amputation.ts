@@ -5,6 +5,13 @@ import { TalentBaseModifier } from '../../../../talent_base_modifier';
 
 @registerAbility()
 export class talent_crystal_maiden_frosty_fortress_frostbite_amputation extends BaseAbility {
+
+    Precache(context: CScriptPrecacheContext): void {
+        PrecacheResource(PrecacheType.PARTICLE, 'particles/crystal_maiden/ice_stronghold/frostbite_amputation_link.vpcf', context);
+        PrecacheResource(PrecacheType.PARTICLE, 'particles/crystal_maiden/ice_stronghold/frostbite_amputation_disarm_ovrhead.vpcf', context);
+        PrecacheResource(PrecacheType.PARTICLE, 'particles/crystal_maiden/ice_stronghold/frostbite_amputation_disarm_ovrhead_halo.vpcf', context);
+    }
+
     GetIntrinsicModifierName(): string {
         return modifier_talent_crystal_maiden_frosty_fortress_frostbite_amputation.name;
     }
@@ -60,6 +67,7 @@ export class modifier_frostbite_amputation_ready extends BaseModifier {
         const isHeroLike = event.attacker.IsConsideredHero();
 
         if (this.IsInCooldown()) return;
+        if (event.target != this.GetParent()) return;
         if (event.attacker.IsDebuffImmune()) return;
         if (!isHeroLike) return;
         if (!IsEnemy(event.attacker, this.GetParent())) return;
@@ -92,7 +100,7 @@ export class modifier_frostbite_amputation_cooldown extends BaseModifier {
         return false;
     }
 
-    OnCreated(params: object): void {}
+    OnCreated(params: object): void { }
 }
 
 @registerModifier()
@@ -121,11 +129,52 @@ export class modifier_frostbite_amputation_debuff extends BaseModifier {
         return ParticleAttachment.OVERHEAD_FOLLOW;
     }
 
-    OnCreated(params: object): void {}
+    OnCreated(params: object): void {
+        if (IsServer()) {
+
+            const particleId = ParticleManager.CreateParticle(
+                'particles/crystal_maiden/ice_stronghold/frostbite_amputation_link.vpcf',
+                ParticleAttachment.ABSORIGIN_FOLLOW,
+                this.GetCaster()
+            );
+
+            
+            ParticleManager.SetParticleControlEnt(
+                particleId,
+                1,
+                this.GetParent(),
+                ParticleAttachment.POINT_FOLLOW,
+                "attach_attack1",
+                Vector(0, 0, 0),
+                false
+            );
+
+            ParticleManager.ReleaseParticleIndex(particleId);
+
+            const particleId2 = ParticleManager.CreateParticle(
+                'particles/crystal_maiden/ice_stronghold/frostbite_amputation_disarm_ovrhead_halo.vpcf',
+                ParticleAttachment.POINT_FOLLOW,
+                this.GetParent(),
+                
+            );
+            ParticleManager.SetParticleControlEnt(
+                particleId2,
+                0,
+                this.GetParent(),
+                ParticleAttachment.POINT_FOLLOW,
+                "attach_attack1",
+                Vector(0, 0, 0),
+                false
+            );
+            
+            this.AddParticle(particleId2, true, false, 10, true, true);
+
+        }
+    }
 
     CheckState(): Partial<Record<ModifierState, boolean>> {
         return {
-            [ModifierState.DISARMED]: true,
+            [ModifierState.DISARMED]: true,            
         };
     }
 }
@@ -145,7 +194,7 @@ export const $_DEFINITION: AbilityDefinition = {
     // Casting
     //-------------------------------------------------------------------------------------------------------------
     AbilityCastPoint: '0 0 0 0',
-    AbilityCooldown: '16 13 9 9', 
+    AbilityCooldown: '16 13 9 9',
     AbilityValues: {
         disarm_duration: '1 1 1 1.75',
         cooldown_duration: '16 13 9 9',

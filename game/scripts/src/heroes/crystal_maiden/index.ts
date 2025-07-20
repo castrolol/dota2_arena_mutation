@@ -1,16 +1,14 @@
-import { HeroDefinition } from "../static_definitions";
+import { HeroDefinition, localIcon, fileIcon, makel18n, makeHero18n, emptyRow, talentsFor } from "../static_definitions";
 import { base_ability_crystal_maiden_brilliance_aura } from "./abilities/base_ability_crystal_maiden_brilliance_aura";
 import { base_ability_crystal_maiden_crystal_nova } from "./abilities/base_ability_crystal_maiden_crystal_nova";
 import { base_ability_crystal_maiden_freezing_field } from "./abilities/base_ability_crystal_maiden_freezing_field";
 import { base_ability_crystal_maiden_frostbite } from "./abilities/base_ability_crystal_maiden_frostbite";
-import { talent_crystal_maiden_frosty_fortress_brain_freeze } from "./ice_stronghold/frosty_fortress/talents/talent_crystal_maiden_frosty_fortress_brain_freeze";
-import { talent_crystal_maiden_frosty_fortress_frostbite_amputation } from "./ice_stronghold/frosty_fortress/talents/talent_crystal_maiden_frosty_fortress_frostbite_amputation";
-import { talent_crystal_maiden_frosty_fortress_heavy_frost_armor } from "./ice_stronghold/frosty_fortress/talents/talent_crystal_maiden_frosty_fortress_heavy_frost_armor";
-import { talent_crystal_maiden_frosty_fortress_ice_block } from "./ice_stronghold/frosty_fortress/talents/talent_crystal_maiden_frosty_fortress_ice_block";
-import { talent_crystal_maiden_frosty_fortress_inner_block } from "./ice_stronghold/frosty_fortress/talents/talent_crystal_maiden_frosty_fortress_inner_block";
+import { IceStronghold } from "./ice_stronghold";
+
+const heroName = "crystal_maiden";
 
 export const HERO: HeroDefinition = {
-    name: 'npc_dota_hero_crystal_maiden',
+    name: makeHero18n(heroName),
 
     abilities: {
         slot1: base_ability_crystal_maiden_crystal_nova.name,
@@ -21,40 +19,34 @@ export const HERO: HeroDefinition = {
 
     classes: {
         ice_stronghold: {
-            name: 'ice_stronghold',
-            l18n: 'CUSTOM_crystal_maiden_ice_stronghold',
-            icon: {
-                icon: 'ice_tower',
-                type: 'file',
-            },
+            name: IceStronghold.name,
+            l18n: makel18n(heroName, IceStronghold.name),
+            icon: fileIcon('ice_tower'),
             color: 'blue_1',
             paths: {
-                arcane_illusionist: {
-                    name: 'frosty_fortress',
-                    l18n: 'CUSTOM_crystal_maiden_ice_stronghold_frosty_fortress',
-                    icon: {
-                        icon: 'armor',
-                        type: 'local',
-                    },
-                    talents: [
-                        [talent_crystal_maiden_frosty_fortress_ice_block.name, talent_crystal_maiden_frosty_fortress_heavy_frost_armor.name, talent_crystal_maiden_frosty_fortress_brain_freeze.name, talent_crystal_maiden_frosty_fortress_inner_block.name],
-                        [talent_crystal_maiden_frosty_fortress_frostbite_amputation.name, null, null, null],
-                        [null, null, null, null],
-                        [null, null, null, null],
-                    ],
+                frosty_fortress: {
+                    name: IceStronghold.FrostyFortress.name,
+                    l18n: makel18n(heroName, IceStronghold.name, IceStronghold.FrostyFortress.name),
+                    icon: localIcon('armor'),
+                    talents: talentsFor(
+                        IceStronghold.FrostyFortress,
+                        [
+                            ["bonus:block_physical_int", "bonus:damage_reduction_int", "bonus:defense_bonus_int", "bonus:dot_defense_uni"],
+                            ["ice_block", "heavy_frost_armor", "brain_freeze", "inner_block"],
+                            ["frostbite_amputation", null, null, null],
+                            null
+                        ]
+                    ),
                 },
-                magical_shade: {
+                freezing_mountain: {
                     name: 'freezing_mountain',
                     l18n: 'CUSTOM_crystal_maiden_ice_stronghold_freezing_mountain',
-                    icon: {
-                        icon: 'full_heart',
-                        type: 'local',
-                    },
+                    icon: localIcon('full_heart'),
                     talents: [
-                        [null, null, null, null],
-                        [null, null, null, null],
-                        [null, null, null, null],
-                        [null, null, null, null],
+                        emptyRow(),
+                        emptyRow(),
+                        emptyRow(),
+                        emptyRow(),
                     ],
                 },
             },
@@ -63,38 +55,29 @@ export const HERO: HeroDefinition = {
         frost_mage: {
             name: 'frost_mage',
             l18n: 'CUSTOM_crystal_maiden_frost_mage',
-            icon: {
-                icon: 'snowflake',
-                type: 'local',
-            },
+            icon: localIcon('snowflake'),
             color: 'cyan_3',
             paths: {
-                arcane_illusionist: {
+                sudden_freeze: {
                     name: 'sudden_freeze',
                     l18n: 'CUSTOM_crystal_maiden_frost_mage_sudden_freeze',
-                    icon: {
-                        icon: 'wand',
-                        type: 'file',
-                    },
+                    icon: fileIcon('wand'),
                     talents: [
-                        [null, null, null, null],
-                        [null, null, null, null],
-                        [null, null, null, null],
-                        [null, null, null, null],
+                        emptyRow(),
+                        emptyRow(),
+                        emptyRow(),
+                        emptyRow(),
                     ],
                 },
-                magical_shade: {
+                frost_archmage: {
                     name: 'frost_archmage',
                     l18n: 'CUSTOM_crystal_maiden_frost_mage_frost_archmage',
-                    icon: {
-                        icon: 'snowflake',
-                        type: 'local',
-                    },
+                    icon: localIcon('snowflake'),
                     talents: [
-                        [null, null, null, null],
-                        [null, null, null, null],
-                        [null, null, null, null],
-                        [null, null, null, null],
+                        emptyRow(),
+                        emptyRow(),
+                        emptyRow(),
+                        emptyRow(),
                     ],
                 },
             },
@@ -104,38 +87,29 @@ export const HERO: HeroDefinition = {
         snow_walker: {
             name: 'snow_walker',
             l18n: 'CUSTOM_crystal_maiden_snow_walker',
-            icon: {
-                icon: 'focus_fire',
-                type: 'local',
-            },
+            icon: localIcon('focus_fire'),
             color: 'purple_3',
             paths: {
-                arcane_illusionist: {
+                snow_hawkeye: {
                     name: 'snow_hawkeye',
                     l18n: 'CUSTOM_crystal_maiden_snow_walker_snow_hawkeye',
-                    icon: {
-                        icon: 'execute',
-                        type: 'local',
-                    },
+                    icon: localIcon('execute'),
                     talents: [
-                        [null, null, null, null],
-                        [null, null, null, null],
-                        [null, null, null, null],
-                        [null, null, null, null],
+                        emptyRow(),
+                        emptyRow(),
+                        emptyRow(),
+                        emptyRow(),
                     ],
                 },
-                magical_shade: {
+                snow_shade: {
                     name: 'snow_shade',
                     l18n: 'CUSTOM_crystal_maiden_snow_walker_snow_shade',
-                    icon: {
-                        icon: 'speed',
-                        type: 'local',
-                    },
+                    icon: localIcon('speed'),
                     talents: [
-                        [null, null, null, null],
-                        [null, null, null, null],
-                        [null, null, null, null],
-                        [null, null, null, null],
+                        emptyRow(),
+                        emptyRow(),
+                        emptyRow(),
+                        emptyRow(),
                     ],
                 },
             },

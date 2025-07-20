@@ -5,6 +5,12 @@ import { TalentBaseModifier } from '../../../../talent_base_modifier';
 
 @registerAbility()
 export class talent_crystal_maiden_frosty_fortress_inner_block extends BaseAbility {
+
+    Precache(context: CScriptPrecacheContext): void {
+        PrecacheResource(PrecacheType.PARTICLE, 'particles/units/heroes/hero_antimage/antimage_counter.vpcf', context);
+        PrecacheResource(PrecacheType.SOUNDFILE, 'soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts', context);
+    }
+
     GetIntrinsicModifierName(): string {
         return modifier_talent_crystal_maiden_frosty_fortress_inner_block.name;
     }
@@ -141,7 +147,7 @@ export class modifier_talent_crystal_maiden_frosty_fortress_inner_block_buff ext
             this.GetParent().SetMana(this.GetParent().GetMana() - manaToDrain);
 
             const pfx = ParticleManager.CreateParticle(
-                "particles/units/heroes/hero_antimage/antimage_counter_glint.vpcf",
+                "particles/units/heroes/hero_antimage/antimage_counter.vpcf",
                 ParticleAttachment.CUSTOMORIGIN,
                 this.GetParent()
             );

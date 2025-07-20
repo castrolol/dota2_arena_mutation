@@ -71,6 +71,7 @@ export class custom_modifier_attributes_bonus extends BonusPropertyModifier<Attr
     }
 
     GetModifierPercentageCooldown(event: ModifierAbilityEvent): number {
+        if (event == null || event.ability == null) return 0;
         if (event.ability.IsItem()) return this.params.cooldownItemReduction;
         return this.params.cooldownSpellReduction;
     }
