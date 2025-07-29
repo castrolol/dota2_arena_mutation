@@ -12,7 +12,6 @@
 	[
 		{
 			m_name = "preview"
-			m_drivers = [  ]
 		},
 	]
 	m_Initializers = 

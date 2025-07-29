@@ -1,24 +1,25 @@
 import { registerAbility, BaseAbility, registerModifier, BaseModifier } from '../../../utils/dota_ts_adapter';
 import { CalculateDirectionToPosition, CalculateDistanceBetweenPoints, RemoveReflectedAbilities, SpellReflect } from '../../../utils/util';
 import { AbilityDefinition, CustomAbilityType } from '../../static_definitions';
+import { modifier_talent_antimage_shadow_dancer_umbrageous_mana, modifier_talent_antimage_shadow_dancer_umbrageous_mana_debuff, talent_antimage_shadow_dancer_umbrageous_mana } from '../shadow_rogue/shadow_dancer/talents/talent_antimage_shadow_dancer_umbrageous_mana';
 
 @registerAbility()
 export class base_ability_antimage_mana_break extends BaseAbility {
 
-    caster: CDOTA_BaseNPC = this.GetCaster();
+	caster: CDOTA_BaseNPC = this.GetCaster();
 	sound_blast: string = "AntiMage.ManaBreak.EnergyBlast.Cast";
 	sound_blast_hit: string = "AntiMage.ManaBreak.EnergyBlast.Hit";
 	particle_blast: string = "particles/heroes/anti_mage/antimage_energy_blast.vpcf";
 
-    Precache(context: CScriptPrecacheContext) {
-        PrecacheResource(PrecacheType.PARTICLE, "particles/heroes/anti_mage/antimage_energy_blast.vpcf", context);
+	Precache(context: CScriptPrecacheContext) {
+		PrecacheResource(PrecacheType.PARTICLE, "particles/heroes/anti_mage/antimage_energy_blast.vpcf", context);
 
-    }
+	}
 
-    GetIntrinsicModifierName(): string {
-        return base_modifier_antimage_mana_break.name;
-    }
- 
+	GetIntrinsicModifierName(): string {
+		return base_modifier_antimage_mana_break.name;
+	}
+
 }
 
 
@@ -38,7 +39,7 @@ export class base_modifier_antimage_mana_break extends BaseModifier {
 	mana_per_hit: number = 0;
 	mana_per_hit_pct: number = 0;
 	illusion_percentage: number = 0;
- 
+
 	IsHidden() {
 		return true;
 	}
@@ -112,7 +113,7 @@ export class base_modifier_antimage_mana_break extends BaseModifier {
 
 		// Calculate damage percentage of mana burned
 		damage = actual_mana_burned * this.percent_damage_per_burn * 0.01;
-	 
+
 		// Play sound
 		EmitSoundOn(this.sound_mana_break, event.target);
 
@@ -121,10 +122,28 @@ export class base_modifier_antimage_mana_break extends BaseModifier {
 		ParticleManager.SetParticleControl(particle_mana_break_fx, 0, event.target.GetAbsOrigin());
 		ParticleManager.ReleaseParticleIndex(particle_mana_break_fx);
 
+
+		if (this.parent.HasModifier("modifier_shadow_clone_attack")) {
+			const umbrageous_mana = modifier_talent_antimage_shadow_dancer_umbrageous_mana.find_on(this.parent);
+			if (umbrageous_mana) {
+				const damagePercent = umbrageous_mana.GetDamagePercetage();
+				const debuffDuration = umbrageous_mana.GetDebuffDuration();
+				modifier_talent_antimage_shadow_dancer_umbrageous_mana_debuff.apply(
+					event.target,
+					umbrageous_mana.GetCaster(),
+					this.ability,
+					{
+						damage: mana_burn_amount * damagePercent * 0.01,
+						duration: debuffDuration
+					}
+				)
+			}
+		}
+
 		return damage;
 	}
 
-	 
+
 }
 
 
@@ -132,21 +151,21 @@ export class base_modifier_antimage_mana_break extends BaseModifier {
 
 
 export const $_DEFINITION: AbilityDefinition = {
-    name: base_ability_antimage_mana_break.name,
-    AbilityTextureName: 'antimage_mana_break',
-    ScriptFile: __dirname,
-    CustomAbilityType: CustomAbilityType.Base,
-    MaxLevel: 4,
-    AbilityBehavior: "DOTA_ABILITY_BEHAVIOR_PASSIVE",
-    AbilityUnitDamageType: "DAMAGE_TYPE_PHYSICAL",
-    SpellImmunityType: "SPELL_IMMUNITY_ENEMIES_NO",
-    AbilitySound: "Hero_Antimage.ManaBreak",
-    IsBreakable: "1",
-    AbilityCastAnimation: "ACT_DOTA_CAST_ABILITY_1",
-    AbilityValues: {
-        mana_per_hit: "25 30 35 40",
-        mana_per_hit_pct: "1.6 2.4 3.2 4",
-        percent_damage_per_burn: "50",
-        illusion_percentage: "50",
-    },
+	name: base_ability_antimage_mana_break.name,
+	AbilityTextureName: 'antimage_mana_break',
+	ScriptFile: __dirname,
+	CustomAbilityType: CustomAbilityType.Base,
+	MaxLevel: 4,
+	AbilityBehavior: "DOTA_ABILITY_BEHAVIOR_PASSIVE",
+	AbilityUnitDamageType: "DAMAGE_TYPE_PHYSICAL",
+	SpellImmunityType: "SPELL_IMMUNITY_ENEMIES_NO",
+	AbilitySound: "Hero_Antimage.ManaBreak",
+	IsBreakable: "1",
+	AbilityCastAnimation: "ACT_DOTA_CAST_ABILITY_1",
+	AbilityValues: {
+		mana_per_hit: "25 30 35 40",
+		mana_per_hit_pct: "1.6 2.4 3.2 4",
+		percent_damage_per_burn: "50",
+		illusion_percentage: "50",
+	},
 };

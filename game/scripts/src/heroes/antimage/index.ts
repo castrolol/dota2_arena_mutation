@@ -5,6 +5,7 @@ import { base_ability_antimage_counterspell } from "./abilities/base_ability_ant
 import { base_ability_antimage_mana_break } from "./abilities/base_ability_antimage_mana_break";
 import { base_ability_antimage_mana_void } from "./abilities/base_ability_antimage_mana_void";
 import ShadowRogue from "./shadow_rogue";
+import { special_abililty_antimage_shadow_dancer_blonk_trigger } from "./shadow_rogue/shadow_dancer/special_abilities/special_abililty_antimage_shadow_dancer_blonk_trigger";
 
 const heroName = "antimage";
 
@@ -18,6 +19,10 @@ export const HERO: HeroDefinition = {
         slot3: base_ability_antimage_mana_break.name,
         slot6: base_ability_antimage_mana_void.name,
     },
+
+    extra_abilities: [
+        { class: ShadowRogue.name, path: ShadowRogue.ShadowDancer.name, ability: special_abililty_antimage_shadow_dancer_blonk_trigger.name, type: "special" },
+    ],
 
     classes: {
         arcane_hunter: {
@@ -73,7 +78,7 @@ export const HERO: HeroDefinition = {
                     talents: talentsFor(
                         ShadowRogue.ShadowDancer,
                         [
-                            ["shadow", "bodyguard_of_shadow", null, null],
+                            ["shadow", "bodyguard_of_shadow", "zipzap", "umbrageous_mana"],
                             [null, null, null, null],
                             [null, null, null, null],
                             [null, null, null, null],

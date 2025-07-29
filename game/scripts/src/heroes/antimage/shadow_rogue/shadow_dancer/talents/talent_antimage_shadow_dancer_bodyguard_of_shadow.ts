@@ -1,4 +1,4 @@
-import { registerAbility, BaseAbility, registerModifier, BaseModifier } from "../../../../../utils/dota_ts_adapter";
+import { registerAbility, BaseAbility, registerModifier, BaseModifier } from '../../../../../utils/dota_ts_adapter';
 import {
   AbilityDefinition,
   CustomAbilityType,

@@ -92,10 +92,10 @@ export class ModifierUtils {
         let damage = damageTick;
 
         if (!ignoreAmplify) {
-            let casterAmplify = custom_dot_amplify_outgoing.GetAmountFor(caster);
+            let casterAmplify = caster.IsAlive() ? custom_dot_amplify_outgoing.GetAmountFor(caster) : 0;
             let targetAmplify = custom_dot_amplify_incoming.GetAmountFor(target);
 
-            damage = damage + (damage * casterAmplify) / 100 + (damage * targetAmplify) / 100;
+            damage = damage + (damage * casterAmplify * 0.01) + (damage * targetAmplify * 0.01);
         }
         
         const lifestealAmount = custom_dot_lifesteal_outgoing.GetAmountFor(caster);

@@ -154,8 +154,8 @@
                             {
                                 "Talent01"    "talent_antimage_shadow_dancer_shadow"
                                 "Talent02"    "talent_antimage_shadow_dancer_bodyguard_of_shadows"
-                                "Talent03"    "none"
-                                "Talent04"    "none"
+                                "Talent03"    "talent_antimage_shadow_dancer_zipzap"
+                                "Talent04"    "talent_antimage_shadow_dancer_umbrageous_mana"
                             }
                         }
                         "TalentRow02"

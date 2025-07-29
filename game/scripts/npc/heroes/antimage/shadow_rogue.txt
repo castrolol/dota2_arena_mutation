@@ -1,5 +1,20 @@
 "DOTAAbilities"
 {
+    "special_abililty_antimage_shadow_dancer_blonk_trigger"
+    {
+        "name"    "special_abililty_antimage_shadow_dancer_blonk_trigger"
+        "AbilityTextureName"    "antimage_shadow_dancer_zipzap"
+        "ScriptFile"    "heroes/antimage/shadow_rogue/shadow_dancer/special_abilities/special_abililty_antimage_shadow_dancer_blonk_trigger"
+        "CustomAbilityType"    "SPECIAL_ABILITY"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitDamageType"    "DAMAGE_TYPE_MAGICAL"
+        "SpellImmunityType"    "SPELL_IMMUNITY_ENEMIES_NO"
+        "SpellDispellableType"    "SPELL_DISPELLABLE_YES"
+        "AbilitySound"    "Antimage.Blink"
+        "AbilityCooldown"    "0"
+        "AbilityCastPoint"    "0"
+        "BaseClass"    "ability_lua"
+    }
     "special_ability_antimage_shadow_dancer_shadow"
     {
         "name"    "special_ability_antimage_shadow_dancer_shadow"
@@ -9,11 +24,12 @@
         "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
         "FightRecapLevel"    "1"
         "MaxLevel"    "4"
+        "RequiredLevel"    "100"
         "AbilityCastPoint"    "0 0 0 0"
         "AbilityValues"
         {
             "shadow_clone_damage"    "50 66 82 100"
-            "shadow_clone_chance"    "17 17 17 17"
+            "shadow_clone_chance"    "17 17 22 22"
             "attacks_until_die"    "1 1 2 2"
         }
         "BaseClass"    "ability_lua"
@@ -54,6 +70,43 @@
             "shadow_clone_damage"    "50 66 82 100"
             "shadow_clone_chance"    "17 17 17 17"
             "attacks_until_die"    "1 1 2 2"
+        }
+        "BaseClass"    "ability_lua"
+    }
+    "talent_antimage_shadow_dancer_umbrageous_mana"
+    {
+        "name"    "talent_antimage_shadow_dancer_umbrageous_mana"
+        "AbilityTextureName"    "antimage_shadow_dancer_shadow_umbrageous_mana"
+        "CustomAbilityType"    "TRAIT"
+        "ScriptFile"    "heroes/antimage/shadow_rogue/shadow_dancer/talents/talent_antimage_shadow_dancer_umbrageous_mana"
+        "IsBreakable"    "1"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "FightRecapLevel"    "1"
+        "MaxLevel"    "4"
+        "RequiredLevel"    "-3"
+        "AbilityCastPoint"    "0 0 0 0"
+        "AbilityValues"
+        {
+            "damage_percentage"    "10 12 18 25"
+            "debuff_duration"    "2 3 4 5"
+        }
+        "BaseClass"    "ability_lua"
+    }
+    "talent_antimage_shadow_dancer_zipzap"
+    {
+        "name"    "talent_antimage_shadow_dancer_zipzap"
+        "AbilityTextureName"    "antimage_shadow_dancer_zipzap"
+        "CustomAbilityType"    "TRAIT"
+        "ScriptFile"    "heroes/antimage/shadow_rogue/shadow_dancer/talents/talent_antimage_shadow_dancer_zipzap"
+        "IsBreakable"    "1"
+        "AbilityBehavior"    "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "FightRecapLevel"    "1"
+        "MaxLevel"    "4"
+        "RequiredLevel"    "-3"
+        "AbilityCastPoint"    "0 0 0 0"
+        "AbilityValues"
+        {
+            "token_duration"    "1 1.5 2 2.5"
         }
         "BaseClass"    "ability_lua"
     }

@@ -1,6 +1,7 @@
 import { registerAbility, BaseAbility, registerModifier, BaseModifier } from '../../../utils/dota_ts_adapter';
 import { CalculateDirectionToPosition, CalculateDistanceBetweenPoints } from '../../../utils/util';
 import { AbilityDefinition, CustomAbilityType } from '../../static_definitions';
+import { modifier_talent_antimage_shadow_dancer_zipzap, modifier_talent_antimage_shadow_dancer_zipzap_thinker } from '../shadow_rogue/shadow_dancer/talents/talent_antimage_shadow_dancer_zipzap';
 
 @registerAbility()
 export class base_ability_antimage_blink extends BaseAbility {
@@ -11,18 +12,19 @@ export class base_ability_antimage_blink extends BaseAbility {
     particle_blink_start: string = "particles/units/heroes/hero_antimage/antimage_blink_start.vpcf";
     particle_blink_end: string = "particles/units/heroes/hero_antimage/antimage_blink_end.vpcf";
     particle_interference: string = "particles/econ/items/antimage/antimage_weapon_basher_ti5/am_manaburn_basher_ti_5.vpcf";
-
+    blonk_thinker: CDOTA_BaseNPC | undefined;
 
     Precache(context: CScriptPrecacheContext) {
         PrecacheResource(PrecacheType.PARTICLE, "particles/units/heroes/hero_antimage/antimage_blink_start.vpcf", context);
         PrecacheResource(PrecacheType.PARTICLE, "particles/units/heroes/hero_antimage/antimage_blink_end.vpcf", context);
         PrecacheResource(PrecacheType.PARTICLE, "particles/econ/items/antimage/antimage_weapon_basher_ti5/am_manaburn_basher_ti_5.vpcf", context);
         PrecacheResource(PrecacheType.PARTICLE, "particles/heroes/anti_mage/antimage_magic_nullity_shield.vpcf", context);
-        PrecacheResource(PrecacheType.PARTICLE, "particles/antimage/antimage_blonk/antimage_blonk_ground.vpcf", context);
+        PrecacheResource(PrecacheType.PARTICLE, "particles/antimage/shadow_dancer/antimage_blonk_ground.vpcf", context);
 
     }
 
     OnSpellStart(): void {
+
 
         const target_position = this.GetCursorPosition();
         const direction = CalculateDirectionToPosition(this.caster.GetAbsOrigin(), target_position);
@@ -67,6 +69,30 @@ export class base_ability_antimage_blink extends BaseAbility {
         const particle_blink_end_fx = ParticleManager.CreateParticle(this.particle_blink_end, ParticleAttachment.ABSORIGIN_FOLLOW, this.caster);
         ParticleManager.SetParticleControl(particle_blink_end_fx, 0, this.caster.GetAbsOrigin());
         ParticleManager.ReleaseParticleIndex(particle_blink_end_fx);
+
+        this.CreateBlonkTarget(original_caster_position);
+
+    }
+
+    CreateBlonkTarget(position: Vector) {
+
+        const modifier = modifier_talent_antimage_shadow_dancer_zipzap.find_on(this.GetCaster());
+
+        if (modifier === undefined) return;
+
+        const thinker = CreateModifierThinker(
+            this.GetCaster(),
+            this,
+            modifier_talent_antimage_shadow_dancer_zipzap_thinker.name,
+            { duration: modifier.token_duration },
+            position,
+            this.GetCaster().GetTeam(),
+            false
+        )
+        this.GetCaster().AddNewModifier(this.GetCaster(), this, "modifier_talent_antimage_shadow_dancer_zipzap_cooldown", { duration: modifier.token_duration })
+        thinker.AddNewModifier(this.GetCaster(), this, BuiltInModifier.KILL, { duration: modifier.token_duration })
+
+        this.blonk_thinker = thinker;
 
     }
 }

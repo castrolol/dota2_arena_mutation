@@ -34,7 +34,14 @@ export type TalentRow = [TalentItem, TalentItem, TalentItem, TalentItem] | null;
 export type HeroDefinition = {
   name: `npc_dota_hero_${string}`;
 
-  abilities: PartialRecord<`slot${1 | 2 | 3 | 4 | 5 | 6}`, string>;
+  abilities: PartialRecord<`slot${1 | 2 | 3 | 4 | 5 | 6 | 7 | 8}`, string>;
+  
+  extra_abilities?: {
+    class: string;
+    path: string;
+    ability: string;
+    type: "trait" | "special" | "increment";
+  }[];
 
   classes: {
     [className: string]: HeroClassDefinition;

@@ -214,6 +214,19 @@ export class modifier_shadow_clone extends BaseModifier {
             shadow_clone_damage: params.shadow_clone_damage
         });
 
+        if (caster.HasModifier("modifier_talent_antimage_shadow_dancer_umbrageous_mana")) {
+            const talent = caster.FindModifierByName("modifier_talent_antimage_shadow_dancer_umbrageous_mana");
+            const stackCount = talent.GetStackCount();
+
+            if (stackCount > 0) {
+                shadow_clone.AddNewModifier(
+                    caster,
+                    ability,
+                    "modifier_talent_antimage_shadow_dancer_umbrageous_mana",
+                    { level: stackCount }
+                )
+            }
+        }
 
         return shadow_clone;
 
@@ -233,13 +246,13 @@ export const $_DEFINITION: AbilityDefinition = {
     FightRecapLevel: '1',
 
     MaxLevel: '4',
-    //RequiredLevel: '100',
-     // Casting
+    RequiredLevel: '100',
+    // Casting
     //-------------------------------------------------------------------------------------------------------------
     AbilityCastPoint: '0 0 0 0',
     AbilityValues: {
         shadow_clone_damage: '50 66 82 100',
-        shadow_clone_chance: "17 17 17 17",
+        shadow_clone_chance: "17 17 22 22",
         attacks_until_die: '1 1 2 2',
     },
 };
