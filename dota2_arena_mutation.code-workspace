@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "dota2_arena_mutation"
+		},
+		{
+			"path": "generation"
+		},
+		{
+			"path": "l18n"
+		}
+	],
+	"settings": {}
+}

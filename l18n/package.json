@@ -1,0 +1,24 @@
+{
+  "name": "l18n",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsx ./index.ts"
+  },
+  "devDependencies": {
+    "@types/chance": "^1.1.6",
+    "@types/node": "^22.13.5",
+    "translate": "^3.0.1",
+    "tsx": "^4.19.3"
+  },
+  "dependencies": {
+    "@kreisler/js-google-translate-free": "^4.0.2",
+    "chance": "^1.1.12",
+    "ollama": "^0.5.14",
+    "openai": "^4.85.4",
+    "translatte": "^3.0.1",
+    "zod": "^3.24.2",
+    "zod-to-json-schema": "^3.24.3"
+  }
+}

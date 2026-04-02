@@ -1,0 +1,22 @@
+{
+  "name": "generation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsx --require ./tsbase.ts generate-heroes.ts",
+    "link:folders": "symlink-dir ../dota2_arena_mutation/game/scripts/src/heroes ./base-heroes", 
+    "link:npc": "symlink-dir ../dota2_arena_mutation/game/scripts/npc ./npc-kvs",
+    "link:panorama": "symlink-dir ../dota2_arena_mutation/content/panorama/src ./panorama",
+    "link:vpks": "symlink-dir C:/Users/luan_/Documents/dota2/dota_vpk_updates ./vpks"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "symlink-dir": "^6.0.4",
+    "tsx": "^4.19.3"
+  },
+  "dependencies": {
+    "change-case": "4",
+    "valve-kv": "^1.2.1"
+  }
+}

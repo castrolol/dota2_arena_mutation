@@ -1,0 +1,18 @@
+SLOW => sempre se trata de lentidão e NUNCA LENTO/LENTA, SEMPRE LENTIDÃO
+status resistance => dentro do game, se refere a resistencia estática (ou a efeitos negativos em idiomas q nao são portugues)
+stack => refere-se a quantidade de camadas de alguem efeito aplicado, geralmente entenda como camada/camadas, NUNCA COMO PILHA
+plus => quando está como adjetivo, refere-se a algo "extra"
+Bulwark => refere-se a figura de um baluarte
+
+All Items here, should be considered for All Languages
+CRITICAL: Don't chage % special character of place, if it appears at beginning keep it there, same for when it appears at end
+CRITICAL: Don't pur extra special characters! 
+
+VERY CRITIAL: NEVER USE SLOW AS AN ADJECTIVE, IT'S A NOUN EVERYTIME, THEN IN PORTUGUESE FOR EXAMPLE, YOU EVERYTIME WILL USE AS "LENTIDÃO"
+EXAMPLE:
+MOVE SPEED SLOW => LENTIDÃO DE VELOCIDADE DE MOVIMENTO
+
+AND DON'T FORGET TO NEVER REMOVE PERCENTAGE SYMBOL, KEEP IT ON THE ORIGINAL PLACE!
+
+
+and last runs, you remove or replaced percentage symbol (%), DON'T DO IT, KEEP IT, IT'S VERY CRITICAL

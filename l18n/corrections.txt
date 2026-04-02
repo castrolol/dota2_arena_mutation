@@ -1,0 +1,54 @@
+KEY: NARRATOR: The four of them continued their debaucherous meeting until the break of dawn when Alice and Chiho’s pussies were overflowing.
+SOFTCORE: O narrador: As quatro continuaram sua reunião depravada até o amanhecer, quando os bucetas de Alice e Chiho estavam transbordando.
+NORMAL: O narrador: As quatro continuaram sua reunião depravada até o amanhecer, quando os vaginas de Alice e Chiho estavam transbordando.
+HARDCORE: O narrador: As quatro continuaram sua reunião depravada até o amanhecer, quando as pussies de Alice e Chiho estavam transbordando.
+REASON: não use pussies, pois é inglês, vc precisa achar termos em portugues, nesse caso, buceta seria um bom termo
+FIX_SOFTCORE: O narrador: As quatro continuaram sua reunião depravada até o amanhecer, quando os vaginas de Alice e Chiho estavam transbordando.
+FIX_NORMAL: O narrador: As quatro continuaram sua reunião depravada até o amanhecer, quando os bucetas de Alice e Chiho estavam cheias de semem.
+FIX_HARDCORE: O narrador: As quatro continuaram sua reunião depravada até o amanhecer, quando as bucetas de Alice e Chiho estavam cheias de porra.
+$END$
+KEY: NARRATOR: The men were now penetrating so deeply that they could feel the tips of their penises reach the entrance of the ladies’ wombs.    
+SOFTCORE: O narrador: Os homens agora estavam penetrando tão profundamente que podiam sentir as pontas de seus pênis alcançarem a entrada do útero das senhoritas.
+NORMAL: O narrador: Os homens agora estavam penetrando tão profundamente que podiam sentir as pontas de seus pênes alcançarem a entrada do útero das senhoritas.
+HARDCORE: O narrador: Os caras agora estavam penetrando tão fundo que podiam sentir os cabos dos seus pauzinhos tocando na entrada das fofinhas.
+REASON: pauzinhos não é um termo bom para usar, já que é uma visual novel Harem, com publico alvo masculino, e nem usar senhoritas, use moças ou talvez meninas
+FIX_SOFTCORE: O narrador: Os homens agora estavam penetrando tão profundamente que podiam sentir as pontas de seus pênis alcançarem a entrada do útero das meninas.
+FIX_NORMAL: O narrador: Os homens agora estavam penetrando tão profundamente que podiam sentir as pontas de seus paus alcançarem a entrada do útero das meninas.
+FIX_HARDCORE: O narrador: Os caras agora estavam penetrando tão fundo que podiam sentir seus paus chegando no útero das vadias.
+$END$  
+KEY: Thanks, it's fine, I can handle it.
+SOFTCORE: Não, é só o que eu preciso. Agradeço.
+NORMAL: Não, é só o que eu preciso. Adeus.
+HARDCORE: Não, é só o que eu preciso. Vai se foder.
+REASON: your translation isn't what user sent, please don't change the context
+FIX_SOFTCORE: ta tudo bem, eu posso lidar com isso
+FIX_NORMAL: ta tudo bem, eu posso lidar com isso
+FIX_HARDCORE: ta tudo bem, eu posso lidar com isso
+$END$
+KEY: Love Potion
+SOFTCORE: 
+NORMAL: Ameixada
+HARDCORE: 
+REASON: don't let translations empty, just repeat in this case, and Ameixada doesn't match with Love Potion maybe "Poção do amor"
+SOFTCORE: Poção do Amor
+NORMAL: Poção do Amor
+HARDCORE: Poção do Amor
+$END$
+KEY: Do it, ravage our pussies!
+SOFTCORE: Faça isso, assalte nossas bucetinhas!
+NORMAL: Faça isso, assalte nossas bucetas!
+HARDCORE: Faça isso, assalte nossas vadias!
+REASON: Don't use "assalte", because it looks like a robery, use a sexual intention
+SOFTCORE: Faça isso, arregaçe nossas bucetinhas!
+NORMAL: Faça isso, arregaçe nossas bucetinhas!
+HARDCORE: Faça isso, arregaçe nossas bucetinhas!
+$END$
+KEY: Timer: 57s
+SOFTCORE: Lady: meninas, moças, vadias, putas (use as the level of NSFW)
+NORMAL: Lady: meninas, moças, vadias, putas (use as the level of NSFW)
+HARDCORE: Lady: meninas, moças, vadias, putas (use as the level of NSFW)
+REASON: don't create things, just translate it man... 
+FIX_SOFTCORE: Cronometro: 57s
+FIX_NORMAL: Cronometro: 57s
+FIX_HARDCORE: Cronometro: 57s
+$END$
