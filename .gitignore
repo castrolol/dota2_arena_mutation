@@ -54,12 +54,6 @@ generation/panorama
 generation/vpks
 
 # === l18n ===
-# Files with API keys (NEVER commit)
-l18n/translate-openai.ts
-l18n/testing.ts
-l18n/testing-2.ts
-l18n/translate-ai-run.ts
-
 # Temp/debug files
 l18n/translated-*.txt
 l18n/yarn-error.log

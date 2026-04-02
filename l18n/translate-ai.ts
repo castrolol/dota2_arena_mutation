@@ -6,15 +6,8 @@ const glossario = readFileSync("./glossario.txt", "utf8");
 console.log(glossario);
 
 const ollama = new Ollama({
-  host: "http://127.0.0.1:11434", //
+  host: process.env.OLLAMA_HOST ?? "http://127.0.0.1:11434",
   fetch,
-
-  headers: {
-    "api-key":
-      "a54edfe64b913a94bfae29824eeeac8711ed9d0f80d27b15d8a2388feb30841b",
-    token: "a54edfe64b913a94bfae29824eeeac8711ed9d0f80d27b15d8a2388feb30841b",
-    Authorization: `Bearer a54edfe64b913a94bfae29824eeeac8711ed9d0f80d27b15d8a2388feb30841b`,
-  },
 });
 const TranslationSchema = z.object({
   translation: z
